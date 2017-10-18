@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Goal xmlns="http://hl7.org/fhir">
+  <id value="qicore-goal-example"/> 
+  <text>
+    <status value="additional"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Simple care goal for an obese patient to lose weight</p>
+      <p>
+        <strong>identifier</strong>: 123
+      </p>
+      <p>
+        <strong>status</strong>: on-hold
+      </p>
+      <p>
+        <strong>assertedDate</strong>: 10/09/2014
+      </p>
+      <p>
+        <strong>category</strong>: { FHIR code 'dietary' = 'Dietary' }
+      </p>
+      <p>
+        <strong>priority</strong>: { FHIR code 'high-priority' = 'High Priority', given as 'high' })
+      </p>
+      <p>
+        <strong>description</strong>: Target weight is 160 to 180 lbs.
+      </p>
+      <p>
+        <strong>subject</strong>: 
+        <a href="Patient-qicore-patient-example.html">Patient/example</a>
+      </p>
+      <p>
+        <strong>startDate</strong>: 04/05/2015
+      </p>
+      <blockquote>
+        <p><strong>target</strong></p>
+        <p>
+          <strong>measure</strong>: { LOINC code '3141-9' = 'Weight Measured' })
+        </p>
+        <blockquote>
+          <p><strong>detailRange</strong></p>
+          <p>
+            <strong>low</strong>: 160 lbs
+          </p>
+          <p>
+            <strong>high</strong>: 180 lbs
+          </p>
+        </blockquote>
+        <p>
+          <strong>dueDate</strong>: 04/05/2015
+        </p>
+      </blockquote>
+      <p>
+        <strong>statusDate</strong>: 02/14/2016
+      </p>
+      <p>
+        <strong>statusReason</strong>: Patient wants to defer weight loss until after honeymoon.
+      </p>
+      <p>
+        <strong>expressedBy</strong>: 
+        <a href="Patient-qicore-patient-example.html">Patient/example</a>
+      </p>
+      <p>
+        <strong>addresses</strong>: obesity condition
+      </p>
+      <p>
+        <strong>outcomeReference</strong>: 
+        <a href="Observation-qicore-observation-example.html">Observation/example</a>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <value value="123"/>
+  </identifier>
+  <status value="on-hold"/>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/goal-category"/>
+      <code value="dietary"/>
+    </coding>
+  </category>
+  <priority>
+    <coding>
+      <system value="http://hl7.org/fhir/goal-priority"/>
+      <code value="high-priority"/>
+      <display value="High Priority"/>
+    </coding>
+    <text value="high"/>
+  </priority>
+  <description>
+        <text value="Target weight is 160 to 180 lbs."/>
+  </description>
+  <subject>
+    <reference value="Patient/example"/>
+    <display value="Peter James Chalmers"/>
+  </subject>
+  <startDate value="2015-04-05"/>
+  <target>
+    <measure>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="3141-9"/>
+        <display value="Weight Measured"/>
+      </coding>
+    </measure>
+    <detailRange>
+      <low>
+        <value value="160"/>
+        <unit value="lbs"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="[lb_av]"/>
+      </low>
+      <high>
+        <value value="180"/>
+        <unit value="lbs"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="[lb_av]"/>
+      </high>
+    </detailRange>
+    <dueDate value="2016-04-05"/>
+  </target>
+  <statusDate value="2016-02-14"/>
+  <statusReason value="Patient wants to defer weight loss until after honeymoon."/>
+  <expressedBy>
+    <reference value="Patient/example"/>
+    <display value="Peter James Chalmers"/>
+  </expressedBy>
+  <addresses>
+    <display value="obesity condition"/>
+  </addresses>
+  <outcomeReference>
+    <reference value="Observation/example"/>
+    <display value="Body Weight Measured"/>
+  </outcomeReference>
+</Goal>
