@@ -1,0 +1,69 @@
+{
+  "resourceType": "CommunicationRequest",
+  "id": "qicore-communicationrequest-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h4>From DomainResource</h4>\n      <blockquote>\n        <p>\n          <strong>Organization 1 (Provider)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: provider                \n        </p>\n        <p>\n          <strong>identifier</strong>: 3456                \n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>Organization 2 (Insurer)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: payor                \n        </p>\n        <p>\n          <strong>identifier</strong>: 123456                \n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>Organization 3 (Practitioner)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: requester                \n        </p>\n        <p>\n          <strong>identifier</strong>: 6789                \n        </p>\n      </blockquote>\n      <h4>CommunicationRequest</h4>\n      <p>\n        <strong>identifier</strong>: ABC123            \n      </p>\n      <p>\n        <strong>basedOn</strong>: EligibilityRequest      \n      </p>\n      <p>\n        <strong>replaces</strong>: prior CommunicationRequest      \n      </p>\n      <p>\n        <strong>groupIdentifier</strong>: 12345      \n      </p>\n      <p>\n        <strong>status</strong>: active      \n      </p>\n      <p>\n        <strong>category</strong>: SolicitedAttachmentRequest      \n      </p>\n      <p>\n        <strong>priority</strong>: routine      \n      </p>\n      <p>\n        <strong>medium</strong>: written      \n      </p>\n      <p>\n        <strong>recipient</strong>:         \n        <a href=\"Organization-qicore-organization-example.html\">Organization/Example</a>\n      </p>\n      <p>\n        <strong>context</strong>:         \n        <a href=\"Encounter-qicore-encounter-example.html\">Encounter/example</a>\n      </p>\n      <p>\n        <strong>payload</strong>: Please provide the accident report and any associated pictures to support your Claim #DEF5647.      \n      </p>\n      <p>\n        <strong>occurrenceDateTime</strong>: 06/10/2016      \n      </p>\n      <p>\n        <strong>authoredOn</strong>: 06/10/2016      \n      </p>\n      <p>\n        <strong>sender</strong>:        \n        <a href=\"Organization-qicore-patient-example.html\">Patient/Example</a>\n      </p>\n      <p>\n        <strong>requester</strong>:        \n        <a href=\"Organization-qicore-practitioner-example.html\">Practitioner/Example</a>\n      </p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "system": "http://www.jurisdiction.com/insurer/123456",
+      "value": "ABC123"
+    }
+  ],
+  "basedOn": [
+    {
+      "display": "EligibilityRequest"
+    }
+  ],
+  "replaces": [
+    {
+      "display": "prior CommunicationRequest"
+    }
+  ],
+  "groupIdentifier": {
+    "value": "12345"
+  },
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://acme.org/messagetypes",
+          "code": "SolicitedAttachmentRequest"
+        }
+      ]
+    }
+  ],
+  "priority": "routine",
+  "medium": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/v3/ParticipationMode",
+          "code": "WRITTEN",
+          "display": "written"
+        }
+      ],
+      "text": "written"
+    }
+  ],
+  "recipient": [
+    {
+      "reference": "Oraganization/example"
+    }
+  ],
+  "context": {
+    "reference": "Encounter/example"
+  },
+  "payload": [
+    {
+      "contentString": "Please provide the accident report and any associated pictures to support your Claim #DEF5647."
+    }
+  ],
+  "occurrenceDateTime": "2016-06-10T11:01:10-08:00",
+  "authoredOn": "2016-06-10T11:01:10-08:00",
+  "sender": {
+    "reference": "Patient/example"
+  }
+}

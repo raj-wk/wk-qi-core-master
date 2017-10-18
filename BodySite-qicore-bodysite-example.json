@@ -1,0 +1,46 @@
+{
+  "resourceType": "BodySite",
+  "id": "qicore-bodysite-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>Generated Narrative with Details</strong>\n      </p>\n      <p>\n        <strong>id</strong>: tumor\n      </p>\n      <p>\n        <strong>identifier</strong>: 12345\n      </p>\n      <p>\n        <strong>code</strong>: Splenic mass \n        <span>(Details: { SNOMED CT code '4147007' = 'Mass', given as 'Mass (morphologic abnormality)' })</span>\n      </p>\n      <p>\n        <strong>qualifier</strong>: Splenic mass \n        <span>(Details: { SNOMED CT code '78961009' = 'Spleen', given as 'Splenic structure (body structure)' })</span>\n      </p>\n      <p>\n        <strong>description</strong>: 7 cm maximum diameter\n      </p>\n      <p>\n        <strong>image</strong>: \n      </p>\n      <p>\n        <strong>patient</strong>:\n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "system": "http://goodhealth.org/bodysite/identifiers",
+      "value": "12345"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "4147007",
+        "display": "Mass (morphologic abnormality)"
+      }
+    ],
+    "text": "Splenic mass"
+  },
+  "qualifier": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "78961009",
+          "display": "Splenic structure (body structure)"
+        }
+      ],
+      "text": "Splenic mass"
+    }
+  ],
+  "description": "7 cm maximum diameter",
+  "image": [
+    {
+      "contentType": "application/dicom",
+      "url": "http://imaging.acme.com/wado/server?requestType=WADO&amp;wado_details"
+    }
+  ],
+  "patient": {
+    "reference": "Patient/example"
+  }
+}

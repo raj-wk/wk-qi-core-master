@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/BodySite/qicore-bodysite-example> a fhir:BodySite;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-bodysite-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>Generated Narrative with Details</strong>\n      </p>\n      <p>\n        <strong>id</strong>: tumor\n      </p>\n      <p>\n        <strong>identifier</strong>: 12345\n      </p>\n      <p>\n        <strong>code</strong>: Splenic mass \n        <span>(Details: { SNOMED CT code '4147007' = 'Mass', given as 'Mass (morphologic abnormality)' })</span>\n      </p>\n      <p>\n        <strong>qualifier</strong>: Splenic mass \n        <span>(Details: { SNOMED CT code '78961009' = 'Spleen', given as 'Splenic structure (body structure)' })</span>\n      </p>\n      <p>\n        <strong>description</strong>: 7 cm maximum diameter\n      </p>\n      <p>\n        <strong>image</strong>: \n      </p>\n      <p>\n        <strong>patient</strong>:\n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n    </div>"
+  ];
+  fhir:BodySite.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://goodhealth.org/bodysite/identifiers" ];
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:BodySite.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:4147007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "4147007" ];
+       fhir:Coding.display [ fhir:value "Mass (morphologic abnormality)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Splenic mass" ]
+  ];
+  fhir:BodySite.qualifier [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:78961009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "78961009" ];
+       fhir:Coding.display [ fhir:value "Splenic structure (body structure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Splenic mass" ]
+  ];
+  fhir:BodySite.description [ fhir:value "7 cm maximum diameter"];
+  fhir:BodySite.image [
+     fhir:index 0;
+     fhir:Attachment.contentType [ fhir:value "application/dicom" ];
+     fhir:Attachment.url [ fhir:value "http://imaging.acme.com/wado/server?requestType=WADO&amp;wado_details" ]
+  ];
+  fhir:BodySite.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/BodySite/qicore-bodysite-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/BodySite/qicore-bodysite-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

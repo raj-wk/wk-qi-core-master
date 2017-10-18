@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/DeviceUseStatement/qicore-deviceusestatement-example> a fhir:DeviceUseStatement;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-deviceusestatement-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f\n      </p>\n      <p>\n        <strong>status</strong>: active\n      </p>\n      <p>\n        <strong>subject</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>device</strong>: <a href=\"Device-qicore-device-example.html\">Device/example</a>\n      </p>\n    </div>"
+  ];
+  fhir:DeviceUseStatement.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http:goodhealth.org/identifiers" ];
+     fhir:Identifier.value [ fhir:value "51ebb7a9-4e3a-4360-9a05-0cc2d869086f" ]
+  ];
+  fhir:DeviceUseStatement.status [ fhir:value "active"];
+  fhir:DeviceUseStatement.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:DeviceUseStatement.device [
+     fhir:link <http://hl7.org/fhir/us/qicore/Device/example>;
+     fhir:Reference.reference [ fhir:value "Device/example" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Device/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/DeviceUseStatement/qicore-deviceusestatement-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/DeviceUseStatement/qicore-deviceusestatement-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

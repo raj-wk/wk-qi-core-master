@@ -1,0 +1,226 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+  <link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+  </div>
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3//index.html">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
+
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+  <div class="container">  <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">  <!-- segment-content -->
+ <div class="container">  <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<h2>Example: ImagingStudy-qicore-imagingstudy-example</h2>
+
+<p>
+Formats: <a href="ImagingStudy-qicore-imagingstudy-example.xml.html">XML</a>, <a href="ImagingStudy-qicore-imagingstudy-example.json.html">JSON</a>, <a href="ImagingStudy-qicore-imagingstudy-example.ttl.html">Turtle</a>
+</p>
+
+<pre class="rdf">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sct: &lt;http://snomed.info/id/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ImagingStudy;
+  <a href="http://hl7.org/fhir/STU3/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#id">fhir:value</a> &quot;qicore-imagingstudy-example&quot;];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n      &lt;p&gt;&lt;strong&gt;CT Chest. John Smith (MRN: 09236). Accession: W12342398. Performed: 2011-01-01. 3 series, 12 images.&lt;/strong&gt;&lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;radiationDose&lt;/strong&gt;: \n        &lt;a href=\&quot;ImagingStudy-RadiationDose-qicore-imagingstudy-radiationdose-example.html\&quot;&gt;ImagingStudy-RadiationDose/example&lt;/a&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;radiationDuration&lt;/strong&gt;: \n        &lt;a href=\&quot;ImagingStudy-RadiationDuration-qicore-imagingstudy-radiationduration-example.html\&quot;&gt;ImagingStudy-RadiationDuration/example&lt;/a&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;uid&lt;/strong&gt;: urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;patient&lt;/strong&gt;: \n        &lt;a href=\&quot;Patient-qicore-patient-example.html\&quot;&gt;Patient/example&lt;/a&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;started&lt;/strong&gt;: 01/01/2011\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;numberOfSeries&lt;/strong&gt;: 1\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;strong&gt;numberOfInstances&lt;/strong&gt;: 1\n      &lt;/p&gt;\n      &lt;blockquote&gt;\n        &lt;p&gt;&lt;strong&gt;series&lt;/strong&gt;&lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;uid&lt;/strong&gt;: urn:oid:2.16.124.113543.6003.2588828330.45298.17418.2723805630\n        &lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;number&lt;/strong&gt;: 3\n        &lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;modality&lt;/strong&gt;: CT\n        &lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;description&lt;/strong&gt;: CT Surview 180\n        &lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;numberOfInstances&lt;/strong&gt;: 1\n        &lt;/p&gt;\n        &lt;p&gt;\n          &lt;strong&gt;bodySite&lt;/strong&gt;: { SNOMED CT code '67734004' = 'Upper Trunk Structure' })\n        &lt;/p&gt;\n        &lt;blockquote&gt;\n          &lt;p&gt;&lt;strong&gt;instance&lt;/strong&gt;&lt;/p&gt;\n          &lt;p&gt;\n            &lt;strong&gt;uid&lt;/strong&gt;: urn:oid:2.16.124.113543.6003.189642796.63084.16748.2599092903\n          &lt;/p&gt;\n          &lt;p&gt;\n            &lt;strong&gt;number&lt;/strong&gt;: 1\n          &lt;/p&gt;\n          &lt;p&gt;\n            &lt;strong&gt;sopClass&lt;/strong&gt;: urn:oid:1.2.840.10008.5.1.4.1.1.2\n          &lt;/p&gt;\n        &lt;/blockquote&gt;\n      &lt;/blockquote&gt;\n    &lt;/div&gt;&quot;
+  ];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.extension">fhir:DomainResource.extension</a> [
+     <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationDose&quot; ];
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueRange</a> [
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Range#Range.low">fhir:Range.low</a> [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity#Quantity.value">fhir:Quantity.value</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">fhir:value</a> &quot;200.0&quot;^^xsd:decimal ];
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity#Quantity.unit">fhir:Quantity.unit</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Gy&quot; ]       ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Range#Range.high">fhir:Range.high</a> [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity#Quantity.value">fhir:Quantity.value</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">fhir:value</a> &quot;1234.5&quot;^^xsd:decimal ];
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity#Quantity.unit">fhir:Quantity.unit</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Gy&quot; ]       ]     ]
+  ], [
+     <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 1;
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationDuration&quot; ];
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueDuration</a> [
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Duration#Duration.value">fhir:Quantity.value</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">fhir:value</a> &quot;25&quot;^^xsd:decimal ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Duration#Duration.unit">fhir:Quantity.unit</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;sec&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Duration#Duration.system">fhir:Quantity.system</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://unitsofmeasure.org&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Duration#Duration.code">fhir:Quantity.code</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;s&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.uid">fhir:ImagingStudy.uid</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#oid">fhir:value</a> &quot;urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045&quot;];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.patient">fhir:ImagingStudy.patient</a> [
+     <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Patient/example&quot; ]
+  ];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.started">fhir:ImagingStudy.started</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">fhir:value</a> &quot;2011-01-01T11:01:20+03:00&quot;^^xsd:dateTime];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.numberOfSeries">fhir:ImagingStudy.numberOfSeries</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.numberOfInstances">fhir:ImagingStudy.numberOfInstances</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger];
+  <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series">fhir:ImagingStudy.series</a> [
+     <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.uid">fhir:ImagingStudy.series.uid</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#oid">fhir:value</a> &quot;urn:oid:2.16.124.113543.6003.2588828330.45298.17418.2723805630&quot; ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.number">fhir:ImagingStudy.series.number</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;3&quot;^^xsd:nonNegativeInteger ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.modality">fhir:ImagingStudy.series.modality</a> [
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://dicom.nema.org/resources/ontology/DCM&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;CT&quot; ]     ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.description">fhir:ImagingStudy.series.description</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;CT Surview 180&quot; ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.numberOfInstances">fhir:ImagingStudy.series.numberOfInstances</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.bodySite">fhir:ImagingStudy.series.bodySite</a> [
+       a sct:67734004;
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;67734004&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Upper Trunk Structure&quot; ]     ];
+     <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.instance">fhir:ImagingStudy.series.instance</a> [
+       <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.instance.uid">fhir:ImagingStudy.series.instance.uid</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#oid">fhir:value</a> &quot;urn:oid:2.16.124.113543.6003.189642796.63084.16748.2599092903&quot; ];
+       <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.instance.number">fhir:ImagingStudy.series.instance.number</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger ];
+       <a href="http://hl7.org/fhir/STU3/imagingstudy.html#ImagingStudy.series.instance.sopClass">fhir:ImagingStudy.series.instance.sopClass</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#oid">fhir:value</a> &quot;urn:oid:1.2.840.10008.5.1.4.1.1.2&quot; ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</pre>
+
+
+          
+<p></p>
+ </div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+</div> <!-- /segment-content -->
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img style="text-align: baseline" src="external.png"/></a> |
+               <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+               <a style="color: #81BEF7" target="_blank" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change <img style="text-align: baseline" src="external.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-military-service"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Military Service Codes</h2><div><p>Value Set for Military Service (Example)</p>\n</div><p>This code system http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service defines the following codes:</p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>not-indicated<a name=\"qicore-military-service-not-indicated\"> </a></td><td>Not Indicated</td><td>The military status is not indicated</td></tr><tr><td>no-military-service<a name=\"qicore-military-service-no-military-service\"> </a></td><td>No Military Service</td><td>The subject has no history of military service</td></tr><tr><td>veteran<a name=\"qicore-military-service-veteran\"> </a></td><td>Veteran</td><td>The subject is has served in the military but is no longer active</td></tr><tr><td>active-duty<a name=\"qicore-military-service-active-duty\"> </a></td><td>Active Duty</td><td>The subject is not a reserve member and is currently engaged in full-time military activity</td></tr><tr><td>active-reserve<a name=\"qicore-military-service-active-reserve\"> </a></td><td>Active Reserve</td><td>The subject is a reserve member and is currently engaged in full-time military activity</td></tr><tr><td>inactive-reserve<a name=\"qicore-military-service-inactive-reserve\"> </a></td><td>Inactive Reserve</td><td>The subject is a reserve member and is not currently engaged in full-time military activity</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service"];
+  fhir:CodeSystem.name [ fhir:value "Military Service Codes"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2017-10-18T21:00:42+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.description [ fhir:value "Value Set for Military Service (Example)"];
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "not-indicated" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Not Indicated" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The military status is not indicated" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "no-military-service" ];
+     fhir:CodeSystem.concept.display [ fhir:value "No Military Service" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The subject has no history of military service" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "veteran" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Veteran" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The subject is has served in the military but is no longer active" ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "active-duty" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Active Duty" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The subject is not a reserve member and is currently engaged in full-time military activity" ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "active-reserve" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Active Reserve" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The subject is a reserve member and is currently engaged in full-time military activity" ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "inactive-reserve" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Inactive Reserve" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The subject is a reserve member and is not currently engaged in full-time military activity" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/CodeSystem/qicore-military-service.ttl> .
+
+# -------------------------------------------------------------------------------------
+

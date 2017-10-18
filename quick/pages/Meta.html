@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Meta</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="icon" href="../resources/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="../stylesheet.css" type="text/css" title="Style"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css"/>
+  </head>
+  <body>
+  <!-- ========= START OF TOP NAVBAR ======= -->
+    <div class="topNav">
+      <a name="navbar_top">
+  <!--  -->
+</a>
+      <ul title="Navigation" class="navList">
+        <li>
+          <a href="../overview-summary.html">Overview</a>
+        </li>
+        <li class="navBarCell1Rev">Class</li>
+        <li>
+          <a href="../index-files.html">Index</a>
+        </li>
+      </ul>
+      <div class="aboutLanguage">QUICK</div>
+    </div>
+    <div class="subNav">
+      <ul class="navList">
+        <li><a name="b67b795d-9177-4bb7-b01e-8cf058dd6efe"> </a>
+          <a href="../index.html?pages/Meta.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a href="Meta.html" target="_top">NO FRAMES</a>
+        </li>
+      </ul>
+      <div>  <!--  --></div>
+    </div>
+  <!-- ========= END OF TOP NAVBAR ========= -->
+  <!-- ======== START OF CLASS DATA ======== -->
+    <div class="header">
+      <h2 title="Class Meta" class="title">Meta</h2>
+    </div>
+    <div class="contentContainer">
+      <div class="description">
+        <ul class="blockList">
+          <li style="font-size:115%;" class="blockList">Metadata about a resource
+            <p/>Base StructureDefinition for Meta Type: The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
+          </li>
+        </ul>
+      </div>
+      <div class="summary">
+        <ul class="blockList">
+          <li class="blockList">
+            <ul class="blockList">
+              <li class="blockList">
+  <!-- =========== FIELD SUMMARY =========== -->
+                <a name="field_summary">  <!--  --></a>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+<table border="0" summary="Field Summary table, listing fields, and an explanation" cellpadding="3" cellspacing="0" class="overviewSummary">
+<tr>
+<th scope="col" class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;Field</th>
+<th scope="col" style="border-right-width: 0px" class="colLast">Card.</th>
+<th scope="col" class="colLast">Type and Description
+<span style="float: right"><a href="../help.html" title="Legend for this format"><img border="0" src="../resources/help16.png" alt="doco"/></a></span></th>
+</tr>
+
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="lastUpdated">lastUpdated</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>DateTime</code>
+                    <blockquote>
+                      <div class="block">When the resource last changed - e.g. when the version changed.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="profile">profile</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Uri&gt;</code>
+                    <blockquote>
+                      <div class="block">A list of profiles (references to [StructureDefinition](structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url]().</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="security">security</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Code&gt;</code>
+                    <blockquote>
+                      <div class="block">Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-security-labels.html" title="Security Labels from the Healthcare Privacy and Security Classification System.">All Security Labels</a> (Extensible)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="tag">tag</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Code&gt;</code>
+                    <blockquote>
+                      <div class="block">Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-common-tags.html" title="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;">Common Tags</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="versionId">versionId</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>id</code>
+                    <blockquote>
+                      <div class="block">The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.</div>
+                    </blockquote>
+                  </td>
+                </tr></table>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav">
+<span class="legalCopy"><small><font size="-1">
+        &copy; HL7.org 2011+. QUICK Generated on Fri, Aug 25, 2017 5:43PM.
+        </font>
+</small></span>
+</div>
+  <!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+  </body>
+</html>

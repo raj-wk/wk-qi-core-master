@@ -1,0 +1,73 @@
+{
+  "resourceType": "ReferralRequest",
+  "id": "qicore-referralrequest-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Referral to Dr Dave for Beverly weaver to have grommets inserted in her r) ear</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/referralrequest-reasonRefused",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "609589008",
+            "display": "Refused by parents of subject"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "cancelled",
+  "intent": "order",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "700274009",
+        "display": "Referral for procedure"
+      }
+    ]
+  },
+  "priority": "routine",
+  "serviceRequested": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "172676009",
+          "display": "Myringotomy and insertion of short-term tympanic ventilation tube (procedure)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "context": {
+    "reference": "ReferralRequest/example2"
+  },
+  "occurrenceDateTime": "2014-02-13",
+  "authoredOn": "2014-02-14",
+  "specialty": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "417887005",
+        "display": "Pediatric otolaryngology"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "65363002",
+          "display": "Otitis media"
+        }
+      ]
+    }
+  ]
+}

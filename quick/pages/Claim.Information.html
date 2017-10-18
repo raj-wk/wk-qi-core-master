@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Claim.Information</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="icon" href="../resources/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="../stylesheet.css" type="text/css" title="Style"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css"/>
+  </head>
+  <body>
+  <!-- ========= START OF TOP NAVBAR ======= -->
+    <div class="topNav">
+      <a name="navbar_top">
+  <!--  -->
+</a>
+      <ul title="Navigation" class="navList">
+        <li>
+          <a href="../overview-summary.html">Overview</a>
+        </li>
+        <li class="navBarCell1Rev">Class</li>
+        <li>
+          <a href="../index-files.html">Index</a>
+        </li>
+      </ul>
+      <div class="aboutLanguage">QUICK</div>
+    </div>
+    <div class="subNav">
+      <ul class="navList">
+        <li><a name="543c82e1-44ff-49db-bc59-647581fe28e0"> </a>
+          <a href="../index.html?pages/Claim.Information.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a href="Claim.Information.html" target="_top">NO FRAMES</a>
+        </li>
+      </ul>
+      <div>  <!--  --></div>
+    </div>
+  <!-- ========= END OF TOP NAVBAR ========= -->
+  <!-- ======== START OF CLASS DATA ======== -->
+    <div class="header">
+      <h2 title="Class Claim.Information" class="title"><a href="Claim.html">Claim</a>.Information</h2>
+    </div>
+    <div class="contentContainer">
+      <div class="description">
+        <ul class="blockList">
+          <li style="font-size:115%;" class="blockList">Exceptions, special considerations, the condition, situation, prior or concurrent issues
+            <p/>Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues. Often there are mutiple jurisdiction specific valuesets which are required.
+          </li>
+        </ul>
+      </div>
+      <div class="summary">
+        <ul class="blockList">
+          <li class="blockList">
+            <ul class="blockList">
+              <li class="blockList">
+  <!-- =========== FIELD SUMMARY =========== -->
+                <a name="field_summary">  <!--  --></a>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+<table border="0" summary="Field Summary table, listing fields, and an explanation" cellpadding="3" cellspacing="0" class="overviewSummary">
+<tr>
+<th scope="col" class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;Field</th>
+<th scope="col" style="border-right-width: 0px" class="colLast">Card.</th>
+<th scope="col" class="colLast">Type and Description
+<span style="float: right"><a href="../help.html" title="Legend for this format"><img border="0" src="../resources/help16.png" alt="doco"/></a></span></th>
+</tr>
+
+                <tr class="altColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="category">category</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">The general class of the information supplied: information; exception; accident, employment; onset, etc.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-claim-informationcategory.html" title="This value set includes sample Information Category codes.">Claim Information Category Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="code">code</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient for which care is sought which may influence the adjudication.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-claim-exception.html" title="This value set includes sample Exception codes.">Exception Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="id">id</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String</code>
+                    <blockquote>
+                      <div class="block">unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="reason">reason</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">For example, provides the reason for: the additional stay, or missing tooth or any other situation where a reason code is required in addition to the content.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-missing-tooth-reason.html" title="Reason codes for the missing teeth">Missing Tooth Reason Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="sequence">sequence</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>positiveInt</code>
+                    <blockquote>
+                      <div class="block">Sequence of the information element which serves to provide a link.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="timing_x_">timing[x]</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>DateTime | interval&lt;DateTime&gt;</code>
+                    <blockquote>
+                      <div class="block">The date when or period to which this information refers.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="value_x_">value[x]</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String | <a href="Quantity.html">Quantity</a> | <a href="Attachment.html">Attachment</a> | Reference</code>
+                    <blockquote>
+                      <div class="block">Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.</div>
+                    </blockquote>
+                  </td>
+                </tr></table>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav">
+<span class="legalCopy"><small><font size="-1">
+        &copy; HL7.org 2011+. QUICK Generated on Fri, Aug 25, 2017 5:43PM.
+        </font>
+</small></span>
+</div>
+  <!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+  </body>
+</html>

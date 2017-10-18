@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ReferralRequest/qicore-referralrequest-example> a fhir:ReferralRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-referralrequest-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Referral to Dr Dave for Beverly weaver to have grommets inserted in her r) ear</div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/referralrequest-reasonRefused" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:609589008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "609589008" ];
+         fhir:Coding.display [ fhir:value "Refused by parents of subject" ]
+       ]
+     ]
+  ];
+  fhir:ReferralRequest.status [ fhir:value "cancelled"];
+  fhir:ReferralRequest.intent [ fhir:value "order"];
+  fhir:ReferralRequest.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:700274009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "700274009" ];
+       fhir:Coding.display [ fhir:value "Referral for procedure" ]
+     ]
+  ];
+  fhir:ReferralRequest.priority [ fhir:value "routine"];
+  fhir:ReferralRequest.serviceRequested [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:172676009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "172676009" ];
+       fhir:Coding.display [ fhir:value "Myringotomy and insertion of short-term tympanic ventilation tube (procedure)" ]
+     ]
+  ];
+  fhir:ReferralRequest.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ReferralRequest.context [
+     fhir:link <http://hl7.org/fhir/us/qicore/ReferralRequest/example2>;
+     fhir:Reference.reference [ fhir:value "ReferralRequest/example2" ]
+  ];
+  fhir:ReferralRequest.occurrenceDateTime [ fhir:value "2014-02-13"^^xsd:date];
+  fhir:ReferralRequest.authoredOn [ fhir:value "2014-02-14"^^xsd:date];
+  fhir:ReferralRequest.specialty [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:417887005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "417887005" ];
+       fhir:Coding.display [ fhir:value "Pediatric otolaryngology" ]
+     ]
+  ];
+  fhir:ReferralRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:65363002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "65363002" ];
+       fhir:Coding.display [ fhir:value "Otitis media" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ReferralRequest/example2> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ReferralRequest/qicore-referralrequest-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ReferralRequest/qicore-referralrequest-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

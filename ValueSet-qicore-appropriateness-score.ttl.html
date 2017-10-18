@@ -1,0 +1,245 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+  <link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">    <!-- segment-header -->
+  <div class="container">    <!-- container -->
+   <a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+     <img src="assets/images/hl7-logo.png" alt="visit the hl7 website" width="42" height="50"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a></div>
+  </div>
+  <div class="container">    <!-- container -->
+ </div></div>    <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">    <!-- container -->
+     <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a href="http://hl7.org/fhir/STU3//index.html" class="navbar-brand hidden">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>    <!-- /.nav-collapse -->
+    </div>    <!-- /.container -->
+   </nav>    <!-- /.navbar -->
+
+    <!-- /HEADER CONTENT -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+  <div class="container">    <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">    <!-- segment-content -->
+ <div class="container">    <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<h2>Valueset: qicore-appropriateness-score</h2>
+
+<table class="grid">
+ <tbody><tr><td>Defining URL:</td><td>http://hl7.org/fhir/us/qicore/ValueSet/qicore-appropriateness-score</td></tr>
+ <tr><td>Name:</td><td>QICoreAppropriatenessScore</td></tr>
+ <tr><td>Definition:</td><td><p>The RAND scoring for appropriateness of the procedure.</p>
+</td></tr>
+ <tr><td>Publisher:</td><td>HL7 (FHIR Project)</td></tr>
+ <tr><td>Source Resource</td><td><a href="ValueSet-qicore-appropriateness-score.xml.html">XML</a> / <a href="ValueSet-qicore-appropriateness-score.json.html">JSON</a> / <a href="ValueSet-qicore-appropriateness-score.ttl.html">Turtle</a></td></tr>
+</tbody></table>
+
+
+This value set is used by:
+
+
+<ul>
+ <li><a href="qicore-procedurerequest-appropriatenessScore.html">QICore-ProcedureRequest-AppropriatenessScore</a></li>
+</ul>
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>QICoreAppropriatenessScore</h2>
+      <p>The RAND scoring for appropriateness of the procedure.</p>
+      <p>This value set has an inline code system which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <strong>Code</strong>
+          </td>
+          <td>
+            <strong>Display</strong>
+          </td>
+          <td>
+            <strong>Definition</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>extremely-inappropriate
+            <a name="extremely-inappropriate"> </a>
+          </td>
+          <td>Extremely Inappropriate</td>
+          <td>The procedure is extremely inappropriate</td>
+        </tr>
+        <tr>
+          <td>inappropriate
+            <a name="inappropriate"> </a>
+          </td>
+          <td>Inappropriate</td>
+          <td>The procedure is inappropriate</td>
+        </tr>
+        <tr>
+          <td>probably-inappropriate
+            <a name="probably-inappropriate"> </a>
+          </td>
+          <td>Probably Inappropriate</td>
+          <td>The procedure is probably inappropriate</td>
+        </tr>
+        <tr>
+          <td>uncertain-inappropriate
+            <a name="uncertain-inappropriate"> </a>
+          </td>
+          <td>Uncertain Inappropriate</td>
+          <td>The appropriateness of the procedure is uncertain, leaning towards inappropriate</td>
+        </tr>
+        <tr>
+          <td>uncertain
+            <a name="uncertain"> </a>
+          </td>
+          <td>Uncertain</td>
+          <td>The appropriateness of the procedure is uncertain</td>
+        </tr>
+        <tr>
+          <td>uncertain-appropriate
+            <a name="uncertain-appropriate"> </a>
+          </td>
+          <td>Uncertain Appropriate</td>
+          <td>The appropriateness of the procedure is uncertain, leaning towards appropriate</td>
+        </tr>
+        <tr>
+          <td>probably-appropriate
+            <a name="probably-appropriate"> </a>
+          </td>
+          <td>Probably Appropriate</td>
+          <td>The procedure is probably appropriate</td>
+        </tr>
+        <tr>
+          <td>appropriate
+            <a name="appropriate"> </a>
+          </td>
+          <td>Appropriate</td>
+          <td>The procedure is appropriate</td>
+        </tr>
+        <tr>
+          <td>extremely-appropriate
+            <a name="extremely-appropriate"> </a>
+          </td>
+          <td>Extremely Appropriate</td>
+          <td>The procedure is extremely appropriate</td>
+        </tr>
+      </table>
+    </div>
+
+<h3>Expansion</h3>
+
+<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 9 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score version 3.1.0</p><p>All codes from system <a href="qicore-appropriateness-score.html"><code>http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="b69c497e-9d91-4053-8d84-1e185275f930"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-extremely-inappropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-extremely-inappropriate">extremely-inappropriate</a></td><td>Extremely Inappropriate</td><td>The procedure is extremely inappropriate</td></tr><tr><td><a name="ffd43812-20d4-4366-af9c-55e54595cce4"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-inappropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-inappropriate">inappropriate</a></td><td>Inappropriate</td><td>The procedure is inappropriate</td></tr><tr><td><a name="8412ca54-70a5-44b1-a1a0-c94cb350e3d1"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-probably-inappropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-probably-inappropriate">probably-inappropriate</a></td><td>Probably Inappropriate</td><td>The procedure is probably inappropriate</td></tr><tr><td><a name="4c6434d2-0428-4333-8263-cbc83dcf4a05"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-uncertain-inappropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-uncertain-inappropriate">uncertain-inappropriate</a></td><td>Uncertain Inappropriate</td><td>The appropriateness of the procedure is uncertain, leaning towards inappropriate</td></tr><tr><td><a name="75cd71f4-f4fd-4f82-bb06-e1dcf21f183c"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-uncertain"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-uncertain">uncertain</a></td><td>Uncertain</td><td>The appropriateness of the procedure is uncertain</td></tr><tr><td><a name="ce762e9c-f698-45dd-81ab-f5db12c3fc73"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-uncertain-appropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-uncertain-appropriate">uncertain-appropriate</a></td><td>Uncertain Appropriate</td><td>The appropriateness of the procedure is uncertain, leaning towards appropriate</td></tr><tr><td><a name="504200d9-1168-4d8a-9710-5c6bf69a0ca0"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-probably-appropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-probably-appropriate">probably-appropriate</a></td><td>Probably Appropriate</td><td>The procedure is probably appropriate</td></tr><tr><td><a name="e6760e2d-861c-4448-a1d4-65fd8c0fbb06"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-appropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-appropriate">appropriate</a></td><td>Appropriate</td><td>The procedure is appropriate</td></tr><tr><td><a name="6da6151e-0949-4160-9e60-d65b6fd4450a"> </a><a name="http---hl7.org-fhir-us-qicore-CodeSystem-qicore-appropriateness-score-extremely-appropriate"> </a><a href="qicore-appropriateness-score.html#qicore-appropriateness-score-extremely-appropriate">extremely-appropriate</a></td><td>Extremely Appropriate</td><td>The procedure is extremely appropriate</td></tr></table></div>        
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> |
+                 <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+               <a style="color: #81BEF7" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>
+        </span>
+        </p>
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
+
+        <!-- JS and analytics only. -->
+        <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+    <!-- Analytics Below
+================================================== -->
+
+</div></div></div></div></div></body></html>

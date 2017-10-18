@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Procedure/qicore-procedure-example> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-procedure-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated narrative...</div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/procedure-approachBodySite" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/us/qicore/BodySite/example>;
+       fhir:Reference.reference [ fhir:value "BodySite/example" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/procedure-incisionDateTime" ];
+     fhir:Extension.valueDateTime [ fhir:value "2013-04-05T09:30:00-04:00"^^xsd:dateTime ]
+  ];
+  fhir:Procedure.status [ fhir:value "completed"];
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:80146002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "80146002" ];
+       fhir:Coding.display [ fhir:value "Appendectomy (Procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Appendectomy" ]
+  ];
+  fhir:Procedure.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Procedure.context [
+     fhir:link <http://hl7.org/fhir/us/qicore/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:Procedure.performedPeriod [
+     fhir:Period.start [ fhir:value "2013-04-05T09:20:00-04:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2013-04-05T10:30:00-04:00"^^xsd:dateTime ]
+  ];
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ];
+       fhir:Reference.display [ fhir:value "Dr Cecil Surgeon" ]
+     ]
+  ];
+  fhir:Procedure.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:163220003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "163220003" ];
+       fhir:Coding.display [ fhir:value "On examination - abdominal pain - right iliac" ]
+     ]
+  ];
+  fhir:Procedure.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:66754008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "66754008" ];
+       fhir:Coding.display [ fhir:value "Appendix structure" ]
+     ]
+  ];
+  fhir:Procedure.report [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/DiagnosticReport/example>;
+     fhir:Reference.reference [ fhir:value "DiagnosticReport/example" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/BodySite/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/DiagnosticReport/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Procedure/qicore-procedure-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Procedure/qicore-procedure-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CommunicationRequest/qicore-communicationrequest-example> a fhir:CommunicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-communicationrequest-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <h4>From DomainResource</h4>\n      <blockquote>\n        <p>\n          <strong>Organization 1 (Provider)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: provider                \n        </p>\n        <p>\n          <strong>identifier</strong>: 3456                \n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>Organization 2 (Insurer)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: payor                \n        </p>\n        <p>\n          <strong>identifier</strong>: 123456                \n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>Organization 3 (Practitioner)</strong>\n        </p>\n        <p>\n          <strong>id</strong>: requester                \n        </p>\n        <p>\n          <strong>identifier</strong>: 6789                \n        </p>\n      </blockquote>\n      <h4>CommunicationRequest</h4>\n      <p>\n        <strong>identifier</strong>: ABC123            \n      </p>\n      <p>\n        <strong>basedOn</strong>: EligibilityRequest      \n      </p>\n      <p>\n        <strong>replaces</strong>: prior CommunicationRequest      \n      </p>\n      <p>\n        <strong>groupIdentifier</strong>: 12345      \n      </p>\n      <p>\n        <strong>status</strong>: active      \n      </p>\n      <p>\n        <strong>category</strong>: SolicitedAttachmentRequest      \n      </p>\n      <p>\n        <strong>priority</strong>: routine      \n      </p>\n      <p>\n        <strong>medium</strong>: written      \n      </p>\n      <p>\n        <strong>recipient</strong>:         \n        <a href=\"Organization-qicore-organization-example.html\">Organization/Example</a>\n      </p>\n      <p>\n        <strong>context</strong>:         \n        <a href=\"Encounter-qicore-encounter-example.html\">Encounter/example</a>\n      </p>\n      <p>\n        <strong>payload</strong>: Please provide the accident report and any associated pictures to support your Claim #DEF5647.      \n      </p>\n      <p>\n        <strong>occurrenceDateTime</strong>: 06/10/2016      \n      </p>\n      <p>\n        <strong>authoredOn</strong>: 06/10/2016      \n      </p>\n      <p>\n        <strong>sender</strong>:        \n        <a href=\"Organization-qicore-patient-example.html\">Patient/Example</a>\n      </p>\n      <p>\n        <strong>requester</strong>:        \n        <a href=\"Organization-qicore-practitioner-example.html\">Practitioner/Example</a>\n      </p>\n    </div>"
+  ];
+  fhir:CommunicationRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://www.jurisdiction.com/insurer/123456" ];
+     fhir:Identifier.value [ fhir:value "ABC123" ]
+  ];
+  fhir:CommunicationRequest.basedOn [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "EligibilityRequest" ]
+  ];
+  fhir:CommunicationRequest.replaces [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "prior CommunicationRequest" ]
+  ];
+  fhir:CommunicationRequest.groupIdentifier [
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:CommunicationRequest.status [ fhir:value "active"];
+  fhir:CommunicationRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://acme.org/messagetypes" ];
+       fhir:Coding.code [ fhir:value "SolicitedAttachmentRequest" ]
+     ]
+  ];
+  fhir:CommunicationRequest.priority [ fhir:value "routine"];
+  fhir:CommunicationRequest.medium [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/ParticipationMode" ];
+       fhir:Coding.code [ fhir:value "WRITTEN" ];
+       fhir:Coding.display [ fhir:value "written" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "written" ]
+  ];
+  fhir:CommunicationRequest.recipient [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/Oraganization/example>;
+     fhir:Reference.reference [ fhir:value "Oraganization/example" ]
+  ];
+  fhir:CommunicationRequest.context [
+     fhir:link <http://hl7.org/fhir/us/qicore/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:CommunicationRequest.payload [
+     fhir:index 0;
+     fhir:CommunicationRequest.payload.contentString [ fhir:value "Please provide the accident report and any associated pictures to support your Claim #DEF5647." ]
+  ];
+  fhir:CommunicationRequest.occurrenceDateTime [ fhir:value "2016-06-10T11:01:10-08:00"^^xsd:dateTime];
+  fhir:CommunicationRequest.authoredOn [ fhir:value "2016-06-10T11:01:10-08:00"^^xsd:dateTime];
+  fhir:CommunicationRequest.sender [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Oraganization/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CommunicationRequest/qicore-communicationrequest-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/CommunicationRequest/qicore-communicationrequest-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,21 @@
+{
+  "resourceType": "DeviceUseStatement",
+  "id": "qicore-deviceusestatement-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f\n      </p>\n      <p>\n        <strong>status</strong>: active\n      </p>\n      <p>\n        <strong>subject</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>device</strong>: <a href=\"Device-qicore-device-example.html\">Device/example</a>\n      </p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "system": "http:goodhealth.org/identifiers",
+      "value": "51ebb7a9-4e3a-4360-9a05-0cc2d869086f"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "device": {
+    "reference": "Device/example"
+  }
+}

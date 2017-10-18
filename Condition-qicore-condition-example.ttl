@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Condition/qicore-condition-example> a fhir:Condition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-condition-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <blockquote>\n        <p><strong>condition-criticality</strong></p>\n        <p>\n          <strong>code</strong>: { SNOMED CT code '399166001' = 'Fatal' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>clinicalStatus</strong>: confirmed\n      </p>\n      <blockquote>\n        <p><strong>category</strong></p>\n        <p>\n          <strong>coding 1</strong>: Problem List Item\n        </p>\n        <p>\n          <strong>coding 2</strong>: { SNOMED CT code '439401001' = 'Diagnosis' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>severity</strong>: { SNOMED CT code '24484000' = 'Severe (severity modifier)' }\n      </p>\n      <blockquote>\n        <p><strong>code</strong>: Burnt Ear</p>\n        <p>\n          <strong>coding 3</strong>: { SNOMED CT code '39065001' = 'Burn of ear' }\n        </p>\n      </blockquote>\n      <blockquote>\n        <p><strong>bodySite</strong>: Left Ear</p>\n        <p>\n          <strong>coding 4</strong>: { SNOMED CT code '49521004' = 'Left external ear structure' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>subject</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>onsetDateTime</strong>: 05/24/2012\n      </p>\n    </div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/condition-criticality" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:399166001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "399166001" ];
+         fhir:Coding.display [ fhir:value "Fatal" ]
+       ]
+     ]
+  ];
+  fhir:Condition.clinicalStatus [ fhir:value "active"];
+  fhir:Condition.verificationStatus [ fhir:value "confirmed"];
+  fhir:Condition.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/condition-category" ];
+       fhir:Coding.code [ fhir:value "problem-list-item" ];
+       fhir:Coding.display [ fhir:value "Problem List Item" ]
+     ], [
+       fhir:index 1;
+       a sct:439401001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "439401001" ];
+       fhir:Coding.display [ fhir:value "Diagnosis" ]
+     ]
+  ];
+  fhir:Condition.severity [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:24484000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "24484000" ];
+       fhir:Coding.display [ fhir:value "Severe (severity modifier)" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:39065001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "39065001" ];
+       fhir:Coding.display [ fhir:value "Burn of ear" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Burnt Ear" ]
+  ];
+  fhir:Condition.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:49521004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "49521004" ];
+       fhir:Coding.display [ fhir:value "Left external ear structure" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Left Ear" ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Condition.onsetDateTime [ fhir:value "2012-05-24T00:00:00+00:00"^^xsd:dateTime] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Condition/qicore-condition-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Condition/qicore-condition-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

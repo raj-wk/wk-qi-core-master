@@ -1,0 +1,186 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+  <link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">    <!-- segment-header -->
+  <div class="container">    <!-- container -->
+   <a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+     <img src="assets/images/hl7-logo.png" alt="visit the hl7 website" width="42" height="50"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a no-external="true" id="hl7-logo" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a></div>
+  </div>
+  <div class="container">    <!-- container -->
+ </div></div>    <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">    <!-- container -->
+     <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a href="http://hl7.org/fhir/STU3//index.html" class="navbar-brand hidden">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>    <!-- /.nav-collapse -->
+    </div>    <!-- /.container -->
+   </nav>    <!-- /.navbar -->
+
+    <!-- /HEADER CONTENT -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+  <div class="container">    <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">    <!-- segment-content -->
+ <div class="container">    <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<a name="terminology"> </a>
+<h2><span class="sectioncount">4.0.0</span> QICore Terminology<a href="terminology.html#terminology" title="link to here" class="self-link"> <img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+
+<p><a name="90f95072-87a7-44d0-84e7-83850dedcfd2"> </a>This page lists all the ValueSets, CodeSystems, and ConceptMaps defined as part of the US Core implementation Guide. For more information on using codes in resources, see the <a href="guidance.html#using-codes-in-us-core-profiles">guidance section</a> as well as in the <a href="http://hl7.org/fhir/terminologies.html">FHIR specification</a>.</p>
+
+<h4 id="value-sets">Value Sets</h4>
+
+<p>These value sets have been defined for this implementation guide.</p>
+
+<li><a href="valueset-qicore-allergyintolerance-reason-refuted.html">Allergy Intolerance – Reason Refuted</a></li>
+<li><a href="valueset-qicore-appropriateness-score.html">Appropriateness – Score</a></li>
+<li><a href="valueset-qicore-bodysite-precoordinated.html">Body Site – Precoordinated</a></li>
+<li><a href="valueset-qicore-communication-reason-not-performed.html">Communication – Reason Not Performed</a></li>
+<li><a href="valueset-qicore-condition-certainty.html">Condition – Certainty</a></li>
+<li><a href="valueset-qicore-condition-stage.html">Condition – Stage</a></li>
+<li><a href="valueset-qicore-encounter-canceled-reason.html">Encounter – Canceled Reason</a></li>
+<li><a href="valueset-qicore-encounter-condition-role.html">Encounter – Condition Role</a></li>
+<li><a href="valueset-qicore-flag-category.html">Flag – Category</a></li>
+<li><a href="valueset-qicore-goal-reason-rejected.html">Goal – Reason Rejected</a></li>
+<li><a href="valueset-qicore-medication-dose-type.html">Medication – Dose Type</a></li>
+<li><a href="valueset-qicore-military-service.html">Military Service</a></li>
+<li><a href="valueset-qicore-observation-body-position.html">Observation – Body Position</a></li>
+<li><a href="valueset-qicore-observation-verification.html">Observation – Verification</a></li>
+<li><a href="valueset-qicore-patient-disability.html">Patient – Disability</a></li>
+<li><a href="valueset-qicore-priority.html">Priority</a></li>
+<li><a href="valueset-qicore-referralrequest-reason-rejected.html">Referral Request – Reason Rejected</a></li>
+
+<h4 id="code-systems">Code Systems</h4>
+
+<p>See the <a href="http://hl7.org/fhir/terminologies-systems.html">FHIR terminology section</a> for a complete discussion on code systems and a list of codes system names used in FHIR. The following additional names (URIs) have been identified for this implementation guide.</p>
+
+<p><strong>Code systems published in this IG</strong></p>
+
+<li><a href="qicore-appropriateness-score.html">Appropriateness Score</a></li>
+<li><a name="4ae284c4-06c8-4d51-b623-45ff610d4634"> </a><a href="qicore-encounterclass.html">Encounter – Class</a></li>
+<li><a href="codesystem-qicore-military-service.html">Military Service</a></li>
+
+
+<p/>
+ </div>
+
+    </div>    <!-- /inner-wrapper -->
+            </div>    <!-- /row -->
+        </div>    <!-- /container -->
+
+</div>   <!-- /segment-content -->
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img src="external.png" style="text-align: baseline"/></a> |
+                 <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+               <a style="color: #81BEF7" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank">Propose a change <img src="external.png" style="text-align: baseline"/></a>
+        </span>
+        </p>
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
+
+        <!-- JS and analytics only. -->
+        <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+    <!-- Analytics Below
+================================================== -->
+</body>
+</html>

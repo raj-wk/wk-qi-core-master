@@ -1,0 +1,85 @@
+{
+  "resourceType": "Medication",
+  "id": "qicore-medication-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p> <strong> Generated Narrative with Details</strong> </p>\n      <p> <strong> id</strong> : med0303</p> <p> <strong> contained</strong> : </p>\n      <p> <strong> code</strong> : Alemtuzumab 10mg/ml (Lemtrada) <span> (Details : {RxNorm code '1594660' = '1594660', given as 'Alemtuzumab 10mg/ml (Lemtrada)'})</span> </p>\n      <p> <strong> isBrand</strong> : true</p>\n      <p> <strong> manufacturer</strong> : id: org6; name: Genzyme</p>\n      <p> <strong> form</strong> : Injection solution (qualifier vallue) <span> (Details : {SNOMED CT code '385219001' = 'Injection solution', given as 'Injection solution (qualifier vallue)'})</span> </p>\n      <h3> Ingredients</h3> <table>\n        <tr>\n          <td> -</td>\n          <td> <strong> ItemReference</strong> </td>\n          <td> <strong> isActive</strong> </td>\n          <td> <strong> Amount</strong> </td>\n        </tr>\n        <tr>\n          <td> *</td>\n          <td> Alemtuzamab (substance) <span> (Details : {SNOMED CT code '129472003' = 'Alemtuzumab', given as 'Alemtuzamab (substance)'})</span> </td>\n          <td> 12 mg<span>  (Details: UCUM code mg = 'mg')</span> /1.2 mL<span>  (Details: UCUM code mL = 'mL')</span> </td>\n        </tr>\n      </table>\n      <blockquote>\n        <p> <strong> package</strong> </p>\n        <p> <strong> container</strong> : Vial <span> (Details : {SNOMED CT code '415818006' = 'Vial', given as 'Vial'})</span> </p>\n        <h3> Contents</h3>\n        <table>\n          <tr>\n            <td> -</td>\n            <td> <strong> Item[x]</strong> </td>\n            <td> <strong> Amount</strong> </td>\n          </tr>\n          <tr>\n            <td> *</td>\n            <td> Alemtuzumab 30mg/3mL infusion concentrate (product) <span> (Details : {SNOMED CT code '408596005' = 'Alemtuzumab 30mg/3mL infusion concentrate', given as 'Alemtuzumab 30mg/3mL infusion concentrate (product)'})</span> </td>\n            <td> 3 mL<span>  (Details: UCUM code mL = 'mL')</span> </td>\n          </tr>\n        </table>\n        <h3> Batches</h3>\n        <table>\n          <tr>\n            <td> -</td>\n            <td> <strong> LotNumber</strong> </td>\n            <td> <strong> ExpirationDate</strong></td>\n          </tr>\n          <tr>\n            <td> *</td>\n            <td> 9494788</td>\n            <td> 22/05/2017</td>\n          </tr>\n        </table>\n      </blockquote>\n    </div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1594660",
+        "display": "Alemtuzumab 10mg/ml (Lemtrada)"
+      }
+    ]
+  },
+  "isBrand": true,
+  "manufacturer": {
+    "reference": "Organization/example"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385219001",
+        "display": "Injection solution (qualifier value)"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemReference": {
+        "reference": "Substance/example"
+      },
+      "isActive": true,
+      "amount": {
+        "numerator": {
+          "value": 12,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1.2,
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    }
+  ],
+  "package": {
+    "container": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "415818006",
+          "display": "Vial"
+        }
+      ]
+    },
+    "content": [
+      {
+        "itemCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408596005",
+              "display": "Alemtuzumab 30mg/3mL infusion concentrate (product)"
+            }
+          ]
+        },
+        "amount": {
+          "value": 3,
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    ],
+    "batch": [
+      {
+        "lotNumber": "9494788",
+        "expirationDate": "2017-05-22"
+      }
+    ]
+  }
+}

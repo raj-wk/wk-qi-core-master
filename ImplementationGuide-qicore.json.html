@@ -1,0 +1,1334 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+  <link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+  </div>
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3//index.html">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
+
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+  <div class="container">  <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">  <!-- segment-content -->
+ <div class="container">  <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<h2>QICore Implementation Guide</h2>
+
+<pre class="json">
+{
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide">resourceType</a>" : "ImplementationGuide",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.id">id</a>" : "qicore",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;QICore Implementation Guide&lt;/h2&gt;&lt;p&gt;The official URL for this implementation guide is: &lt;/p&gt;&lt;pre&gt;http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore&lt;/pre&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.url">url</a>" : "http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.name">name</a>" : "QICore Implementation Guide",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.experimental">experimental</a>" : true,
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.publisher">publisher</a>" : "ONC",
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.dependency">dependency</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.dependency.type">type</a>" : "reference",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.dependency.uri">uri</a>" : "http://hl7.org/fhir/us/core"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package">package</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "base",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore AdverseEvent",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore AdverseEvent",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "AdverseEvent/adverseevent-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-adverseevent"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore AllergyIntolerance Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore AllergyIntolerance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "AllergyIntolerance/allergyintolerance-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-allergyintolerance"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore AllergyIntolerance Refuted Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore AllergyIntolerance Refuted",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "AllergyIntolerance/allergyintolerance-example-refuted-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-allergyintolerance"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-allergyintolerance.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore AllergyIntolerance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore AllergyIntolerance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-allergyintolerance"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore BodySite Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore BodySite",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "BodySite/bodysite-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-bodysite"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Claim Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Claim",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Claim/claim-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-claim"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Communication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Communication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Communication/communication-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-communication"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore CommunicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore CommunicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "CommunicationRequest/communicationrequest-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-communicationrequest"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Condition Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Condition",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Condition/condition-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-condition"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-condition.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Condition",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Condition",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-condition"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Coverage Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Coverage",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Coverage/coverage-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-coverage"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-device.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Device",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Device",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-device"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Device Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Device",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Device/device-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-device"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore DeviceUseStatment Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore DeviceUseStatement",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "DeviceUseStatement/deviceusestatement-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-deviceusestatement"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-diagnosticreport.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore DiagnosticReport",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore DiagnosticReport",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-diagnosticreport"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore DiagnosticReport Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore DiagnosticReport",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "DiagnosticReport/diagnosticreport-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-diagnosticreport"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Encounter",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Encounter",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Encounter/encounter-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-encounter"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore FamilyMemberHistory",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore FamilyMemberHistory with condition did-not-have",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "FamilyMemberHistory/familymemberhistory-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-familymemberhistory"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Flag",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Flag",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Flag/flag-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-flag"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-goal.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Goal",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Goal",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-goal"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Goal Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICoreGoal",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Goal/goal-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-goal"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore ImagingStudy",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore ImagingStudy",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ImagingStudy/imagingstudy-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-imagingstudy"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore RadiationDose",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "QICore RadiationDose",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-imagingstudy-radiationdose"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore RadiationDuration",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "QICore RadiationDuration",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-imagingstudy-radiationduration"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-immunization.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Immunization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Immunization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-immunization"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Immunization Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Immunization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Immunization/immunization-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-immunization"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Immunization Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Immunization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ImmunizationRecommendation/immunizationrecommendation-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-immunizationrec"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-location.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Location",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Location",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-location"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Location Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Location",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Location/location-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-location"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-medication.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Medication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Medication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medication"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Medication Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Medication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Medication/medication-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medication"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationAdministration Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore MedicationAdministration",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "MedicationAdministration/medicationadministration-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationadministration"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationDispense",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore MedicationDispense",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "MedicationDispense/medicationdispense-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationdispense"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-medicationrequest.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore MedicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationrequest"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationRequest Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore MedicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "MedicationRequest/medicationrequest-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationrequest"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-medicationstatement.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationStatement",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore MedicationStatement",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationstatement"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore MedicationStatement Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore MedicationStatement",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "MedicationStatement/medicationstatement-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationstatement"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Observation",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Observation",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Observation/observation-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-observation"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-organization.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Organization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Organization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-organization"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Organization Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Organization",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Organization/organization-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-organization"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-patient.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Patient",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Patient",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-patient"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Patient Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Patient",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Patient/patient-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-patient"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-practitioner.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Practitioner",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Practitioner",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-practitioner"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-military-service.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-military-service"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "codesystem-qicore-military-service.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "CodeSystem/qicore-military-service"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Practitioner Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Practitioner",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Practitioner/practitioner-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-practitioner"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-practitioner-role.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-practitioner-role"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-procedure.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Procedure",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Derived QICore Procedure",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedure"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Procedure Example",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Procedure",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Procedure/procedure-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedure"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-procedure-approachBodySite.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedure-approachBodySite"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-procedurerequest-approachBodySite.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedurerequest-approachBodySite"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-procedurerequest-appropriatenessScore.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedurerequest-appropriatenessScore"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-appropriateness-score.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "CodeSystem/qicore-appropriateness-score"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore ProcedureRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore ProcedureRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ProcedureRequest/procedurerequest-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedurerequest"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore ReferralRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore ReferralRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ReferralRequest/referralrequest-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-referralrequest"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore RelatedPerson",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore RelatedPerson",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "RelatedPerson/relatedperson-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-relatedperson"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Specimen",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Specimen",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Specimen/specimen-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-specimen"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore Substance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.description">description</a>" : "Example of QICore Substance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "Substance/substance-example-qicore"
+          },
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.exampleFor">exampleFor</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-substance"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-allergyintolerance-reason-refuted.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-allergyintolerance-reason-refuted"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-military-service.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-military-service"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-patient-disability.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-patient-disability"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-condition-certainty.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-condition-certainty"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-condition-criticality.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-condition-criticality"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-condition-stage.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-condition-stage"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-flag-category.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-flag-category"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "valueset-qicore-goal-reason-rejected.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "ValueSet/qicore-goal-reason-rejected"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-AdverseEvent",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-adverseevent.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-AdverseEvent",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-adverseevent"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-BodySite",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-bodysite.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-BodySite",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-bodysite"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Claim",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-claim.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Claim",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-claim"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Communication",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-communication.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Communication",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-communication"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-CommunicationRequest",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-communicationrequest.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-CommunicationRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-communicationrequest"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Coverage",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-coverage.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Coverage",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-coverage"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-DeviceUseStatement",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-deviceusestatement.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-DeviceUseStatement",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-deviceusestatement"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Encounter",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-encounter.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Encounter",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-encounter"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-FamilyMemberHistory",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-familymemberhistory.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-FamilyMemberHistory",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-familymemberhistory"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Flag",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-flag.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Flag",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-flag"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-ImagingStudy",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-imagingstudy.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-ImagingStudy",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-imagingstudy"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-ImmunizationRecommendation",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-immunizationrec.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-ImmunizationRecommendation",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-immunizationrec"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-MedicationAdministration",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-medicationadministration.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-MedicationAdministration",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationadministration"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-MedicationDispense",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-medicationdispense.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-MedicationDispense",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-medicationdispense"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Observation",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-observation.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Observation",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-observation"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-ProcedureRequest",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-procedurerequest.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-ProcedureRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-procedurerequest"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-ReferralRequest",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-referralrequest.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-ReferralRequest",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-referralrequest"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-RelatedPerson",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-relatedperson.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-RelatedPerson",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-relatedperson"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Specimen",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-specimen.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Specimen",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-specimen"
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.name">name</a>" : "QICore-Substance",
+      "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueUri</a>" : "qicore-substance.html"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.example">example</a>" : false,
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.name">name</a>" : "QICore-Substance",
+          "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.package.resource.source[x]">sourceReference</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/qicore-substance"
+          }
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page">page</a>" : {
+    "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.source">source</a>" : "index.html",
+    "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.title">title</a>" : "Home Page",
+    "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.kind">kind</a>" : "page",
+    "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.page">page</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.source">source</a>" : "registry.html",
+        "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.title">title</a>" : "Registry",
+        "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.kind">kind</a>" : "list",
+        "<a href="http://hl7.org/fhir/STU3/implementationguide.html#ImplementationGuide.page.type">type</a>" : [
+          "CapabilityStatement",
+          "StructureDefinition",
+          "ValueSet",
+          "ConceptMap"
+        ]
+      }
+    ]
+  }
+}</pre>
+
+
+<p></p>
+ </div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+</div> <!-- /segment-content -->
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img style="text-align: baseline" src="external.png"/></a> |
+               <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+               <a style="color: #81BEF7" target="_blank" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change <img style="text-align: baseline" src="external.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "resourceType": "Substance",
+  "id": "qicore-substance-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t  <p> <strong> Generated Narrative with Details</strong> </p> \n\t  <p> <strong> id</strong> : example</p> <p> <strong> identifier</strong> : 1463</p> <p> <strong> status</strong> : active</p> \n\t  <p> <strong> category</strong> : Allergen <span> (Details : {http://hl7.org.fhir/substance-category code 'allergen' = 'allergen', given as 'Allergen'})</span> </p> \n\t  <p> <strong> code</strong> : apitoxin (Honey Bee Venom) <span> (Details )</span> </p> \n\t  <p> <strong> ingredient</strong> : 0.150 mg of apitoxin </p>\n\t</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://acme.org/identifiers/substances",
+      "value": "1463"
+    }
+  ],
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org.fhir/substance-category",
+          "code": "allergen",
+          "display": "Allergen"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "text": "apitoxin (Honey Bee Venom)"
+  },
+  "ingredient": [
+    {
+      "quantity": {
+        "numerator": {
+          "value": 0.150,
+          "unit": "mg"
+        },
+        "denominator": {
+          "value": 1
+        }
+      },
+      "substanceReference": {
+        "reference": "Substance/apitoxin"
+      }
+    }
+  ]
+}

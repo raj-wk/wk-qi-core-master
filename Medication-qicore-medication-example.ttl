@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Medication/qicore-medication-example> a fhir:Medication;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-medication-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p> <strong> Generated Narrative with Details</strong> </p>\n      <p> <strong> id</strong> : med0303</p> <p> <strong> contained</strong> : </p>\n      <p> <strong> code</strong> : Alemtuzumab 10mg/ml (Lemtrada) <span> (Details : {RxNorm code '1594660' = '1594660', given as 'Alemtuzumab 10mg/ml (Lemtrada)'})</span> </p>\n      <p> <strong> isBrand</strong> : true</p>\n      <p> <strong> manufacturer</strong> : id: org6; name: Genzyme</p>\n      <p> <strong> form</strong> : Injection solution (qualifier vallue) <span> (Details : {SNOMED CT code '385219001' = 'Injection solution', given as 'Injection solution (qualifier vallue)'})</span> </p>\n      <h3> Ingredients</h3> <table>\n        <tr>\n          <td> -</td>\n          <td> <strong> ItemReference</strong> </td>\n          <td> <strong> isActive</strong> </td>\n          <td> <strong> Amount</strong> </td>\n        </tr>\n        <tr>\n          <td> *</td>\n          <td> Alemtuzamab (substance) <span> (Details : {SNOMED CT code '129472003' = 'Alemtuzumab', given as 'Alemtuzamab (substance)'})</span> </td>\n          <td> 12 mg<span>  (Details: UCUM code mg = 'mg')</span> /1.2 mL<span>  (Details: UCUM code mL = 'mL')</span> </td>\n        </tr>\n      </table>\n      <blockquote>\n        <p> <strong> package</strong> </p>\n        <p> <strong> container</strong> : Vial <span> (Details : {SNOMED CT code '415818006' = 'Vial', given as 'Vial'})</span> </p>\n        <h3> Contents</h3>\n        <table>\n          <tr>\n            <td> -</td>\n            <td> <strong> Item[x]</strong> </td>\n            <td> <strong> Amount</strong> </td>\n          </tr>\n          <tr>\n            <td> *</td>\n            <td> Alemtuzumab 30mg/3mL infusion concentrate (product) <span> (Details : {SNOMED CT code '408596005' = 'Alemtuzumab 30mg/3mL infusion concentrate', given as 'Alemtuzumab 30mg/3mL infusion concentrate (product)'})</span> </td>\n            <td> 3 mL<span>  (Details: UCUM code mL = 'mL')</span> </td>\n          </tr>\n        </table>\n        <h3> Batches</h3>\n        <table>\n          <tr>\n            <td> -</td>\n            <td> <strong> LotNumber</strong> </td>\n            <td> <strong> ExpirationDate</strong></td>\n          </tr>\n          <tr>\n            <td> *</td>\n            <td> 9494788</td>\n            <td> 22/05/2017</td>\n          </tr>\n        </table>\n      </blockquote>\n    </div>"
+  ];
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+       fhir:Coding.code [ fhir:value "1594660" ];
+       fhir:Coding.display [ fhir:value "Alemtuzumab 10mg/ml (Lemtrada)" ]
+     ]
+  ];
+  fhir:Medication.isBrand [ fhir:value "true"^^xsd:boolean];
+  fhir:Medication.manufacturer [
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:385219001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "385219001" ];
+       fhir:Coding.display [ fhir:value "Injection solution (qualifier value)" ]
+     ]
+  ];
+  fhir:Medication.ingredient [
+     fhir:index 0;
+     fhir:Medication.ingredient.itemReference [
+       fhir:link <http://hl7.org/fhir/us/qicore/Substance/example>;
+       fhir:Reference.reference [ fhir:value "Substance/example" ]
+     ];
+     fhir:Medication.ingredient.isActive [ fhir:value "true"^^xsd:boolean ];
+     fhir:Medication.ingredient.amount [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "12"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "mg" ]
+       ];
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1.2"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ]
+     ]
+  ];
+  fhir:Medication.package [
+     fhir:Medication.package.container [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:415818006;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "415818006" ];
+         fhir:Coding.display [ fhir:value "Vial" ]
+       ]
+     ];
+     fhir:Medication.package.content [
+       fhir:index 0;
+       fhir:Medication.package.content.itemCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:408596005;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "408596005" ];
+           fhir:Coding.display [ fhir:value "Alemtuzumab 30mg/3mL infusion concentrate (product)" ]
+         ]
+       ];
+       fhir:Medication.package.content.amount [
+         fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "mL" ]
+       ]
+     ];
+     fhir:Medication.package.batch [
+       fhir:index 0;
+       fhir:Medication.package.batch.lotNumber [ fhir:value "9494788" ];
+       fhir:Medication.package.batch.expirationDate [ fhir:value "2017-05-22"^^xsd:date ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Organization/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Substance/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Medication/qicore-medication-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Medication/qicore-medication-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

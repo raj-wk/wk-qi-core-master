@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Coverage/qicore-coverage-example> a fhir:Coverage;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-coverage-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>A human-readable rendering of the coverage</p>\n      <p>\n        <strong>identifier</strong>: 12345\n      </p>\n      <p>\n        <strong>status</strong>: active\n      </p>\n      <p>\n        <strong>code</strong>: ActCode\n        <span>(Details: { FHIR code 'EHCPOL' = 'extended healthcare' })</span>\n      </p>\n      <p>\n        <strong>policyHolder</strong>: \n        <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n      </p>\n      <p>\n        <strong>subscriber</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>beneficiary</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>relationship</strong>: self\n      </p>\n      <blockquote>\n        <p><strong>period</strong></p>\n        <p>\n          <strong>start</strong>: 05/23/2011\n        </p>\n        <p>\n          <strong>start</strong>: 05/23/2012\n        </p>\n      </blockquote>\n      <p>\n        <strong>organization</strong>: \n        <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n      </p>\n      <blockquote>\n        <p><strong>grouping</strong></p>\n        <p>\n          <strong>group</strong>: Corporate Baker's Inc. Local #35\n        </p>\n        <p>\n          <strong>subGroup</strong>: Trainee Part-time Benefits\n        </p>\n        <p>\n          <strong>plan</strong>: Full Coverage: Medical, Dental, Pharmacy, Vision, EHC\n        </p>\n        <p>\n          <strong>subPlan</strong>: Includes afterlife benefits\n        </p>\n        <p>\n          <strong>class</strong>: Silver: Family Plan spouse only\n        </p>\n        <p>\n          <strong>subClass</strong>: Low deductable, max $20 copay\n        </p>\n      </blockquote>\n      <p>\n        <strong>dependent</strong>: 0\n      </p>\n      <p>\n        <strong>sequence</strong>: 9\n      </p>\n    </div>"
+  ];
+  fhir:Coverage.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://benefitsinc.com/certificate" ];
+     fhir:Identifier.value [ fhir:value "12345" ]
+  ];
+  fhir:Coverage.status [ fhir:value "active"];
+  fhir:Coverage.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/ActCode" ];
+       fhir:Coding.code [ fhir:value "EHCPOL" ];
+       fhir:Coding.display [ fhir:value "extended healthcare" ]
+     ]
+  ];
+  fhir:Coverage.policyHolder [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Coverage.subscriber [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Coverage.beneficiary [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Coverage.relationship [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "self" ]
+     ]
+  ];
+  fhir:Coverage.period [
+     fhir:Period.start [ fhir:value "2011-05-23"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2012-05-23"^^xsd:date ]
+  ];
+  fhir:Coverage.payor [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Coverage.grouping [
+     fhir:Coverage.grouping.group [ fhir:value "CBI35" ];
+     fhir:Coverage.grouping.groupDisplay [ fhir:value "Corporate Baker's Inc. Local #35" ];
+     fhir:Coverage.grouping.subGroup [ fhir:value "123" ];
+     fhir:Coverage.grouping.subGroupDisplay [ fhir:value "Trainee Part-time Benefits" ];
+     fhir:Coverage.grouping.plan [ fhir:value "B37FC" ];
+     fhir:Coverage.grouping.planDisplay [ fhir:value "Full Coverage: Medical, Dental, Pharmacy, Vision, EHC" ];
+     fhir:Coverage.grouping.subPlan [ fhir:value "P7" ];
+     fhir:Coverage.grouping.subPlanDisplay [ fhir:value "Includes afterlife benefits" ];
+     fhir:Coverage.grouping.class [ fhir:value "SILVER" ];
+     fhir:Coverage.grouping.classDisplay [ fhir:value "Silver: Family Plan spouse only" ];
+     fhir:Coverage.grouping.subClass [ fhir:value "Tier2" ];
+     fhir:Coverage.grouping.subClassDisplay [ fhir:value "Low deductable, max $20 copay" ]
+  ];
+  fhir:Coverage.dependent [ fhir:value "0"];
+  fhir:Coverage.sequence [ fhir:value "9"] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Organization/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Coverage/qicore-coverage-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Coverage/qicore-coverage-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

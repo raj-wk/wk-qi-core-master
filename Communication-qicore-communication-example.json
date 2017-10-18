@@ -1,0 +1,77 @@
+{
+  "resourceType": "Communication",
+  "id": "qicore-communication-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>identifier</strong>: 2345678901      \n      </p>\n      <p>\n        <strong>definition</strong>: Hyperkalemia      \n      </p>\n      <p>\n        <strong>partOf</strong>: Serum Potassium Observation      \n      </p>\n      <p>\n        <strong>value</strong>: completed      \n      </p>\n      <p>\n        <strong>category</strong>: Alert      \n      </p>\n      <p>\n        <strong>medium</strong>: written      \n      </p>\n      <p>\n        <strong>definition</strong>: Hyperkalemia      \n      </p>\n      <p>\n        <strong>subject</strong>:         \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>recipient</strong>:         \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>context</strong>:         \n        <a href=\"Encounter-qicore-encounter-example.html\">Encounter/example</a>\n      </p>\n      <p>\n        <strong>sent</strong>: 12/12/2014      \n      </p>\n      <p>\n        <strong>sender</strong>: Device/example\n      </p>\n      <p>\n        <strong>payload 1</strong>: Patient 1 has a very high serum potassium value (7.2 mmol/L on 2014-Dec-12 at 5:55 pm)      \n      </p>\n      <p>\n        <strong>payload 2</strong>:          \n        <a href=\"Observation-qicore-observation-example.html\">Observation/example</a>\n      </p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "type": {
+        "text": "Paging System"
+      },
+      "system": "urn:oid:1.3.4.5.6.7",
+      "value": "2345678901"
+    }
+  ],
+  "definition": [
+    {
+      "display": "Hyperkalemia"
+    }
+  ],
+  "partOf": [
+    {
+      "display": "Serum Potassium Observation"
+    }
+  ],
+  "status": "completed",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://acme.org/messagetypes",
+          "code": "Alert"
+        }
+      ],
+      "text": "Alert"
+    }
+  ],
+  "medium": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/v3/ParticipationMode",
+          "code": "WRITTEN",
+          "display": "written"
+        }
+      ],
+      "text": "written"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "recipient": [
+    {
+      "reference": "Practitioner/example"
+    }
+  ],
+  "context": {
+    "reference": "Encounter/example"
+  },
+  "sent": "2014-12-12T18:01:10-08:00",
+  "received": "2014-12-12T18:01:11-08:00",
+  "sender": {
+    "reference": "Device/example"
+  },
+  "payload": [
+    {
+      "contentString": "Patient 1 has a very high serum potassium value (7.2 mmol/L on 2014-Dec-12 at 5:55 pm)"
+    },
+    {
+      "contentReference": {
+        "display": "Serum Potassium Observation"
+      }
+    }
+  ]
+}

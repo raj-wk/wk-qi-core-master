@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/qicore-allergyintolerance-refuted-example> a fhir:AllergyIntolerance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-allergyintolerance-refuted-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example      \n      </p>\n      <p>\n        <strong>identifier</strong>: 49476534      \n      </p>\n      <p>\n        <strong>clinicalStatus</strong>: inactive      \n      </p>\n      <p>\n        <strong>verificationStatus</strong>: refuted      \n      </p>\n      <p>\n        <strong>type</strong>: allergy      \n      </p>\n      <p>\n        <strong>category</strong>: food      \n      </p>\n      <p>\n        <strong>code</strong>: Cashew nuts         \n        <span>(Details: { SNOMED CT code '227493005' = 'Cashew nuts', given as 'Cashew nuts' })</span>\n      </p>\n      <p>\n        <strong>patient</strong>:         \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>assertedDate</strong>: 10/09/2014      \n      </p>\n      <p>\n        <strong>recorder</strong>:         \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>asserter</strong>:         \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n    </div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/allergyintolerance-reasonRefuted" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/ActReason" ];
+         fhir:Coding.code [ fhir:value "MED" ];
+         fhir:Coding.display [ fhir:value "Medical Status Altered" ]
+       ]
+     ]
+  ];
+  fhir:AllergyIntolerance.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://acme.com/ids/patients/risks" ];
+     fhir:Identifier.value [ fhir:value "49476534" ]
+  ];
+  fhir:AllergyIntolerance.clinicalStatus [ fhir:value "inactive"];
+  fhir:AllergyIntolerance.verificationStatus [ fhir:value "refuted"];
+  fhir:AllergyIntolerance.type [ fhir:value "allergy"];
+  fhir:AllergyIntolerance.category [
+     fhir:value "food";
+     fhir:index 0
+  ];
+  fhir:AllergyIntolerance.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:227493005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "227493005" ];
+       fhir:Coding.display [ fhir:value "Cashew nuts" ]
+     ]
+  ];
+  fhir:AllergyIntolerance.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:AllergyIntolerance.assertedDate [ fhir:value "2014-10-09T14:58:00+11:00"^^xsd:dateTime];
+  fhir:AllergyIntolerance.recorder [
+     fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:AllergyIntolerance.asserter [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/qicore-allergyintolerance-refuted-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/AllergyIntolerance/qicore-allergyintolerance-refuted-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

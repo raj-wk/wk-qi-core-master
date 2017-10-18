@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ImagingStudy/qicore-imagingstudy-example> a fhir:ImagingStudy;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-imagingstudy-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p><strong>CT Chest. John Smith (MRN: 09236). Accession: W12342398. Performed: 2011-01-01. 3 series, 12 images.</strong></p>\n      <p>\n        <strong>radiationDose</strong>: \n        <a href=\"ImagingStudy-RadiationDose-qicore-imagingstudy-radiationdose-example.html\">ImagingStudy-RadiationDose/example</a>\n      </p>\n      <p>\n        <strong>radiationDuration</strong>: \n        <a href=\"ImagingStudy-RadiationDuration-qicore-imagingstudy-radiationduration-example.html\">ImagingStudy-RadiationDuration/example</a>\n      </p>\n      <p>\n        <strong>uid</strong>: urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045\n      </p>\n      <p>\n        <strong>patient</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>started</strong>: 01/01/2011\n      </p>\n      <p>\n        <strong>numberOfSeries</strong>: 1\n      </p>\n      <p>\n        <strong>numberOfInstances</strong>: 1\n      </p>\n      <blockquote>\n        <p><strong>series</strong></p>\n        <p>\n          <strong>uid</strong>: urn:oid:2.16.124.113543.6003.2588828330.45298.17418.2723805630\n        </p>\n        <p>\n          <strong>number</strong>: 3\n        </p>\n        <p>\n          <strong>modality</strong>: CT\n        </p>\n        <p>\n          <strong>description</strong>: CT Surview 180\n        </p>\n        <p>\n          <strong>numberOfInstances</strong>: 1\n        </p>\n        <p>\n          <strong>bodySite</strong>: { SNOMED CT code '67734004' = 'Upper Trunk Structure' })\n        </p>\n        <blockquote>\n          <p><strong>instance</strong></p>\n          <p>\n            <strong>uid</strong>: urn:oid:2.16.124.113543.6003.189642796.63084.16748.2599092903\n          </p>\n          <p>\n            <strong>number</strong>: 1\n          </p>\n          <p>\n            <strong>sopClass</strong>: urn:oid:1.2.840.10008.5.1.4.1.1.2\n          </p>\n        </blockquote>\n      </blockquote>\n    </div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationDose" ];
+     fhir:Extension.valueRange [
+       fhir:Range.low [
+         fhir:Quantity.value [ fhir:value "200.0"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "Gy" ]
+       ];
+       fhir:Range.high [
+         fhir:Quantity.value [ fhir:value "1234.5"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "Gy" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationDuration" ];
+     fhir:Extension.valueDuration [
+       fhir:Quantity.value [ fhir:value "25"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "sec" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "s" ]
+     ]
+  ];
+  fhir:ImagingStudy.uid [ fhir:value "urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045"];
+  fhir:ImagingStudy.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ImagingStudy.started [ fhir:value "2011-01-01T11:01:20+03:00"^^xsd:dateTime];
+  fhir:ImagingStudy.numberOfSeries [ fhir:value "1"^^xsd:nonNegativeInteger];
+  fhir:ImagingStudy.numberOfInstances [ fhir:value "1"^^xsd:nonNegativeInteger];
+  fhir:ImagingStudy.series [
+     fhir:index 0;
+     fhir:ImagingStudy.series.uid [ fhir:value "urn:oid:2.16.124.113543.6003.2588828330.45298.17418.2723805630" ];
+     fhir:ImagingStudy.series.number [ fhir:value "3"^^xsd:nonNegativeInteger ];
+     fhir:ImagingStudy.series.modality [
+       fhir:Coding.system [ fhir:value "http://dicom.nema.org/resources/ontology/DCM" ];
+       fhir:Coding.code [ fhir:value "CT" ]
+     ];
+     fhir:ImagingStudy.series.description [ fhir:value "CT Surview 180" ];
+     fhir:ImagingStudy.series.numberOfInstances [ fhir:value "1"^^xsd:nonNegativeInteger ];
+     fhir:ImagingStudy.series.bodySite [
+       a sct:67734004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "67734004" ];
+       fhir:Coding.display [ fhir:value "Upper Trunk Structure" ]
+     ];
+     fhir:ImagingStudy.series.instance [
+       fhir:index 0;
+       fhir:ImagingStudy.series.instance.uid [ fhir:value "urn:oid:2.16.124.113543.6003.189642796.63084.16748.2599092903" ];
+       fhir:ImagingStudy.series.instance.number [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ImagingStudy.series.instance.sopClass [ fhir:value "urn:oid:1.2.840.10008.5.1.4.1.1.2" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ImagingStudy/qicore-imagingstudy-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ImagingStudy/qicore-imagingstudy-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

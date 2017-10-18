@@ -1,0 +1,46 @@
+{
+  "resourceType": "Flag",
+  "id": "qicore-flag-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p><strong>Large Dog warning for Peter Patient</strong></p>\n      <p>\n        <strong>identifier</strong>: 12345\n      </p>\n      <p>\n        <strong>status</strong>: inactive\n      </p>\n      <p>\n        <strong>category</strong>: Admin\n      </p>\n      <blockquote>\n        <p><strong>category</strong></p>\n        <p>\n          <strong>coding</strong>: Admin\n        </p>\n        <p>\n          <strong>text</strong>: admin\n        </p>\n      </blockquote>\n      <blockquote>\n        <p><strong>code</strong></p>\n        <p>\n          <strong>coding</strong>: Big dog\n        </p>\n        <p>\n          <strong>text</strong>: Patient has a big dog at his home. Always always wear a suit of armor or take other active counter-measures.\n        </p>\n      </blockquote>\n      <p>\n        <strong>subject</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <blockquote>\n        <p><strong>period</strong></p>\n        <p>\n          <strong>start</strong>: 01/17/2015\n        </p>\n        <p>\n          <strong>end</strong>: 12/01/2016\n        </p>\n      </blockquote>\n      <p>\n        <strong>author</strong>: \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "value": "12345"
+    }
+  ],
+  "status": "inactive",
+  "category": {
+    "coding": [
+      {
+        "system": "http://example.org/local",
+        "code": "admin",
+        "display": "Admin"
+      }
+    ],
+    "text": "admin"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://example.org/local",
+        "code": "bigdog",
+        "display": "Big dog"
+      }
+    ],
+    "text": "Patient has a big dog at his home. Always always wear a suit of armor or take other active      counter-measures"
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Peter Patient"
+  },
+  "period": {
+    "start": "2015-01-17",
+    "end": "2016-12-01"
+  },
+  "author": {
+    "reference": "Practitioner/example",
+    "display": "Nancy Nurse"
+  }
+}

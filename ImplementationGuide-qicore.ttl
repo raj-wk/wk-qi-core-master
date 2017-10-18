@@ -1,0 +1,1423 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>QICore Implementation Guide</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore</pre></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore"];
+  fhir:ImplementationGuide.name [ fhir:value "QICore Implementation Guide"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ImplementationGuide.publisher [ fhir:value "ONC"];
+  fhir:ImplementationGuide.dependency [
+     fhir:index 0;
+     fhir:ImplementationGuide.dependency.type [ fhir:value "reference" ];
+     fhir:ImplementationGuide.dependency.uri [ fhir:value "http://hl7.org/fhir/us/core" ]
+  ];
+  fhir:ImplementationGuide.package [
+     fhir:index 0;
+     fhir:ImplementationGuide.package.name [ fhir:value "base" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore AdverseEvent" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore AdverseEvent" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/AdverseEvent/adverseevent-example-qicore>;
+         fhir:Reference.reference [ fhir:value "AdverseEvent/adverseevent-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-adverseevent" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore AllergyIntolerance Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore AllergyIntolerance" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/AllergyIntolerance/allergyintolerance-example-qicore>;
+         fhir:Reference.reference [ fhir:value "AllergyIntolerance/allergyintolerance-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-allergyintolerance" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore AllergyIntolerance Refuted Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore AllergyIntolerance Refuted" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/AllergyIntolerance/allergyintolerance-example-refuted-qicore>;
+         fhir:Reference.reference [ fhir:value "AllergyIntolerance/allergyintolerance-example-refuted-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-allergyintolerance" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-allergyintolerance.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore AllergyIntolerance" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore AllergyIntolerance" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-allergyintolerance" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore BodySite Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore BodySite" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/BodySite/bodysite-example-qicore>;
+         fhir:Reference.reference [ fhir:value "BodySite/bodysite-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodysite>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-bodysite" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Claim Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Claim" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Claim/claim-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Claim/claim-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-claim" ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Communication" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Communication" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Communication/communication-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Communication/communication-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-communication" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore CommunicationRequest" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore CommunicationRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/CommunicationRequest/communicationrequest-example-qicore>;
+         fhir:Reference.reference [ fhir:value "CommunicationRequest/communicationrequest-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-communicationrequest" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Condition Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Condition" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Condition/condition-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Condition/condition-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-condition" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-condition.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Condition" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Condition" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-condition" ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Coverage Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Coverage" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Coverage/coverage-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Coverage/coverage-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-coverage" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-device.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Device" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Device" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-device" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Device Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Device" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Device/device-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Device/device-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-device" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore DeviceUseStatment Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore DeviceUseStatement" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/DeviceUseStatement/deviceusestatement-example-qicore>;
+         fhir:Reference.reference [ fhir:value "DeviceUseStatement/deviceusestatement-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-deviceusestatement" ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-diagnosticreport.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore DiagnosticReport" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore DiagnosticReport" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-diagnosticreport" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore DiagnosticReport Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore DiagnosticReport" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/DiagnosticReport/diagnosticreport-example-qicore>;
+         fhir:Reference.reference [ fhir:value "DiagnosticReport/diagnosticreport-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-diagnosticreport" ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Encounter" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Encounter" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Encounter/encounter-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Encounter/encounter-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-encounter" ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore FamilyMemberHistory" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore FamilyMemberHistory with condition did-not-have" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/FamilyMemberHistory/familymemberhistory-example-qicore>;
+         fhir:Reference.reference [ fhir:value "FamilyMemberHistory/familymemberhistory-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-familymemberhistory" ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Flag" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Flag" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Flag/flag-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Flag/flag-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-flag" ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-goal.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Goal" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Goal" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-goal" ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Goal Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICoreGoal" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Goal/goal-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Goal/goal-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-goal" ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore ImagingStudy" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore ImagingStudy" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ImagingStudy/imagingstudy-example-qicore>;
+         fhir:Reference.reference [ fhir:value "ImagingStudy/imagingstudy-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-imagingstudy" ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore RadiationDose" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "QICore RadiationDose" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationdose>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-imagingstudy-radiationdose" ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore RadiationDuration" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "QICore RadiationDuration" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationduration>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-imagingstudy-radiationduration" ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-immunization.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Immunization" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Immunization" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-immunization" ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Immunization Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Immunization" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Immunization/immunization-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Immunization/immunization-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-immunization" ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Immunization Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Immunization" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ImmunizationRecommendation/immunizationrecommendation-example-qicore>;
+         fhir:Reference.reference [ fhir:value "ImmunizationRecommendation/immunizationrecommendation-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-immunizationrec" ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-location.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Location" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Location" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-location" ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Location Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Location" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Location/location-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Location/location-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-location" ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-medication.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Medication" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Medication" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medication" ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Medication Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Medication" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Medication/medication-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Medication/medication-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medication" ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationAdministration Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore MedicationAdministration" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/MedicationAdministration/medicationadministration-example-qicore>;
+         fhir:Reference.reference [ fhir:value "MedicationAdministration/medicationadministration-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationadministration" ]
+       ]
+     ], [
+       fhir:index 32;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationDispense" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore MedicationDispense" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/MedicationDispense/medicationdispense-example-qicore>;
+         fhir:Reference.reference [ fhir:value "MedicationDispense/medicationdispense-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationdispense" ]
+       ]
+     ], [
+       fhir:index 33;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-medicationrequest.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationRequest" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore MedicationRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationrequest" ]
+       ]
+     ], [
+       fhir:index 34;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationRequest Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore MedicationRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/MedicationRequest/medicationrequest-example-qicore>;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/medicationrequest-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationrequest" ]
+       ]
+     ], [
+       fhir:index 35;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-medicationstatement.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationStatement" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore MedicationStatement" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatement>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationstatement" ]
+       ]
+     ], [
+       fhir:index 36;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore MedicationStatement Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore MedicationStatement" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/MedicationStatement/medicationstatement-example-qicore>;
+         fhir:Reference.reference [ fhir:value "MedicationStatement/medicationstatement-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatement>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationstatement" ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Observation" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Observation" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Observation/observation-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Observation/observation-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-observation" ]
+       ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-organization.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Organization" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Organization" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-organization" ]
+       ]
+     ], [
+       fhir:index 39;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Organization Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Organization" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Organization/organization-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Organization/organization-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-organization" ]
+       ]
+     ], [
+       fhir:index 40;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-patient.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Patient" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Patient" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-patient" ]
+       ]
+     ], [
+       fhir:index 41;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Patient Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Patient" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Patient/patient-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Patient/patient-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-patient" ]
+       ]
+     ], [
+       fhir:index 42;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-practitioner.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Practitioner" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Practitioner" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-practitioner" ]
+       ]
+     ], [
+       fhir:index 43;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-military-service.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-military-service>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-military-service" ]
+       ]
+     ], [
+       fhir:index 44;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "codesystem-qicore-military-service.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/qicore-military-service" ]
+       ]
+     ], [
+       fhir:index 45;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Practitioner Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Practitioner" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/practitioner-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Practitioner/practitioner-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-practitioner" ]
+       ]
+     ], [
+       fhir:index 46;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-practitioner-role.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner-role>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-practitioner-role" ]
+       ]
+     ], [
+       fhir:index 47;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-procedure.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Procedure" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Derived QICore Procedure" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedure" ]
+       ]
+     ], [
+       fhir:index 48;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Procedure Example" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Procedure" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Procedure/procedure-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Procedure/procedure-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedure" ]
+       ]
+     ], [
+       fhir:index 49;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-procedure-approachBodySite.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure-approachBodySite>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedure-approachBodySite" ]
+       ]
+     ], [
+       fhir:index 50;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-procedurerequest-approachBodySite.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest-approachBodySite>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedurerequest-approachBodySite" ]
+       ]
+     ], [
+       fhir:index 51;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-procedurerequest-appropriatenessScore.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest-appropriatenessScore>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedurerequest-appropriatenessScore" ]
+       ]
+     ], [
+       fhir:index 52;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-appropriateness-score.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/qicore-appropriateness-score" ]
+       ]
+     ], [
+       fhir:index 53;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore ProcedureRequest" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore ProcedureRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ProcedureRequest/procedurerequest-example-qicore>;
+         fhir:Reference.reference [ fhir:value "ProcedureRequest/procedurerequest-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedurerequest" ]
+       ]
+     ], [
+       fhir:index 54;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore ReferralRequest" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore ReferralRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ReferralRequest/referralrequest-example-qicore>;
+         fhir:Reference.reference [ fhir:value "ReferralRequest/referralrequest-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-referralrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-referralrequest" ]
+       ]
+     ], [
+       fhir:index 55;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore RelatedPerson" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore RelatedPerson" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/RelatedPerson/relatedperson-example-qicore>;
+         fhir:Reference.reference [ fhir:value "RelatedPerson/relatedperson-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-relatedperson" ]
+       ]
+     ], [
+       fhir:index 56;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Specimen" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Specimen" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Specimen/specimen-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Specimen/specimen-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimen>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-specimen" ]
+       ]
+     ], [
+       fhir:index 57;
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore Substance" ];
+       fhir:ImplementationGuide.package.resource.description [ fhir:value "Example of QICore Substance" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/Substance/substance-example-qicore>;
+         fhir:Reference.reference [ fhir:value "Substance/substance-example-qicore" ]
+       ];
+       fhir:ImplementationGuide.package.resource.exampleFor [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-substance" ]
+       ]
+     ], [
+       fhir:index 58;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-allergyintolerance-reason-refuted.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-allergyintolerance-reason-refuted>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-allergyintolerance-reason-refuted" ]
+       ]
+     ], [
+       fhir:index 59;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-military-service.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-military-service>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-military-service" ]
+       ]
+     ], [
+       fhir:index 60;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-patient-disability.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-patient-disability>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-patient-disability" ]
+       ]
+     ], [
+       fhir:index 61;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-condition-certainty.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-certainty>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-condition-certainty" ]
+       ]
+     ], [
+       fhir:index 62;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-condition-criticality.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-criticality>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-condition-criticality" ]
+       ]
+     ], [
+       fhir:index 63;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-condition-stage.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-stage>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-condition-stage" ]
+       ]
+     ], [
+       fhir:index 64;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-flag-category.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-flag-category>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-flag-category" ]
+       ]
+     ], [
+       fhir:index 65;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "valueset-qicore-goal-reason-rejected.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/ValueSet/qicore-goal-reason-rejected>;
+         fhir:Reference.reference [ fhir:value "ValueSet/qicore-goal-reason-rejected" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-AdverseEvent" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-adverseevent.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-AdverseEvent" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-adverseevent" ]
+       ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-BodySite" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-bodysite.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-BodySite" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodysite>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-bodysite" ]
+       ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Claim" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-claim.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Claim" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-claim" ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Communication" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-communication.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Communication" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-communication" ]
+       ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-CommunicationRequest" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-communicationrequest.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-CommunicationRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-communicationrequest" ]
+       ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Coverage" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-coverage.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Coverage" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-coverage" ]
+       ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-DeviceUseStatement" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-deviceusestatement.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-DeviceUseStatement" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-deviceusestatement" ]
+       ]
+     ]
+  ], [
+     fhir:index 8;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Encounter" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-encounter.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Encounter" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-encounter" ]
+       ]
+     ]
+  ], [
+     fhir:index 9;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-FamilyMemberHistory" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-familymemberhistory.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-FamilyMemberHistory" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-familymemberhistory" ]
+       ]
+     ]
+  ], [
+     fhir:index 10;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Flag" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-flag.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Flag" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-flag" ]
+       ]
+     ]
+  ], [
+     fhir:index 11;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-ImagingStudy" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-imagingstudy.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-ImagingStudy" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-imagingstudy" ]
+       ]
+     ]
+  ], [
+     fhir:index 12;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-ImmunizationRecommendation" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-immunizationrec.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-ImmunizationRecommendation" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-immunizationrec" ]
+       ]
+     ]
+  ], [
+     fhir:index 13;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-MedicationAdministration" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-medicationadministration.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-MedicationAdministration" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationadministration" ]
+       ]
+     ]
+  ], [
+     fhir:index 14;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-MedicationDispense" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-medicationdispense.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-MedicationDispense" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-medicationdispense" ]
+       ]
+     ]
+  ], [
+     fhir:index 15;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Observation" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-observation.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Observation" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-observation" ]
+       ]
+     ]
+  ], [
+     fhir:index 16;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-ProcedureRequest" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-procedurerequest.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-ProcedureRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-procedurerequest" ]
+       ]
+     ]
+  ], [
+     fhir:index 17;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-ReferralRequest" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-referralrequest.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-ReferralRequest" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-referralrequest>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-referralrequest" ]
+       ]
+     ]
+  ], [
+     fhir:index 18;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-RelatedPerson" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-relatedperson.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-RelatedPerson" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-relatedperson" ]
+       ]
+     ]
+  ], [
+     fhir:index 19;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Specimen" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-specimen.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Specimen" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimen>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-specimen" ]
+       ]
+     ]
+  ], [
+     fhir:index 20;
+     fhir:ImplementationGuide.package.name [ fhir:value "QICore-Substance" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "qicore-substance.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "QICore-Substance" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/qicore-substance" ]
+       ]
+     ]
+  ];
+  fhir:ImplementationGuide.page [
+     fhir:ImplementationGuide.page.source [ fhir:value "index.html" ];
+     fhir:ImplementationGuide.page.title [ fhir:value "Home Page" ];
+     fhir:ImplementationGuide.page.kind [ fhir:value "page" ];
+     fhir:ImplementationGuide.page.page [
+       fhir:index 0;
+       fhir:ImplementationGuide.page.source [ fhir:value "registry.html" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Registry" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "list" ];
+       fhir:ImplementationGuide.page.type [
+         fhir:value "CapabilityStatement";
+         fhir:index 0
+       ], [
+         fhir:value "StructureDefinition";
+         fhir:index 1
+       ], [
+         fhir:value "ValueSet";
+         fhir:index 2
+       ], [
+         fhir:value "ConceptMap";
+         fhir:index 3
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/AdverseEvent/adverseevent-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/allergyintolerance-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/allergyintolerance-example-refuted-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/BodySite/bodysite-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-bodysite> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Claim/claim-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Communication/communication-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communication> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/CommunicationRequest/communicationrequest-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationrequest> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Condition/condition-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Coverage/coverage-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Device/device-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/DeviceUseStatement/deviceusestatement-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-deviceusestatement> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/DiagnosticReport/diagnosticreport-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/encounter-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/FamilyMemberHistory/familymemberhistory-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-familymemberhistory> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Flag/flag-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-flag> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-goal> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Goal/goal-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ImagingStudy/imagingstudy-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationdose> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-imagingstudy-radiationduration> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Immunization/immunization-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ImmunizationRecommendation/immunizationrecommendation-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationrec> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Location/location-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Medication/medication-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationAdministration/medicationadministration-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationDispense/medicationdispense-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationdispense> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/medicationrequest-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationstatement> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationStatement/medicationstatement-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Observation/observation-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Organization/organization-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/patient-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-military-service> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-military-service> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/practitioner-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner-role> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Procedure/procedure-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure-approachBodySite> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest-approachBodySite> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest-appropriatenessScore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ProcedureRequest/procedurerequest-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurerequest> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ReferralRequest/referralrequest-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-referralrequest> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/RelatedPerson/relatedperson-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Specimen/specimen-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-specimen> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Substance/substance-example-qicore> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-substance> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-allergyintolerance-reason-refuted> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-military-service> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-patient-disability> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-certainty> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-criticality> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-condition-stage> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-flag-category> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-goal-reason-rejected> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ImplementationGuide/qicore.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ImplementationGuide/qicore.ttl> .
+
+# -------------------------------------------------------------------------------------
+

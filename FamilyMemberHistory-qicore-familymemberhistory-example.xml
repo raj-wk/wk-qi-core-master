@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FamilyMemberHistory xmlns="http://hl7.org/fhir">
+  <id value="qicore-familymemberhistory-example"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">
+      
+      <p><strong>Father died of a heart attack aged 74</strong></p>
+      
+      <p>
+        <strong>status</strong>: completed
+      </p>
+      <p>
+        <strong>patient</strong>: <a href="Patient-qicore-patient-example.html">Patient/example</a>
+      </p>
+      <p>
+        <strong>date</strong>: 03/18/2011
+      </p>
+      <p>
+        <strong>relationship</strong>: { FHIR code 'FTH' = 'FATHER' })
+      </p>
+      <blockquote>
+        <p><strong>condition</strong></p>
+        <p>
+          <strong>familymemberhistory-severity</strong>: { SNOMED CT code '399166001' = 'Fatal' })
+        </p>
+        <p>
+          <strong>code</strong>: { SNOMED CT code '315619001' = 'Myocardial Infarction' })
+        </p>
+        <p>
+          <strong>outcome</strong>: { SNOMED CT code '520004' = 'Congenital bent nose' })
+        </p>
+        <p>
+          <strong>onsetAge</strong>: 74 yr
+        </p>
+        <p>
+          <strong>note</strong>: Was fishing at the time. At least he went doing someting he loved.
+        </p>
+      </blockquote>
+    </div>
+  </text>
+  <status value="completed"/>
+  <patient>
+    <reference value="Patient/example"/>
+    <display value="Peter Patient"/>
+  </patient>
+  <date value="2011-03-18T17:49:10+00:00"/>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/RoleCode"/>
+      <code value="FTH"/>
+      <display value="FATHER"/>
+    </coding>
+  </relationship>
+  <condition>
+    <extension url="http://hl7.org/fhir/StructureDefinition/familymemberhistory-severity">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="399166001"/>
+          <display value="Fatal"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="315619001"/>
+        <display value="Myocardial Infarction"/>
+      </coding>
+      <text value="Heart Attack"/>
+    </code>
+    <outcome>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="520004"/>
+        <display value="Congenital bent nose"/>
+      </coding>
+    </outcome>
+    <onsetAge>
+      <value value="74"/>
+      <unit value="yr"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="a"/>
+    </onsetAge>
+    <note>
+      <text value="Was fishing at the time. At least he went doing someting he loved."/>
+    </note>
+  </condition>
+</FamilyMemberHistory>

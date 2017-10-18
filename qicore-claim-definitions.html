@@ -1,0 +1,1184 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+  <link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+  </div>
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3//index.html">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
+
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+  <div class="container">  <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">  <!-- segment-content -->
+ <div class="container">  <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<ul class="nav nav-tabs">
+  <li><a href="qicore-claim.html">Content</a></li>
+  <li class="active"><a href="#">Detailed Descriptions</a></li>
+  <li><a href="StructureDefinition-qicore-claim-mappings.html">Mappings</a></li>
+  <li><a href="StructureDefinition-qicore-claim.xml.html">XML</a></li>
+  <li><a href="StructureDefinition-qicore-claim.json.html">JSON</a></li>
+  <li><a href="StructureDefinition-qicore-claim.ttl.html">Turtle</a></li>
+</ul>
+
+<h4>
+  <span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: qicore-claim - Detailed Descriptions
+  <a title="link to here" class="self-link" href="qicore-claim-definitions.html#D.4.1.4">
+    <img src="target.png"/>
+  </a>
+</h4>
+
+<p>Definitions for the StructureDefinition-qicore-claim Profile.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim"> </a><a name="Claim"> </a><b>Claim(QICore-Claim)</b></td></tr>
+  <tr><td>Definition</td><td><p>A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">dom-1</b>: If the resource is contained in another resource, it SHALL NOT contain any narrative (: contained.text.empty())<br/><b title="Formal Invariant Identifier">dom-2</b>: If the resource is contained in another resource, it SHALL NOT contain nested Resources (: contained.contained.empty())<br/><b title="Formal Invariant Identifier">dom-3</b>: If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource (: contained.where(('#'+id in %resource.descendants().reference).not()).empty())<br/><b title="Formal Invariant Identifier">dom-4</b>: If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty())</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.id"> </a><a name="Claim.id"> </a><b>Claim.id</b></td></tr>
+  <tr><td>Definition</td><td><p>The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#id">id</a></td></tr>
+  <tr><td>Comments</td><td><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.meta"> </a><a name="Claim.meta"> </a><b>Claim.meta</b></td></tr>
+  <tr><td>Definition</td><td><p>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Meta">Meta</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.implicitRules"> </a><a name="Claim.implicitRules"> </a><b>Claim.implicitRules</b></td></tr>
+  <tr><td>Definition</td><td><p>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#uri">uri</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element.</p>
+<p>This element is labelled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.language"> </a><a name="Claim.language"> </a><b>Claim.language</b></td></tr>
+  <tr><td>Definition</td><td><p>The base language in which the resource is written.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>A human language.<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-languages.html">Common Languages</a>; other codes may be used where these codes are not suitable</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td><p>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource  Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.text"> </a><a name="Claim.text"> </a><b>Claim.text</b></td></tr>
+  <tr><td>Definition</td><td><p>A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: dom-1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative">Narrative</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>narrative, html, xhtml, display</td></tr>
+  <tr><td>Comments</td><td><p>Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a &quot;text blob&quot; or where text is additionally entered raw or narrated and encoded in formation is added later.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.contained"> </a><a name="Claim.contained"> </a><b>Claim.contained</b></td></tr>
+  <tr><td>Definition</td><td><p>These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/resource.html">Resource</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>inline resources, anonymous resources, contained resources</td></tr>
+  <tr><td>Comments</td><td><p>This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.extension"> </a><a name="Claim.extension"> </a><b>Claim.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.modifierExtension"> </a><a name="Claim.modifierExtension"> </a><b>Claim.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.identifier"> </a><a name="Claim.identifier"> </a><b>Claim.identifier</b></td></tr>
+  <tr><td>Definition</td><td><p>The business identifier for the instance: claim number, pre-determination or pre-authorization number.</p>
+</td></tr>
+  <tr><td>Note</td><td>This is a business identifer, not a resource identifier (see <a href="http://hl7.org/fhir/STU3/resource.html#identifiers">discussion</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.status"> </a><a name="Claim.status"> </a><b>Claim.status</b></td></tr>
+  <tr><td>Definition</td><td><p>The status of the resource instance.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>A code specifying the state of the resource instance.<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-fm-status.html">Financial Resource Status Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>This element is labeled as a modifier because the status contains the code entered-in-error that marks the claim as not currently valid.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.type"> </a><a name="Claim.type"> </a><b>Claim.type</b></td></tr>
+  <tr><td>Definition</td><td><p>The category of claim, eg, oral, pharmacy, vision, insitutional, professional.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The type or discipline-style of the claim<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-claim-type.html">Example Claim Type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td><p>Affects which fields and value sets are used.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.subType"> </a><a name="Claim.subType"> </a><b>Claim.subType</b></td></tr>
+  <tr><td>Definition</td><td><p>A finer grained suite of claim subtype codes which may convey Inpatient vs Outpatient and/or a specialty service. In the US the BillType.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>A more granular claim typecode<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-subtype.html">Example Claim SubType Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td><p>This may contain the local bill type codes such as the US UB-04 bill type code.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.use"> </a><a name="Claim.use"> </a><b>Claim.use</b></td></tr>
+  <tr><td>Definition</td><td><p>Complete (Bill or Claim), Proposed (Pre-Authorization), Exploratory (Pre-determination).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Complete, proposed, exploratory, other<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-claim-use.html">Use</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#code">code</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.patient"> </a><a name="Claim.patient"> </a><b>Claim.patient</b></td></tr>
+  <tr><td>Definition</td><td><p>Patient Resource.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-patient.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient">QICore-Patient</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.billablePeriod"> </a><a name="Claim.billablePeriod"> </a><b>Claim.billablePeriod</b></td></tr>
+  <tr><td>Definition</td><td><p>The billable period for which charges are being submitted.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Period">Period</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.created"> </a><a name="Claim.created"> </a><b>Claim.created</b></td></tr>
+  <tr><td>Definition</td><td><p>The date when the enclosed suite of services were performed or completed.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.enterer"> </a><a name="Claim.enterer"> </a><b>Claim.enterer</b></td></tr>
+  <tr><td>Definition</td><td><p>Person who created the invoice/claim/pre-determination or pre-authorization.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/practitioner.html" title="http://hl7.org/fhir/StructureDefinition/Practitioner">Practitioner</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurer"> </a><a name="Claim.insurer"> </a><b>Claim.insurer</b></td></tr>
+  <tr><td>Definition</td><td><p>The Insurer who is target of the request.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.provider"> </a><a name="Claim.provider"> </a><b>Claim.provider</b></td></tr>
+  <tr><td>Definition</td><td><p>The provider which is responsible for the bill, claim pre-determination, pre-authorization.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-practitioner.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner">QICore-Practitioner</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.organization"> </a><a name="Claim.organization"> </a><b>Claim.organization</b></td></tr>
+  <tr><td>Definition</td><td><p>The organization which is responsible for the bill, claim pre-determination, pre-authorization.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.priority"> </a><a name="Claim.priority"> </a><b>Claim.priority</b></td></tr>
+  <tr><td>Definition</td><td><p>Immediate (STAT), best effort (NORMAL), deferred (DEFER).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The timeliness with which processing is required: STAT, normal, Deferred<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-process-priority.html">Process Priority Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.fundsReserve"> </a><a name="Claim.fundsReserve"> </a><b>Claim.fundsReserve</b></td></tr>
+  <tr><td>Definition</td><td><p>In the case of a Pre-Determination/Pre-Authorization the provider may request that funds in the amount of the expected Benefit be reserved ('Patient' or 'Provider') to pay for the Benefits determined on the subsequent claim(s). 'None' explicitly indicates no funds reserving is requested.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>For whom funds are to be reserved: (Patient, Provider, None).<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-fundsreserve.html">Funds Reservation Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related"> </a><a name="Claim.related"> </a><b>Claim.related</b></td></tr>
+  <tr><td>Definition</td><td><p>Other claims which are related to this claim such as prior claim versions or for related services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.id"> </a><a name="Claim.related.id"> </a><b>Claim.related.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.extension"> </a><a name="Claim.related.extension"> </a><b>Claim.related.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.modifierExtension"> </a><a name="Claim.related.modifierExtension"> </a><b>Claim.related.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.claim"> </a><a name="Claim.related.claim"> </a><b>Claim.related.claim</b></td></tr>
+  <tr><td>Definition</td><td><p>Other claims which are related to this claim such as prior claim versions or for related services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/claim.html" title="http://hl7.org/fhir/StructureDefinition/Claim">Claim</a>)</td></tr>
+  <tr><td>Comments</td><td><p>Do we need a relationship code?</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.relationship"> </a><a name="Claim.related.relationship"> </a><b>Claim.related.relationship</b></td></tr>
+  <tr><td>Definition</td><td><p>For example prior or umbrella.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Relationship of this claim to a related Claim<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-related-claim-relationship.html">Example Related Claim Relationship Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.related.reference"> </a><a name="Claim.related.reference"> </a><b>Claim.related.reference</b></td></tr>
+  <tr><td>Definition</td><td><p>An alternate organizational reference to the case or file to which this particular claim pertains - eg Property/Casualy insurer claim # or Workers Compensation case # .</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.prescription"> </a><a name="Claim.prescription"> </a><b>Claim.prescription</b></td></tr>
+  <tr><td>Definition</td><td><p>Prescription to support the dispensing of Pharmacy or Vision products.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-medicationrequest.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest">QICore-MedicationRequest</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/visionprescription.html" title="http://hl7.org/fhir/StructureDefinition/VisionPrescription">VisionPrescription</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Requirements</td><td><p>For type=Pharmacy and Vision only.</p>
+</td></tr>
+  <tr><td>Comments</td><td><p>Should we create a group to hold multiple prescriptions and add a sequence number and on the line items a link to the sequence.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.originalPrescription"> </a><a name="Claim.originalPrescription"> </a><b>Claim.originalPrescription</b></td></tr>
+  <tr><td>Definition</td><td><p>Original prescription which has been superceded by this prescription to support the dispensing of pharmacy services, medications or products. For example, a physician may prescribe a medication which the pharmacy determines is contraindicated, or for which the patient has an intolerance, and therefor issues a new precription for an alternate medication which has the same theraputic intent. The prescription from the pharmacy becomes the 'prescription' and that from the physician becomes the 'original prescription'.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/medicationrequest.html" title="http://hl7.org/fhir/StructureDefinition/MedicationRequest">MedicationRequest</a>)</td></tr>
+  <tr><td>Comments</td><td><p>as above.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee"> </a><a name="Claim.payee"> </a><b>Claim.payee</b></td></tr>
+  <tr><td>Definition</td><td><p>The party to be reimbursed for the services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.id"> </a><a name="Claim.payee.id"> </a><b>Claim.payee.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.extension"> </a><a name="Claim.payee.extension"> </a><b>Claim.payee.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.modifierExtension"> </a><a name="Claim.payee.modifierExtension"> </a><b>Claim.payee.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.type"> </a><a name="Claim.payee.type"> </a><b>Claim.payee.type</b></td></tr>
+  <tr><td>Definition</td><td><p>Type of Party to be reimbursed: Subscriber, provider, other.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>A code for the party to be reimbursed.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-payeetype.html">Claim Payee Type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.resourceType"> </a><a name="Claim.payee.resourceType"> </a><b>Claim.payee.resourceType</b></td></tr>
+  <tr><td>Definition</td><td><p>organization | patient | practitioner | relatedperson.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The type of Claim payee Resource<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-payee-resource-type.html">ClaimPayeeResourceType</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Coding">Coding</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.payee.party"> </a><a name="Claim.payee.party"> </a><b>Claim.payee.party</b></td></tr>
+  <tr><td>Definition</td><td><p>Party to be reimbursed: Subscriber, provider, other.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-practitioner.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner">QICore-Practitioner</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-organization.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization">QICore-Organization</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-patient.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient">QICore-Patient</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-relatedperson.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson">QICore-RelatedPerson</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.referral"> </a><a name="Claim.referral"> </a><b>Claim.referral</b></td></tr>
+  <tr><td>Definition</td><td><p>The referral resource which lists the date, practitioner, reason and other supporting information.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-referralrequest.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-referralrequest">QICore-ReferralRequest</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.facility"> </a><a name="Claim.facility"> </a><b>Claim.facility</b></td></tr>
+  <tr><td>Definition</td><td><p>Facility where the services were provided.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/location.html" title="http://hl7.org/fhir/StructureDefinition/Location">Location</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam"> </a><a name="Claim.careTeam"> </a><b>Claim.careTeam</b></td></tr>
+  <tr><td>Definition</td><td><p>The members of the team who provided the overall service as well as their role and whether responsible and qualifications.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Requirements</td><td><p>Role and Responsible may not be required when there is only a single provider listed.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.id"> </a><a name="Claim.careTeam.id"> </a><b>Claim.careTeam.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.extension"> </a><a name="Claim.careTeam.extension"> </a><b>Claim.careTeam.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.modifierExtension"> </a><a name="Claim.careTeam.modifierExtension"> </a><b>Claim.careTeam.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.sequence"> </a><a name="Claim.careTeam.sequence"> </a><b>Claim.careTeam.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>Sequence of the careTeam which serves to order and provide a link.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td>Requirements</td><td><p>Required to maintain order of the careTeam.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.provider"> </a><a name="Claim.careTeam.provider"> </a><b>Claim.careTeam.provider</b></td></tr>
+  <tr><td>Definition</td><td><p>Member of the team who provided the overall service.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-practitioner.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner">QICore-Practitioner</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-organization.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization">QICore-Organization</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.responsible"> </a><a name="Claim.careTeam.responsible"> </a><b>Claim.careTeam.responsible</b></td></tr>
+  <tr><td>Definition</td><td><p>The party who is billing and responsible for the claimed good or service rendered to the patient.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.role"> </a><a name="Claim.careTeam.role"> </a><b>Claim.careTeam.role</b></td></tr>
+  <tr><td>Definition</td><td><p>The lead, assisting or supervising practitioner and their discipline if a multidisiplinary team.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The role codes for the care team members.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-careteamrole.html">Claim Care Team Role Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.careTeam.qualification"> </a><a name="Claim.careTeam.qualification"> </a><b>Claim.careTeam.qualification</b></td></tr>
+  <tr><td>Definition</td><td><p>The qualification which is applicable for this service.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Provider professional qualifications<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-provider-qualification.html">Example Provider Qualification Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information"> </a><a name="Claim.information"> </a><b>Claim.information</b></td></tr>
+  <tr><td>Definition</td><td><p>Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues. Often there are mutiple jurisdiction specific valuesets which are required.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Requirements</td><td><p>Typically these information codes are required to support the services rendered or the adjudication of the services rendered.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.id"> </a><a name="Claim.information.id"> </a><b>Claim.information.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.extension"> </a><a name="Claim.information.extension"> </a><b>Claim.information.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.modifierExtension"> </a><a name="Claim.information.modifierExtension"> </a><b>Claim.information.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.sequence"> </a><a name="Claim.information.sequence"> </a><b>Claim.information.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>Sequence of the information element which serves to provide a link.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td>Requirements</td><td><p>To provide a reference link.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.category"> </a><a name="Claim.information.category"> </a><b>Claim.information.category</b></td></tr>
+  <tr><td>Definition</td><td><p>The general class of the information supplied: information; exception; accident, employment; onset, etc.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>This value set includes sample Information Category codes.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-informationcategory.html">Claim Information Category Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>This may contain the local bill type codes such as the US UB-04 bill type code.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.code"> </a><a name="Claim.information.code"> </a><b>Claim.information.code</b></td></tr>
+  <tr><td>Definition</td><td><p>System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient for which care is sought which may influence the adjudication.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>This value set includes sample Exception codes.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-exception.html">Exception Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>This may contain the local bill type codes such as the US UB-04 bill type code.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.timing[x]"> </a><a name="Claim:qicore-claim.information.timingDate"> </a><a name="Claim:qicore-claim.information.timingPeriod"> </a><a name="Claim:qicore-claim.information.timingDate"> </a><a name="Claim:qicore-claim.information.timingPeriod"> </a><b>Claim.information.timing[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>The date when or period to which this information refers.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#date">date</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Period">Period</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.value[x]"> </a><a name="Claim:qicore-claim.information.valueString"> </a><a name="Claim:qicore-claim.information.valueQuantity"> </a><a name="Claim:qicore-claim.information.valueAttachment"> </a><a name="Claim:qicore-claim.information.valueReference"> </a><a name="Claim:qicore-claim.information.valueString"> </a><a name="Claim:qicore-claim.information.valueQuantity"> </a><a name="Claim:qicore-claim.information.valueAttachment"> </a><a name="Claim:qicore-claim.information.valueReference"> </a><b>Claim.information.value[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity">Quantity</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Attachment">Attachment</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/resource.html" title="http://hl7.org/fhir/StructureDefinition/Resource">Resource</a>)</td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.information.reason"> </a><a name="Claim.information.reason"> </a><b>Claim.information.reason</b></td></tr>
+  <tr><td>Definition</td><td><p>For example, provides the reason for: the additional stay, or missing tooth or any other situation where a reason code is required in addition to the content.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Reason codes for the missing teeth<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-missing-tooth-reason.html">Missing Tooth Reason Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis"> </a><a name="Claim.diagnosis"> </a><b>Claim.diagnosis</b></td></tr>
+  <tr><td>Definition</td><td><p>List of patient diagnosis for which care is sought.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.id"> </a><a name="Claim.diagnosis.id"> </a><b>Claim.diagnosis.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.extension"> </a><a name="Claim.diagnosis.extension"> </a><b>Claim.diagnosis.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.modifierExtension"> </a><a name="Claim.diagnosis.modifierExtension"> </a><b>Claim.diagnosis.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.sequence"> </a><a name="Claim.diagnosis.sequence"> </a><b>Claim.diagnosis.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>Sequence of diagnosis which serves to provide a link.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td>Requirements</td><td><p>Required to allow line items to reference the diagnoses.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.diagnosis[x]"> </a><a name="Claim:qicore-claim.diagnosis.diagnosisCodeableConcept"> </a><a name="Claim:qicore-claim.diagnosis.diagnosisReference"> </a><a name="Claim:qicore-claim.diagnosis.diagnosisCodeableConcept"> </a><a name="Claim:qicore-claim.diagnosis.diagnosisReference"> </a><b>Claim.diagnosis.diagnosis[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>The diagnosis.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>ICD10 Diagnostic codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-icd-10.html">ICD-10 Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/condition.html" title="http://hl7.org/fhir/StructureDefinition/Condition">Condition</a>)</td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td>Requirements</td><td><p>Required to adjudicate services rendered to condition presented.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.type"> </a><a name="Claim.diagnosis.type"> </a><b>Claim.diagnosis.type</b></td></tr>
+  <tr><td>Definition</td><td><p>The type of the Diagnosis, for example: admitting, primary, secondary, discharge.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>This value set includes example Diagnosis Type codes.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-diagnosistype.html">Example Diagnosis Type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>May be required to adjudicate services rendered.</p>
+</td></tr>
+  <tr><td>Comments</td><td><p>Diagnosis are presented in list order to their expected importance: primary, secondary, etc.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.diagnosis.packageCode"> </a><a name="Claim.diagnosis.packageCode"> </a><b>Claim.diagnosis.packageCode</b></td></tr>
+  <tr><td>Definition</td><td><p>The package billing code, for example DRG, based on the assigned grouping code system.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The DRG codes associated with the diagnosis<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-diagnosisrelatedgroup.html">Example Diagnosis Related Group Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>May be required to adjudicate services rendered to the mandated grouping system.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure"> </a><a name="Claim.procedure"> </a><b>Claim.procedure</b></td></tr>
+  <tr><td>Definition</td><td><p>Procedures performed.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.id"> </a><a name="Claim.procedure.id"> </a><b>Claim.procedure.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.extension"> </a><a name="Claim.procedure.extension"> </a><b>Claim.procedure.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.modifierExtension"> </a><a name="Claim.procedure.modifierExtension"> </a><b>Claim.procedure.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.sequence"> </a><a name="Claim.procedure.sequence"> </a><b>Claim.procedure.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>Procedure sequence for reference.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Requirements</td><td><p>Required to maintain order of the procudures.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.date"> </a><a name="Claim.procedure.date"> </a><b>Claim.procedure.date</b></td></tr>
+  <tr><td>Definition</td><td><p>When the procedure was performed.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Requirements</td><td><p>Required to adjudicate services rendered.</p>
+</td></tr>
+  <tr><td>Comments</td><td><p>SB DateTime??</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.procedure.procedure[x]"> </a><a name="Claim:qicore-claim.procedure.procedureCodeableConcept"> </a><a name="Claim:qicore-claim.procedure.procedureReference"> </a><a name="Claim:qicore-claim.procedure.procedureCodeableConcept"> </a><a name="Claim:qicore-claim.procedure.procedureReference"> </a><b>Claim.procedure.procedure[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>When the procedure was performed.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>ICD10 Procedure codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-icd-10-procedures.html">ICD-10 Procedure Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/procedure.html" title="http://hl7.org/fhir/StructureDefinition/Procedure">Procedure</a>)</td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Requirements</td><td><p>Required to adjudicate services rendered.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance"> </a><a name="Claim.insurance"> </a><b>Claim.insurance</b></td></tr>
+  <tr><td>Definition</td><td><p>Financial instrument by which payment information for health care.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Requirements</td><td><p>Health care programs and insurers are significant payors of health service costs.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.id"> </a><a name="Claim.insurance.id"> </a><b>Claim.insurance.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.extension"> </a><a name="Claim.insurance.extension"> </a><b>Claim.insurance.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.modifierExtension"> </a><a name="Claim.insurance.modifierExtension"> </a><b>Claim.insurance.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.sequence"> </a><a name="Claim.insurance.sequence"> </a><b>Claim.insurance.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>Sequence of coverage which serves to provide a link and convey coordination of benefit order.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td>Requirements</td><td><p>To maintain order of the coverages.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.focal"> </a><a name="Claim.insurance.focal"> </a><b>Claim.insurance.focal</b></td></tr>
+  <tr><td>Definition</td><td><p>A flag to indicate that this Coverage is the focus for adjudication. The Coverage against which the claim is to be adjudicated.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Requirements</td><td><p>To identify which coverage is being adjudicated.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.coverage"> </a><a name="Claim.insurance.coverage"> </a><b>Claim.insurance.coverage</b></td></tr>
+  <tr><td>Definition</td><td><p>Reference to the program or plan identification, underwriter or payor.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/coverage.html" title="http://hl7.org/fhir/StructureDefinition/Coverage">Coverage</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Need to identify the issuer to target for processing and for coordination of benefit processing.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.businessArrangement"> </a><a name="Claim.insurance.businessArrangement"> </a><b>Claim.insurance.businessArrangement</b></td></tr>
+  <tr><td>Definition</td><td><p>The contract number of a business agreement which describes the terms and conditions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.preAuthRef"> </a><a name="Claim.insurance.preAuthRef"> </a><b>Claim.insurance.preAuthRef</b></td></tr>
+  <tr><td>Definition</td><td><p>A list of references from the Insurer to which these services pertain.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td>Requirements</td><td><p>To provide any pre=determination or prior authorization reference.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.insurance.claimResponse"> </a><a name="Claim.insurance.claimResponse"> </a><b>Claim.insurance.claimResponse</b></td></tr>
+  <tr><td>Definition</td><td><p>The Coverages adjudication details.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/claimresponse.html" title="http://hl7.org/fhir/StructureDefinition/ClaimResponse">ClaimResponse</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Used by downstream payers to determine what balance remains and the net payable.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident"> </a><a name="Claim.accident"> </a><b>Claim.accident</b></td></tr>
+  <tr><td>Definition</td><td><p>An accident which resulted in the need for healthcare services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.id"> </a><a name="Claim.accident.id"> </a><b>Claim.accident.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.extension"> </a><a name="Claim.accident.extension"> </a><b>Claim.accident.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.modifierExtension"> </a><a name="Claim.accident.modifierExtension"> </a><b>Claim.accident.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.date"> </a><a name="Claim.accident.date"> </a><b>Claim.accident.date</b></td></tr>
+  <tr><td>Definition</td><td><p>Date of an accident which these services are addressing.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#date">date</a></td></tr>
+  <tr><td>Requirements</td><td><p>Coverage may be dependant on accidents.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.type"> </a><a name="Claim.accident.type"> </a><b>Claim.accident.type</b></td></tr>
+  <tr><td>Definition</td><td><p>Type of accident: work, auto, etc.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Type of accident: work place, auto, etc.<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/v3/ActIncidentCode/vs.html">ActIncidentCode</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>Coverage may be dependant on the type of accident.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.accident.location[x]"> </a><a name="Claim:qicore-claim.accident.locationAddress"> </a><a name="Claim:qicore-claim.accident.locationReference"> </a><a name="Claim:qicore-claim.accident.locationAddress"> </a><a name="Claim:qicore-claim.accident.locationReference"> </a><b>Claim.accident.location[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>Accident Place.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Address">Address</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/location.html" title="http://hl7.org/fhir/StructureDefinition/Location">Location</a>)</td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.employmentImpacted"> </a><a name="Claim.employmentImpacted"> </a><b>Claim.employmentImpacted</b></td></tr>
+  <tr><td>Definition</td><td><p>The start and optional end dates of when the patient was precluded from working due to the treatable condition(s).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Period">Period</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.hospitalization"> </a><a name="Claim.hospitalization"> </a><b>Claim.hospitalization</b></td></tr>
+  <tr><td>Definition</td><td><p>Period in hospital.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Period">Period</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item"> </a><a name="Claim.item"> </a><b>Claim.item</b></td></tr>
+  <tr><td>Definition</td><td><p>First tier of goods and services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.id"> </a><a name="Claim.item.id"> </a><b>Claim.item.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.extension"> </a><a name="Claim.item.extension"> </a><b>Claim.item.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.modifierExtension"> </a><a name="Claim.item.modifierExtension"> </a><b>Claim.item.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.sequence"> </a><a name="Claim.item.sequence"> </a><b>Claim.item.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>A service line number.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.careTeamLinkId"> </a><a name="Claim.item.careTeamLinkId"> </a><b>Claim.item.careTeamLinkId</b></td></tr>
+  <tr><td>Definition</td><td><p>CareTeam applicable for this service or product line.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.diagnosisLinkId"> </a><a name="Claim.item.diagnosisLinkId"> </a><b>Claim.item.diagnosisLinkId</b></td></tr>
+  <tr><td>Definition</td><td><p>Diagnosis applicable for this service or product line.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.procedureLinkId"> </a><a name="Claim.item.procedureLinkId"> </a><b>Claim.item.procedureLinkId</b></td></tr>
+  <tr><td>Definition</td><td><p>Procedures applicable for this service or product line.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.informationLinkId"> </a><a name="Claim.item.informationLinkId"> </a><b>Claim.item.informationLinkId</b></td></tr>
+  <tr><td>Definition</td><td><p>Exceptions, special conditions and supporting information pplicable for this service or product line.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.revenue"> </a><a name="Claim.item.revenue"> </a><b>Claim.item.revenue</b></td></tr>
+  <tr><td>Definition</td><td><p>The type of reveneu or cost center providing the product and/or service.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Codes for the revenue or cost centers supplying the service and/or products.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-revenue-center.html">Example Revenue Center Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.category"> </a><a name="Claim.item.category"> </a><b>Claim.item.category</b></td></tr>
+  <tr><td>Definition</td><td><p>Health Care Service Type Codes  to identify the classification of service or benefits.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Benefit subcategories such as: oral-basic, major, glasses<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-benefit-subcategory.html">Benefit SubCategory Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.service"> </a><a name="Claim.item.service"> </a><b>Claim.item.service</b></td></tr>
+  <tr><td>Definition</td><td><p>If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RXNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. &quot;glasses&quot; or &quot;compound&quot;.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>This value set includes a smattering of USCLS codes.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-service-uscls.html">USCLS Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.modifier"> </a><a name="Claim.item.modifier"> </a><b>Claim.item.modifier</b></td></tr>
+  <tr><td>Definition</td><td><p>Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Item type or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-modifiers.html">Modifier type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>May impact on adjudication.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.programCode"> </a><a name="Claim.item.programCode"> </a><b>Claim.item.programCode</b></td></tr>
+  <tr><td>Definition</td><td><p>For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Program specific reason codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-program-code.html">Example Program Reason Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.serviced[x]"> </a><a name="Claim:qicore-claim.item.servicedDate"> </a><a name="Claim:qicore-claim.item.servicedPeriod"> </a><a name="Claim:qicore-claim.item.servicedDate"> </a><a name="Claim:qicore-claim.item.servicedPeriod"> </a><b>Claim.item.serviced[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>The date or dates when the enclosed suite of services were performed or completed.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#date">date</a>, <a href="http://hl7.org/fhir/STU3/datatypes.html#Period">Period</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/STU3/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.locationReference"> </a><a name="Claim:qicore-claim.item.location[x]"> </a><a name="Claim:qicore-claim.item.location[x]"> </a><b>Claim.item.locationReference</b></td></tr>
+  <tr><td>Definition</td><td><p>Where the service was provided.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-location.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location">QICore-Location</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.quantity"> </a><a name="Claim.item.quantity"> </a><b>Claim.item.quantity</b></td></tr>
+  <tr><td>Definition</td><td><p>The number of repetitions of a service or product.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity">Quantity</a>(<a href="http://hl7.org/fhir/STU3/datatypes.html#SimpleQuantity" title="http://hl7.org/fhir/StructureDefinition/SimpleQuantity">SimpleQuantity</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.unitPrice"> </a><a name="Claim.item.unitPrice"> </a><b>Claim.item.unitPrice</b></td></tr>
+  <tr><td>Definition</td><td><p>If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.factor"> </a><a name="Claim.item.factor"> </a><b>Claim.item.factor</b></td></tr>
+  <tr><td>Definition</td><td><p>A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">decimal</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.net"> </a><a name="Claim.item.net"> </a><b>Claim.item.net</b></td></tr>
+  <tr><td>Definition</td><td><p>The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.udi"> </a><a name="Claim.item.udi"> </a><b>Claim.item.udi</b></td></tr>
+  <tr><td>Definition</td><td><p>List of Unique Device Identifiers associated with this line item.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-device.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device">QICore-Device</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>The UDI code and issuer if applicable for the supplied product.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.bodySite"> </a><a name="Claim.item.bodySite"> </a><b>Claim.item.bodySite</b></td></tr>
+  <tr><td>Definition</td><td><p>Physical service site on the patient (limb, tooth, etc).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The code for the teeth, quadrant, sextant and arch<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-tooth.html">Oral Site Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.subSite"> </a><a name="Claim.item.subSite"> </a><b>Claim.item.subSite</b></td></tr>
+  <tr><td>Definition</td><td><p>A region or surface of the site, eg. limb region or tooth surface(s).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The code for the tooth surface and surface combinations<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-surface.html">Surface Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.encounter"> </a><a name="Claim.item.encounter"> </a><b>Claim.item.encounter</b></td></tr>
+  <tr><td>Definition</td><td><p>Encounters related to this billed item.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-encounter.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter">QICore-Encounter</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail"> </a><a name="Claim.item.detail"> </a><b>Claim.item.detail</b></td></tr>
+  <tr><td>Definition</td><td><p>Second tier of goods and services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.id"> </a><a name="Claim.item.detail.id"> </a><b>Claim.item.detail.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.extension"> </a><a name="Claim.item.detail.extension"> </a><b>Claim.item.detail.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.modifierExtension"> </a><a name="Claim.item.detail.modifierExtension"> </a><b>Claim.item.detail.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.sequence"> </a><a name="Claim.item.detail.sequence"> </a><b>Claim.item.detail.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>A service line number.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.revenue"> </a><a name="Claim.item.detail.revenue"> </a><b>Claim.item.detail.revenue</b></td></tr>
+  <tr><td>Definition</td><td><p>The type of reveneu or cost center providing the product and/or service.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Codes for the revenue or cost centers supplying the service and/or products.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-revenue-center.html">Example Revenue Center Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.category"> </a><a name="Claim.item.detail.category"> </a><b>Claim.item.detail.category</b></td></tr>
+  <tr><td>Definition</td><td><p>Health Care Service Type Codes  to identify the classification of service or benefits.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Benefit subcategories such as: oral-basic, major, glasses<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-benefit-subcategory.html">Benefit SubCategory Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.service"> </a><a name="Claim.item.detail.service"> </a><b>Claim.item.detail.service</b></td></tr>
+  <tr><td>Definition</td><td><p>If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Allowable service and product codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-service-uscls.html">USCLS Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.modifier"> </a><a name="Claim.item.detail.modifier"> </a><b>Claim.item.detail.modifier</b></td></tr>
+  <tr><td>Definition</td><td><p>Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Item type or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-modifiers.html">Modifier type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>May impact on adjudication.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.programCode"> </a><a name="Claim.item.detail.programCode"> </a><b>Claim.item.detail.programCode</b></td></tr>
+  <tr><td>Definition</td><td><p>For programs which require reson codes for the inclusion, covering, of this billed item under the program or sub-program.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Program specific reason codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-program-code.html">Example Program Reason Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.quantity"> </a><a name="Claim.item.detail.quantity"> </a><b>Claim.item.detail.quantity</b></td></tr>
+  <tr><td>Definition</td><td><p>The number of repetitions of a service or product.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity">Quantity</a>(<a href="http://hl7.org/fhir/STU3/datatypes.html#SimpleQuantity" title="http://hl7.org/fhir/StructureDefinition/SimpleQuantity">SimpleQuantity</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.unitPrice"> </a><a name="Claim.item.detail.unitPrice"> </a><b>Claim.item.detail.unitPrice</b></td></tr>
+  <tr><td>Definition</td><td><p>If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.factor"> </a><a name="Claim.item.detail.factor"> </a><b>Claim.item.detail.factor</b></td></tr>
+  <tr><td>Definition</td><td><p>A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">decimal</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.net"> </a><a name="Claim.item.detail.net"> </a><b>Claim.item.detail.net</b></td></tr>
+  <tr><td>Definition</td><td><p>The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.udi"> </a><a name="Claim.item.detail.udi"> </a><b>Claim.item.detail.udi</b></td></tr>
+  <tr><td>Definition</td><td><p>List of Unique Device Identifiers associated with this line item.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-device.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device">QICore-Device</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>The UDI code and issuer if applicable for the supplied product.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail"> </a><a name="Claim.item.detail.subDetail"> </a><b>Claim.item.detail.subDetail</b></td></tr>
+  <tr><td>Definition</td><td><p>Third tier of goods and services.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.id"> </a><a name="Claim.item.detail.subDetail.id"> </a><b>Claim.item.detail.subDetail.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.extension"> </a><a name="Claim.item.detail.subDetail.extension"> </a><b>Claim.item.detail.subDetail.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.modifierExtension"> </a><a name="Claim.item.detail.subDetail.modifierExtension"> </a><b>Claim.item.detail.subDetail.modifierExtension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content, modifiers</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.sequence"> </a><a name="Claim.item.detail.subDetail.sequence"> </a><b>Claim.item.detail.subDetail.sequence</b></td></tr>
+  <tr><td>Definition</td><td><p>A service line number.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#positiveInt">positiveInt</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.revenue"> </a><a name="Claim.item.detail.subDetail.revenue"> </a><b>Claim.item.detail.subDetail.revenue</b></td></tr>
+  <tr><td>Definition</td><td><p>The type of reveneu or cost center providing the product and/or service.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Codes for the revenue or cost centers supplying the service and/or products.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-revenue-center.html">Example Revenue Center Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.category"> </a><a name="Claim.item.detail.subDetail.category"> </a><b>Claim.item.detail.subDetail.category</b></td></tr>
+  <tr><td>Definition</td><td><p>Health Care Service Type Codes  to identify the classification of service or benefits.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Benefit subcategories such as: oral-basic, major, glasses<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-benefit-subcategory.html">Benefit SubCategory Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.service"> </a><a name="Claim.item.detail.subDetail.service"> </a><b>Claim.item.detail.subDetail.service</b></td></tr>
+  <tr><td>Definition</td><td><p>A code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Allowable service and product codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-service-uscls.html">USCLS Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.modifier"> </a><a name="Claim.item.detail.subDetail.modifier"> </a><b>Claim.item.detail.subDetail.modifier</b></td></tr>
+  <tr><td>Definition</td><td><p>Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Item type or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-claim-modifiers.html">Modifier type Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>May impact on adjudication.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.programCode"> </a><a name="Claim.item.detail.subDetail.programCode"> </a><b>Claim.item.detail.subDetail.programCode</b></td></tr>
+  <tr><td>Definition</td><td><p>For programs which require reson codes for the inclusion, covering, of this billed item under the program or sub-program.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>Program specific reason codes<br/>For example codes, see <a href="http://hl7.org/fhir/STU3/valueset-ex-program-code.html">Example Program Reason Codes</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.quantity"> </a><a name="Claim.item.detail.subDetail.quantity"> </a><b>Claim.item.detail.subDetail.quantity</b></td></tr>
+  <tr><td>Definition</td><td><p>The number of repetitions of a service or product.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Quantity">Quantity</a>(<a href="http://hl7.org/fhir/STU3/datatypes.html#SimpleQuantity" title="http://hl7.org/fhir/StructureDefinition/SimpleQuantity">SimpleQuantity</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.unitPrice"> </a><a name="Claim.item.detail.subDetail.unitPrice"> </a><b>Claim.item.detail.subDetail.unitPrice</b></td></tr>
+  <tr><td>Definition</td><td><p>The fee for an addittional service or product or charge.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.factor"> </a><a name="Claim.item.detail.subDetail.factor"> </a><b>Claim.item.detail.subDetail.factor</b></td></tr>
+  <tr><td>Definition</td><td><p>A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#decimal">decimal</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.net"> </a><a name="Claim.item.detail.subDetail.net"> </a><b>Claim.item.detail.subDetail.net</b></td></tr>
+  <tr><td>Definition</td><td><p>The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+  <tr><td>Requirements</td><td><p>If a fee is present the associated product/service code must be present.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.item.detail.subDetail.udi"> </a><a name="Claim.item.detail.subDetail.udi"> </a><b>Claim.item.detail.subDetail.udi</b></td></tr>
+  <tr><td>Definition</td><td><p>List of Unique Device Identifiers associated with this line item.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="qicore-device.html" title="http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device">QICore-Device</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>The UDI code and issuer if applicable for the supplied product.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Claim:qicore-claim.total"> </a><a name="Claim.total"> </a><b>Claim.total</b></td></tr>
+  <tr><td>Definition</td><td><p>The total value of the claim.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Money">Money</a></td></tr>
+</table>
+
+         
+<p></p>
+ </div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+</div> <!-- /segment-content -->
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img style="text-align: baseline" src="external.png"/></a> |
+               <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+               <a style="color: #81BEF7" target="_blank" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change <img style="text-align: baseline" src="external.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

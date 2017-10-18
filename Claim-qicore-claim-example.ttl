@@ -1,0 +1,202 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Claim/qicore-claim-example> a fhir:Claim;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-claim-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example            \n      </p>\n      <p>\n        <strong>identifier</strong>: 6612346            \n      </p>\n      <p>\n        <strong>type</strong>: vision      \n      </p>\n      <p>\n        <strong>use</strong>: complete      \n      </p>\n      <p>\n        <strong>patient</strong>:                 \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>insurer</strong>:                 \n        <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n      </p>\n      <p>\n        <strong>organization</strong>:                 \n        <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n      </p>\n      <p>\n        <strong>priority</strong>: normal      \n      </p>\n      <p>\n        <strong>prescription</strong>:                 \n        <a href=\"MedicationRequest-qicore-medicationrequest-example\">MedicationRequest/example</a>\n      </p>\n      <p>\n        <strong>payee</strong>:\n        <a href=\"Provider-qicore-practitioner-example\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>careTeam</strong>:\n        <a href=\"Provider-qicore-practitioner-example\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>diagnosis</strong>: 654321      \n      </p>\n      <p>\n        <strong>insurance</strong>:                 \n        <a href=\"Coverage-qicore-converage-example\">Coverage/example</a>\n      </p>\n      <blockquote>\n        <p>\n          <strong>item</strong>\n        </p>\n        <p>\n          <strong>service</strong>: glasses        \n        </p>\n        <p>\n          <strong>unitPrice</strong>: 214.00        \n        </p>\n        <p>\n          <strong>net</strong>: 214.00        \n        </p>\n        <blockquote>\n          <p><strong>detail 1</strong></p>\n          <p>\n            <strong>service</strong>: frame          \n          </p>\n          <p>\n            <strong>unitPrice</strong>: 100.00          \n          </p>\n          <p>\n            <strong>net</strong>: 100.00          \n          </p>\n        </blockquote>\n        <blockquote>\n          <p><strong>detail 2</strong></p>\n          <p>\n            <strong>service</strong>: lens          \n          </p>\n          <p>\n            <strong>unitPrice</strong>: 50.00          \n          </p>\n          <p>\n            <strong>net</strong>: 100.00          \n          </p>\n        </blockquote>\n        <blockquote>\n          <p><strong>detail 3</strong></p>\n          <p>\n            <strong>service</strong>: fst          \n          </p>\n          <p>\n            <strong>unitPrice</strong>: 200.00          \n          </p>\n          <p>\n            <strong>factor</strong>: 0.07          \n          </p>\n          <p>\n            <strong>net</strong>: 14.00          \n          </p>\n        </blockquote>\n      </blockquote>\n    </div>"
+  ];
+  fhir:Claim.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://happysight.com/claim" ];
+     fhir:Identifier.value [ fhir:value "6612346" ]
+  ];
+  fhir:Claim.status [ fhir:value "active"];
+  fhir:Claim.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-claimtype" ];
+       fhir:Coding.code [ fhir:value "vision" ]
+     ]
+  ];
+  fhir:Claim.use [ fhir:value "complete"];
+  fhir:Claim.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Claim.created [ fhir:value "2014-08-16"^^xsd:date];
+  fhir:Claim.insurer [
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Claim.organization [
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Claim.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "normal" ]
+     ]
+  ];
+  fhir:Claim.prescription [
+     fhir:link <http://hl7.org/fhir/us/qicore/MedicationRequest/example>;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/example" ]
+  ];
+  fhir:Claim.payee [
+     fhir:Claim.payee.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "provider" ]
+       ]
+     ];
+     fhir:Claim.payee.party [
+       fhir:link <http://hl7.org/fhir/us/qicore/Provider/example>;
+       fhir:Reference.reference [ fhir:value "Provider/example" ]
+     ]
+  ];
+  fhir:Claim.careTeam [
+     fhir:index 0;
+     fhir:Claim.careTeam.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.careTeam.provider [
+       fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Claim.diagnosis [
+     fhir:index 0;
+     fhir:Claim.diagnosis.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.diagnosis.diagnosisCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.code [ fhir:value "654321" ]
+       ]
+     ]
+  ];
+  fhir:Claim.insurance [
+     fhir:index 0;
+     fhir:Claim.insurance.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.insurance.focal [ fhir:value "true"^^xsd:boolean ];
+     fhir:Claim.insurance.coverage [
+       fhir:link <http://hl7.org/fhir/us/qicore/Coverage/9876B1>;
+       fhir:Reference.reference [ fhir:value "Coverage/9876B1" ]
+     ]
+  ];
+  fhir:Claim.item [
+     fhir:index 0;
+     fhir:Claim.item.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Claim.item.careTeamLinkId [
+       fhir:value "1"^^xsd:positiveInteger;
+       fhir:index 0
+     ];
+     fhir:Claim.item.service [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-visionservice" ];
+         fhir:Coding.code [ fhir:value "glasses" ]
+       ]
+     ];
+     fhir:Claim.item.servicedDate [ fhir:value "2014-08-16"^^xsd:date ];
+     fhir:Claim.item.unitPrice [
+       fhir:Quantity.value [ fhir:value "214.00"^^xsd:decimal ];
+       fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+       fhir:Quantity.code [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.net [
+       fhir:Quantity.value [ fhir:value "214.00"^^xsd:decimal ];
+       fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+       fhir:Quantity.code [ fhir:value "USD" ]
+     ];
+     fhir:Claim.item.detail [
+       fhir:index 0;
+       fhir:Claim.item.detail.sequence [ fhir:value "1"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.service [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "frame" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Quantity.value [ fhir:value "100.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.net [
+         fhir:Quantity.value [ fhir:value "100.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Claim.item.detail.sequence [ fhir:value "2"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.service [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "lens" ]
+         ]
+       ];
+       fhir:Claim.item.detail.quantity [
+         fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Quantity.value [ fhir:value "50.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.net [
+         fhir:Quantity.value [ fhir:value "100.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Claim.item.detail.sequence [ fhir:value "3"^^xsd:positiveInteger ];
+       fhir:Claim.item.detail.service [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ex-visionservice" ];
+           fhir:Coding.code [ fhir:value "fst" ]
+         ]
+       ];
+       fhir:Claim.item.detail.unitPrice [
+         fhir:Quantity.value [ fhir:value "200.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ];
+       fhir:Claim.item.detail.factor [ fhir:value "0.07"^^xsd:decimal ];
+       fhir:Claim.item.detail.net [
+         fhir:Quantity.value [ fhir:value "14.00"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "urn:iso:std:iso:4217" ];
+         fhir:Quantity.code [ fhir:value "USD" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Organization/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Provider/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Coverage/9876B1> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Claim/qicore-claim-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Claim/qicore-claim-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

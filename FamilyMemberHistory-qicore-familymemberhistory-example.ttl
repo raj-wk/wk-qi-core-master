@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/FamilyMemberHistory/qicore-familymemberhistory-example> a fhir:FamilyMemberHistory;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-familymemberhistory-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p><strong>Father died of a heart attack aged 74</strong></p>\n      \n      <p>\n        <strong>status</strong>: completed\n      </p>\n      <p>\n        <strong>patient</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>date</strong>: 03/18/2011\n      </p>\n      <p>\n        <strong>relationship</strong>: { FHIR code 'FTH' = 'FATHER' })\n      </p>\n      <blockquote>\n        <p><strong>condition</strong></p>\n        <p>\n          <strong>familymemberhistory-severity</strong>: { SNOMED CT code '399166001' = 'Fatal' })\n        </p>\n        <p>\n          <strong>code</strong>: { SNOMED CT code '315619001' = 'Myocardial Infarction' })\n        </p>\n        <p>\n          <strong>outcome</strong>: { SNOMED CT code '520004' = 'Congenital bent nose' })\n        </p>\n        <p>\n          <strong>onsetAge</strong>: 74 yr\n        </p>\n        <p>\n          <strong>note</strong>: Was fishing at the time. At least he went doing someting he loved.\n        </p>\n      </blockquote>\n    </div>"
+  ];
+  fhir:FamilyMemberHistory.status [ fhir:value "completed"];
+  fhir:FamilyMemberHistory.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter Patient" ]
+  ];
+  fhir:FamilyMemberHistory.date [ fhir:value "2011-03-18T17:49:10+00:00"^^xsd:dateTime];
+  fhir:FamilyMemberHistory.relationship [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/RoleCode" ];
+       fhir:Coding.code [ fhir:value "FTH" ];
+       fhir:Coding.display [ fhir:value "FATHER" ]
+     ]
+  ];
+  fhir:FamilyMemberHistory.condition [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/familymemberhistory-severity" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:399166001;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "399166001" ];
+           fhir:Coding.display [ fhir:value "Fatal" ]
+         ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.condition.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:315619001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "315619001" ];
+         fhir:Coding.display [ fhir:value "Myocardial Infarction" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Heart Attack" ]
+     ];
+     fhir:FamilyMemberHistory.condition.outcome [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:520004;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "520004" ];
+         fhir:Coding.display [ fhir:value "Congenital bent nose" ]
+       ]
+     ];
+     fhir:FamilyMemberHistory.condition.onsetAge [
+       fhir:Quantity.value [ fhir:value "74"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "yr" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "a" ]
+     ];
+     fhir:FamilyMemberHistory.condition.note [
+       fhir:index 0;
+       fhir:Annotation.text [ fhir:value "Was fishing at the time. At least he went doing someting he loved." ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/FamilyMemberHistory/qicore-familymemberhistory-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/FamilyMemberHistory/qicore-familymemberhistory-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-delta> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-observation-delta"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>QICore Observation Delta Value Set Definition</h2><div><p>Code indicating how the current observation compares to previous observations - e.g., no change, rising trend, decreasing trend, etc...</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/STU3/v2/0078/index.html\"><code>http://hl7.org/fhir/v2/0078</code></a><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v2/0078/index.html#v2-0078-B\">B</a></td><td>Better-use when direction not relevant</td><td/></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v2/0078/index.html#v2-0078-D\">D</a></td><td>Significant change down</td><td/></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v2/0078/index.html#v2-0078-U\">U</a></td><td>Significant change up</td><td/></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v2/0078/index.html#v2-0078-W\">W</a></td><td>Worse-use when direction not relevant</td><td/></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-delta"];
+  fhir:ValueSet.version [ fhir:value "0.02"];
+  fhir:ValueSet.name [ fhir:value "QICore Observation Delta Value Set Definition"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2015-02-09"^^xsd:date];
+  fhir:ValueSet.publisher [ fhir:value "HL7 Clinical Quality Information (CQI) Work Group"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "other" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/cqi" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Code indicating how the current observation compares to previous observations - e.g., no change, rising trend, decreasing trend, etc..."];
+  fhir:ValueSet.extensible [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/v2/0078" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "B" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Better-use when direction not relevant" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "D" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Significant change down" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "U" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Significant change up" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "W" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Worse-use when direction not relevant" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-delta.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ValueSet/qicore-observation-delta.ttl> .
+
+# -------------------------------------------------------------------------------------
+

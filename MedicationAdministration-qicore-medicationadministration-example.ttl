@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationAdministration/qicore-medicationadministration-example> a fhir:MedicationAdministration;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-medicationadministration-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p> <strong> Generated Narrative with Details</strong> </p> \n            <p> <strong> id</strong> : medadminexample03</p> \n            <p> <strong> contained</strong> : </p> \n            <p> <strong> status</strong> : on-hold</p> <p> <strong> medication</strong> : id: med0303; Alemtuzumab 10mg/ml (Lemtrada) <span> (Details : {RxNorm code '1594660' = '1594660', given as 'Alemtuzumab 10mg/ml (Lemtrada)'})</span> </p> \n            <p> <strong> subject</strong> : <a> Donald Duck</a> </p> \n            <p> <strong> context</strong> : <a> Encounter/f001</a> </p> \n            <p> <strong> supportingInformation</strong> : <a> Condition/f204</a> </p> \n            <p> <strong> effective</strong> : 15/01/2015 2:30:00 PM --&gt; 15/01/2015 2:30:00 PM</p> \n            <p> <strong> notGiven</strong> : true</p> \n            <p> <strong> reasonNotGiven</strong> : Administration of medication not done due to a contraindication (situation) <span> (Details : {SNOMED CT code '373147003' = 'Medication not administered because contraindicated',\n        given as 'Administration of medication not done due to a contraindication (situation)'})</span> </p> \n            <p> <strong> prescription</strong> : <a> MedicationRequest/medrx0317</a> </p>\n            <p> <strong> dosage</strong> : <a> 3 mg by intravenous route</a> </p>\n            <p> <strong> note</strong> : Patient started Bupropion this morning - will administer in a reduced dose tomorrow</p> \n        </div>"
+  ];
+  fhir:MedicationAdministration.status [ fhir:value "on-hold"];
+  fhir:MedicationAdministration.medicationReference [
+     fhir:link <http://hl7.org/fhir/us/qicore/Medication/example>;
+     fhir:Reference.reference [ fhir:value "Medication/example" ]
+  ];
+  fhir:MedicationAdministration.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Donald Duck" ]
+  ];
+  fhir:MedicationAdministration.context [
+     fhir:link <http://hl7.org/fhir/us/qicore/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:MedicationAdministration.supportingInformation [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/Condition/example>;
+     fhir:Reference.reference [ fhir:value "Condition/example" ]
+  ];
+  fhir:MedicationAdministration.effectivePeriod [
+     fhir:Period.start [ fhir:value "2015-01-15T14:30:00+01:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2015-01-15T14:30:00+01:00"^^xsd:dateTime ]
+  ];
+  fhir:MedicationAdministration.notGiven [ fhir:value "true"^^xsd:boolean];
+  fhir:MedicationAdministration.reasonNotGiven [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:373147003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "373147003" ];
+       fhir:Coding.display [ fhir:value "Administration of medication not done due to a contraindication (situation)" ]
+     ]
+  ];
+  fhir:MedicationAdministration.prescription [
+     fhir:link <http://hl7.org/fhir/us/qicore/MedicationRequest/example>;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/example" ]
+  ];
+  fhir:MedicationAdministration.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Patient started Bupropion this morning - will administer in a reduced dose tomorrow" ]
+  ];
+  fhir:MedicationAdministration.dosage [
+     fhir:MedicationAdministration.dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:47625008;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "47625008" ];
+         fhir:Coding.display [ fhir:value "Intravenous route (qualifier value)" ]
+       ]
+     ];
+     fhir:MedicationAdministration.dosage.dose [
+       fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "mg" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "mg" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Medication/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Condition/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationAdministration/qicore-medicationadministration-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/MedicationAdministration/qicore-medicationadministration-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

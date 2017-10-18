@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationStatement/qicore-medicationstatement-example> a fhir:MedicationStatement;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-medicationstatement-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>Penicillin VK 10ml suspension administered by oral route at 14:30 on 1 June 2012</p>\n      <p>to patient ref: a23</p>\n    </div>"
+  ];
+  fhir:MedicationStatement.status [ fhir:value "completed"];
+  fhir:MedicationStatement.medicationReference [
+     fhir:link <http://hl7.org/fhir/us/qicore/Medication/example>;
+     fhir:Reference.reference [ fhir:value "Medication/example" ]
+  ];
+  fhir:MedicationStatement.effectiveDateTime [ fhir:value "2012-06-01T14:30:00+14:00"^^xsd:dateTime];
+  fhir:MedicationStatement.dateAsserted [ fhir:value "2012-05-14T15:00:00+14:00"^^xsd:dateTime];
+  fhir:MedicationStatement.informationSource [
+     fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:MedicationStatement.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:MedicationStatement.derivedFrom [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/MedicationRequest/example>;
+     fhir:Reference.reference [ fhir:value "MedicationRequest/example" ]
+  ];
+  fhir:MedicationStatement.taken [ fhir:value "n"];
+  fhir:MedicationStatement.dosage [
+     fhir:index 0;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "3"^^xsd:integer ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:394899003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "394899003" ];
+         fhir:Coding.display [ fhir:value "oral administration of treatment" ]
+       ]
+     ];
+     fhir:Dosage.doseQuantity [
+       fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "ml" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "ml" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Medication/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationStatement/qicore-medicationstatement-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/MedicationStatement/qicore-medicationstatement-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

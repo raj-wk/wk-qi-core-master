@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-encounter-class> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-encounter-class"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ActEncounterCode</h2><div><p>Domain provides codes that qualify the ActEncounterClass (ENC)</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html\"><code>http://hl7.org/fhir/v3/ActCode</code></a><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html#v3-ActCode-OBS\">OBS</a></td><td>Observation Status</td><td>Provision of care of women during pregnancy, childbirth and immediate postpartum period.  Also known as Maternity.</td></tr></table>Include codes from <a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html\"><code>http://hl7.org/fhir/v3/ActCode</code></a> where concept  is-a  <a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html#v3-ActCode-_ActEncounterCode\">_ActEncounterCode</a></li><li>Exclude these codes as defined in <a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html\"><code>http://hl7.org/fhir/v3/ActCode</code></a><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/STU3/v3/ActCode/cs.html#v3-ActCode-_ActEncounterCode\">_ActEncounterCode</a></td><td>ActEncounterCode</td><td>Domain provides codes that qualify the ActEncounterClass (ENC)</td></tr></table></li></ul></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-ballot-status" ];
+     fhir:Extension.valueString [ fhir:value "External" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
+     fhir:Extension.valueInteger [ fhir:value "2"^^xsd:integer ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg" ];
+     fhir:Extension.valueCode [ fhir:value "pa" ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/us/qicore/ValueSet/qicore-encounter-class"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:2.16.840.1.113883.1.11.13955" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "2014-03-26"];
+  fhir:ValueSet.name [ fhir:value "ActEncounterCode"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2017-10-18T21:00:42+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "HL7 v3"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value " Domain provides codes that qualify the ActEncounterClass (ENC)"];
+  fhir:ValueSet.immutable [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/v3/ActCode" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "OBS" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Observation Status" ]
+       ];
+       fhir:ValueSet.compose.include.filter [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.filter.property [ fhir:value "concept" ];
+         fhir:ValueSet.compose.include.filter.op [ fhir:value "is-a" ];
+         fhir:ValueSet.compose.include.filter.value [ fhir:value "_ActEncounterCode" ]
+       ]
+     ];
+     fhir:ValueSet.compose.exclude [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/v3/ActCode" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "_ActEncounterCode" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-encounter-class.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ValueSet/qicore-encounter-class.ttl> .
+
+# -------------------------------------------------------------------------------------
+

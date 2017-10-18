@@ -1,0 +1,71 @@
+{
+  "resourceType": "FamilyMemberHistory",
+  "id": "qicore-familymemberhistory-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p><strong>Father died of a heart attack aged 74</strong></p>\n      \n      <p>\n        <strong>status</strong>: completed\n      </p>\n      <p>\n        <strong>patient</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>date</strong>: 03/18/2011\n      </p>\n      <p>\n        <strong>relationship</strong>: { FHIR code 'FTH' = 'FATHER' })\n      </p>\n      <blockquote>\n        <p><strong>condition</strong></p>\n        <p>\n          <strong>familymemberhistory-severity</strong>: { SNOMED CT code '399166001' = 'Fatal' })\n        </p>\n        <p>\n          <strong>code</strong>: { SNOMED CT code '315619001' = 'Myocardial Infarction' })\n        </p>\n        <p>\n          <strong>outcome</strong>: { SNOMED CT code '520004' = 'Congenital bent nose' })\n        </p>\n        <p>\n          <strong>onsetAge</strong>: 74 yr\n        </p>\n        <p>\n          <strong>note</strong>: Was fishing at the time. At least he went doing someting he loved.\n        </p>\n      </blockquote>\n    </div>"
+  },
+  "status": "completed",
+  "patient": {
+    "reference": "Patient/example",
+    "display": "Peter Patient"
+  },
+  "date": "2011-03-18T17:49:10+00:00",
+  "relationship": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/v3/RoleCode",
+        "code": "FTH",
+        "display": "FATHER"
+      }
+    ]
+  },
+  "condition": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/familymemberhistory-severity",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "399166001",
+                "display": "Fatal"
+              }
+            ]
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "315619001",
+            "display": "Myocardial Infarction"
+          }
+        ],
+        "text": "Heart Attack"
+      },
+      "outcome": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "520004",
+            "display": "Congenital bent nose"
+          }
+        ]
+      },
+      "onsetAge": {
+        "value": 74,
+        "unit": "yr",
+        "system": "http://unitsofmeasure.org",
+        "code": "a"
+      },
+      "note": [
+        {
+          "text": "Was fishing at the time. At least he went doing someting he loved."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Encounter.Participant</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="icon" href="../resources/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="../stylesheet.css" type="text/css" title="Style"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css"/>
+  </head>
+  <body>
+  <!-- ========= START OF TOP NAVBAR ======= -->
+    <div class="topNav">
+      <a name="navbar_top">
+  <!--  -->
+</a>
+      <ul title="Navigation" class="navList">
+        <li>
+          <a href="../overview-summary.html">Overview</a>
+        </li>
+        <li class="navBarCell1Rev">Class</li>
+        <li>
+          <a href="../index-files.html">Index</a>
+        </li>
+      </ul>
+      <div class="aboutLanguage">QUICK</div>
+    </div>
+    <div class="subNav">
+      <ul class="navList">
+        <li><a name="23a6ad00-7342-495d-bb10-fe647c5bab68"> </a>
+          <a href="../index.html?pages/Encounter.Participant.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a href="Encounter.Participant.html" target="_top">NO FRAMES</a>
+        </li>
+      </ul>
+      <div>  <!--  --></div>
+    </div>
+  <!-- ========= END OF TOP NAVBAR ========= -->
+  <!-- ======== START OF CLASS DATA ======== -->
+    <div class="header">
+      <h2 title="Class Encounter.Participant" class="title"><a href="Encounter.html">Encounter</a>.Participant</h2>
+    </div>
+    <div class="contentContainer">
+      <div class="description">
+        <ul class="blockList">
+          <li style="font-size:115%;" class="blockList">List of participants involved in the encounter
+            <p/>The&nbsp;list of&nbsp;people&nbsp;responsible for providing the service.
+          </li>
+        </ul>
+      </div>
+      <div class="summary">
+        <ul class="blockList">
+          <li class="blockList">
+            <ul class="blockList">
+              <li class="blockList">
+  <!-- =========== FIELD SUMMARY =========== -->
+                <a name="field_summary">  <!--  --></a>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+<table border="0" summary="Field Summary table, listing fields, and an explanation" cellpadding="3" cellspacing="0" class="overviewSummary">
+<tr>
+<th scope="col" class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;Field</th>
+<th scope="col" style="border-right-width: 0px" class="colLast">Card.</th>
+<th scope="col" class="colLast">Type and Description
+<span style="float: right"><a href="../help.html" title="Legend for this format"><img border="0" src="../resources/help16.png" alt="doco"/></a></span></th>
+</tr>
+
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="id">id</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String</code>
+                    <blockquote>
+                      <div class="block">unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="individual">individual</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Reference</code>
+                    <blockquote>
+                      <div class="block">Persons involved in the encounter other than the patient.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="period">period</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>interval&lt;DateTime&gt;</code>
+                    <blockquote>
+                      <div class="block">The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="type">type</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Concept&gt;</code>
+                    <blockquote>
+                      <div class="block">Role of participant in encounter.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-encounter-participant-type.html" title="Role of participant in encounter">ParticipantType</a> (Extensible)</p></div>
+                    </blockquote>
+                  </td>
+                </tr></table>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav">
+<span class="legalCopy"><small><font size="-1">
+        &copy; HL7.org 2011+. QUICK Generated on Fri, Aug 25, 2017 5:43PM.
+        </font>
+</small></span>
+</div>
+  <!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+  </body>
+</html>

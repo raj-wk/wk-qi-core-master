@@ -1,0 +1,316 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+  <link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+  </div>
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3//index.html">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
+
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+  <div class="container">  <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">  <!-- segment-content -->
+ <div class="container">  <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<h2>Immunization-qicore-immunization-example</h2>
+
+<p>
+Formats: <a href="Immunization-qicore-immunization-example.xml.html">XML</a>, <a href="Immunization-qicore-immunization-example.json.html">JSON</a>, <a href="Immunization-qicore-immunization-example.ttl.html">Turtle</a>
+</p>
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <strong>id</strong>: example      
+      </p>
+      <p>
+        <strong>identifier</strong>: urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234      
+      </p>
+      <p>
+        <strong>status</strong>: completed      
+      </p>
+      <p>
+        <strong>notGiven</strong>: false      
+      </p>
+      <p>
+        <strong>vaccineCode</strong>: { urn:oid:1.2.36.1.2001.1005.17 code 'FLUVAX' = 'Fluvax' }      
+      </p>
+      <p>
+        <strong>patient</strong>:         
+        <a href="Patient-qicore-patient-example.html">Patient/example</a>
+      </p>
+      <p>
+        <strong>encounter</strong>:         
+        <a href="Encounter-qicore-encounter-example.html">Encounter/example</a>
+      </p>
+      <p>
+        <strong>date</strong>: 10/01/2013      
+      </p>
+      <p>
+        <strong>primarySource</strong>: true      
+      </p>
+      <p>
+        <strong>location</strong>:         
+        <a href="Location-qicore-location-example.html">Location/example</a>
+      </p>
+      <p>
+        <strong>manufacturer</strong>:         
+        <a href="Organization-qicore-organization-example.html">Organization/example</a>
+      </p>
+      <p>
+        <strong>lotNumber</strong>: AAJN11K      
+      </p>
+      <p>
+        <strong>expirationDate</strong>: 15/02/2015      
+      </p>
+      <p>
+        <strong>site</strong>: { http://hl7.org/fhir/v3/ActSite code 'LA' = 'left arm' }      
+      </p>
+      <p>
+        <strong>route</strong>: { http://hl7.org/fhir/v3/RouteOfAdministration code 'IM' = 'Injection, intramuscular' }      
+      </p>
+      <p>
+        <strong>doseQuantity</strong>: 5 mg        
+        <span>(Details: UCUM code mg = 'mg')</span>
+      </p>
+      <blockquote>
+        <p>
+          <strong>practitioner</strong>
+        </p>
+        <p>
+          <strong>role</strong>: Ordering Provider: { http://hl7.org/fhir/v2/0443 code 'OP' = 'Ordering Provider' }        
+        </p>
+        <p>
+          <strong>actor</strong>:           
+          <a href="Practitioner-qicore-practitioner-example.html">Practitioner/example</a>
+        </p>
+      </blockquote>
+      <blockquote>
+        <p>
+          <strong>practitioner</strong>
+        </p>
+        <p>
+          <strong>role</strong>: { http://hl7.org/fhir/v2/0443 code 'AP' = 'Administering Provider' }        
+        </p>
+        <p>
+          <strong>actor</strong>:           
+          <a href="Practitioner-qicore-practitioner-example.html">Practitioner/example</a>
+        </p>
+      </blockquote>
+      <p>
+        <strong>note</strong>: Notes on adminstration of vaccine      
+      </p>
+      <h3>Explanations</h3>
+      <table>
+        <tr>
+          <td>-</td>
+          <td>
+            <strong>Reason</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>Procedure to meet occupational requirement: { SNOMED CT code '429060002' = 'Procedure to meet occupational requirement' }</td>
+        </tr>
+      </table>
+      <h3>Reactions</h3>
+      <table>
+        <tr>
+          <td>-</td>
+          <td>
+            <strong>Date</strong>
+          </td>
+          <td>
+            <strong>Detail</strong>
+          </td>
+          <td>
+            <strong>Reported</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>10/01/2013</td>
+          <td>
+            <a href="Observation-qicore-observation-example.html">Observation/example</a>
+          </td>
+          <td>true</td>
+        </tr>
+      </table>
+      <h3>VaccinationProtocols</h3>
+      <table>
+        <tr>
+          <td>-</td>
+          <td>
+            <strong>DoseSequence</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Authority</strong>
+          </td>
+          <td>
+            <strong>Series</strong>
+          </td>
+          <td>
+            <strong>SeriesDoses</strong>
+          </td>
+          <td>
+            <strong>TargetDisease</strong>
+          </td>
+          <td>
+            <strong>DoseStatus</strong>
+          </td>
+          <td>
+            <strong>DoseStatusReason</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>1</td>
+          <td>Vaccination Protocol Sequence 1</td>
+          <td>
+            <a href="Organization-qicore-organization-example.html">Organization/example</a>
+          </td>
+          <td>Vaccination Series 1</td>
+          <td>2</td>
+          <td>Gestational rubella syndrome { SNOMED CT code '1857005' = 'Gestational rubella syndrome }</td>
+          <td>Counts { http://hl7.org/fhir/STU3/vaccination-protocol-dose-status code 'count' = 'Counts' }</td>
+          <td>Cold chain break { http://hl7.org/fhir/STU3/vaccination-protocol-dose-status-reason code 'coldchbrk' = 'Cold chain break' }          </td>
+        </tr>
+      </table>
+    </div>
+          
+<p></p>
+ </div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+</div> <!-- /segment-content -->
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img style="text-align: baseline" src="external.png"/></a> |
+               <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+               <a style="color: #81BEF7" target="_blank" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change <img style="text-align: baseline" src="external.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

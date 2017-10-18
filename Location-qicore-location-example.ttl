@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Location/qicore-location-example> a fhir:Location;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-location-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mean Joe Greene UMC, South Wing, second floor</div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/location-alias" ];
+     fhir:Extension.valueString [ fhir:value "Mean Joe Greene University Medical Center, South Wing, second floor" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/location-alias" ];
+     fhir:Extension.valueString [ fhir:value "BU MC, SW, F2" ]
+  ];
+  fhir:Location.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "B1-S.F2" ]
+  ];
+  fhir:Location.status [ fhir:value "active"];
+  fhir:Location.name [ fhir:value "South Wing, second floor"];
+  fhir:Location.description [ fhir:value "Second floor of the Old South Wing, formerly in use by Psychiatry"];
+  fhir:Location.mode [ fhir:value "instance"];
+  fhir:Location.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/RoleCode" ];
+       fhir:Coding.code [ fhir:value "HOSP" ];
+       fhir:Coding.display [ fhir:value "Hospital" ]
+     ]
+  ];
+  fhir:Location.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "2328" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactPoint.system [ fhir:value "fax" ];
+     fhir:ContactPoint.value [ fhir:value "2329" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ], [
+     fhir:index 2;
+     fhir:ContactPoint.system [ fhir:value "email" ];
+     fhir:ContactPoint.value [ fhir:value "second wing admissions" ]
+  ], [
+     fhir:index 3;
+     fhir:ContactPoint.system [ fhir:value "url" ];
+     fhir:ContactPoint.value [ fhir:value "http://sampleorg.com/southwing" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ];
+  fhir:Location.address [
+     fhir:Address.use [ fhir:value "work" ];
+     fhir:Address.line [
+       fhir:value "Iron Curtain 75, Building A";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "Pittsburgh" ];
+     fhir:Address.state [ fhir:value "PA" ];
+     fhir:Address.postalCode [ fhir:value "15016" ];
+     fhir:Address.country [ fhir:value "US" ]
+  ];
+  fhir:Location.physicalType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/location-physical-type" ];
+       fhir:Coding.code [ fhir:value "wi" ];
+       fhir:Coding.display [ fhir:value "Wing" ]
+     ]
+  ];
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "-83.6945691"^^xsd:decimal ];
+     fhir:Location.position.latitude [ fhir:value "42.25475478"^^xsd:decimal ];
+     fhir:Location.position.altitude [ fhir:value "0"^^xsd:decimal ]
+  ];
+  fhir:Location.managingOrganization [
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Location.endpoint [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/Endpoint/end1001>;
+     fhir:Reference.reference [ fhir:value "Endpoint/end1001" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Organization/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Endpoint/end1001> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Location/qicore-location-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Location/qicore-location-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Immunization.VaccinationProtocol</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="icon" href="../resources/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="../stylesheet.css" type="text/css" title="Style"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css"/>
+  </head>
+  <body>
+  <!-- ========= START OF TOP NAVBAR ======= -->
+    <div class="topNav">
+      <a name="navbar_top">
+  <!--  -->
+</a>
+      <ul title="Navigation" class="navList">
+        <li>
+          <a href="../overview-summary.html">Overview</a>
+        </li>
+        <li class="navBarCell1Rev">Class</li>
+        <li>
+          <a href="../index-files.html">Index</a>
+        </li>
+      </ul>
+      <div class="aboutLanguage">QUICK</div>
+    </div>
+    <div class="subNav">
+      <ul class="navList">
+        <li><a name="381a5f46-4b2f-4552-b5ba-91409738f525"> </a>
+          <a href="../index.html?pages/Immunization.VaccinationProtocol.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a href="Immunization.VaccinationProtocol.html" target="_top">NO FRAMES</a>
+        </li>
+      </ul>
+      <div>  <!--  --></div>
+    </div>
+  <!-- ========= END OF TOP NAVBAR ========= -->
+  <!-- ======== START OF CLASS DATA ======== -->
+    <div class="header">
+      <h2 title="Class Immunization.VaccinationProtocol" class="title"><a href="Immunization.html">Immunization</a>.VaccinationProtocol</h2>
+    </div>
+    <div class="contentContainer">
+      <div class="description">
+        <ul class="blockList">
+          <li style="font-size:115%;" class="blockList">What protocol was followed
+            <p/>Contains information about the protocol(s) under which the vaccine was administered.
+          </li>
+        </ul>
+      </div>
+      <div class="summary">
+        <ul class="blockList">
+          <li class="blockList">
+            <ul class="blockList">
+              <li class="blockList">
+  <!-- =========== FIELD SUMMARY =========== -->
+                <a name="field_summary">  <!--  --></a>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+<table border="0" summary="Field Summary table, listing fields, and an explanation" cellpadding="3" cellspacing="0" class="overviewSummary">
+<tr>
+<th scope="col" class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;Field</th>
+<th scope="col" style="border-right-width: 0px" class="colLast">Card.</th>
+<th scope="col" class="colLast">Type and Description
+<span style="float: right"><a href="../help.html" title="Legend for this format"><img border="0" src="../resources/help16.png" alt="doco"/></a></span></th>
+</tr>
+
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="authority">authority</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Reference</code>
+                    <blockquote>
+                      <div class="block">Indicates the authority who published the protocol.  E.g. ACIP.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="description">description</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String</code>
+                    <blockquote>
+                      <div class="block">Contains the description about the protocol under which the vaccine was administered.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="doseSequence">doseSequence</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>positiveInt</code>
+                    <blockquote>
+                      <div class="block">Nominal position in a series.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="doseStatus">doseStatus</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">Indicates if the immunization event should &amp;quot;count&amp;quot; against  the protocol.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-vaccination-protocol-dose-status.html" title="The status of the vaccination protocol (i.e. should this count)">Vaccination Protocol Dose Status codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="doseStatusReason">doseStatusReason</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">Provides an explanation as to why an immunization event should or should not count against the protocol.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-vaccination-protocol-dose-status-reason.html" title="The reason for the determining if a vaccination should count or why vaccination should not count.">Vaccination Protocol Dose Status Reason codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="id">id</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String</code>
+                    <blockquote>
+                      <div class="block">unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="series">series</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>String</code>
+                    <blockquote>
+                      <div class="block">One possible path to achieve presumed immunity against a disease - within the context of an authority.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="seriesDoses">seriesDoses</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>positiveInt</code>
+                    <blockquote>
+                      <div class="block">The recommended number of doses to achieve immunity.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="targetDisease">targetDisease</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Concept&gt;</code>
+                    <blockquote>
+                      <div class="block">The targeted disease.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-vaccination-protocol-dose-target.html" title="The disease target of the vaccination protocol">Vaccination Protocol Dose Target Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr></table>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav">
+<span class="legalCopy"><small><font size="-1">
+        &copy; HL7.org 2011+. QUICK Generated on Fri, Aug 25, 2017 5:43PM.
+        </font>
+</small></span>
+</div>
+  <!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+  </body>
+</html>

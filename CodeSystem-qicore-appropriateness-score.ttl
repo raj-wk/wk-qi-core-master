@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-appropriateness-score"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <h2>QICoreAppropriatenessScore</h2>\n            <p>The RAND scoring for appropriateness of the procedure.</p>\n            <p>This code system http://hl7.org/fhir/appropriateness-score defines the following codes:</p>\n            <table class=\"codes\">\n                <tr>\n                    <td>\n                        <strong>Code</strong>\n                    </td>\n                    <td>\n                        <strong>Display</strong>\n                    </td>\n                    <td>\n                        <strong>Definition</strong>\n                    </td>\n                </tr>\n                <tr>\n                    <td>extremely-inappropriate\n                        <a name=\"extremely-inappropriate\"> </a>\n                    </td>\n                    <td>Extremely Inappropriate</td>\n                    <td>The procedure is extremely inappropriate</td>\n                </tr>\n                <tr>\n                    <td>inappropriate\n                        <a name=\"inappropriate\"> </a>\n                    </td>\n                    <td>Inappropriate</td>\n                    <td>The procedure is inappropriate</td>\n                </tr>\n                <tr>\n                    <td>probably-inappropriate\n                        <a name=\"probably-inappropriate\"> </a>\n                    </td>\n                    <td>Probably Inappropriate</td>\n                    <td>The procedure is probably inappropriate</td>\n                </tr>\n                <tr>\n                    <td>uncertain-inappropriate\n                        <a name=\"uncertain-inappropriate\"> </a>\n                    </td>\n                    <td>Uncertain Inappropriate</td>\n                    <td>The appropriateness of the procedure is uncertain, leaning towards inappropriate</td>\n                </tr>\n                <tr>\n                    <td>uncertain\n                        <a name=\"uncertain\"> </a>\n                    </td>\n                    <td>Uncertain</td>\n                    <td>The appropriateness of the procedure is uncertain</td>\n                </tr>\n                <tr>\n                    <td>uncertain-appropriate\n                        <a name=\"uncertain-appropriate\"> </a>\n                    </td>\n                    <td>Uncertain Appropriate</td>\n                    <td>The appropriateness of the procedure is uncertain, leaning towards appropriate</td>\n                </tr>\n                <tr>\n                    <td>probably-appropriate\n                        <a name=\"probably-appropriate\"> </a>\n                    </td>\n                    <td>Probably Appropriate</td>\n                    <td>The procedure is probably appropriate</td>\n                </tr>\n                <tr>\n                    <td>appropriate\n                        <a name=\"appropriate\"> </a>\n                    </td>\n                    <td>Appropriate</td>\n                    <td>The procedure is appropriate</td>\n                </tr>\n                <tr>\n                    <td>extremely-appropriate\n                        <a name=\"extremely-appropriate\"> </a>\n                    </td>\n                    <td>Extremely Appropriate</td>\n                    <td>The procedure is extremely appropriate</td>\n                </tr>\n            </table>\n        </div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score"];
+  fhir:CodeSystem.version [ fhir:value "3.1.0"];
+  fhir:CodeSystem.name [ fhir:value "QICoreAppropriatenessScore"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2016-03-31T08:01:25+11:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 (FHIR Project)"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "other" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/fhir" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "fhir@lists.hl7.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "The RAND scoring for appropriateness of the procedure."];
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.valueSet [ fhir:value "http://hl7.org/fhir/us/qicore/ValueSet/qicore-appropriateness-score"];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "extremely-inappropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Extremely Inappropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is extremely inappropriate" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "inappropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Inappropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is inappropriate" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "probably-inappropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Probably Inappropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is probably inappropriate" ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "uncertain-inappropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Uncertain Inappropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The appropriateness of the procedure is uncertain, leaning towards inappropriate" ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "uncertain" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Uncertain" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The appropriateness of the procedure is uncertain" ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "uncertain-appropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Uncertain Appropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The appropriateness of the procedure is uncertain, leaning towards appropriate" ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "probably-appropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Probably Appropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is probably appropriate" ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "appropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Appropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is appropriate" ]
+  ], [
+     fhir:index 8;
+     fhir:CodeSystem.concept.code [ fhir:value "extremely-appropriate" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Extremely Appropriate" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "The procedure is extremely appropriate" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/CodeSystem/qicore-appropriateness-score.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/CodeSystem/qicore-appropriateness-score.ttl> .
+
+# -------------------------------------------------------------------------------------
+

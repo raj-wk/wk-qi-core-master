@@ -1,0 +1,76 @@
+{
+  "resourceType": "Procedure",
+  "id": "qicore-procedure-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated narrative...</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/procedure-approachBodySite",
+      "valueReference": {
+        "reference": "BodySite/example"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/procedure-incisionDateTime",
+      "valueDateTime": "2013-04-05T09:30:00-04:00"
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "80146002",
+        "display": "Appendectomy (Procedure)"
+      }
+    ],
+    "text": "Appendectomy"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "context": {
+    "reference": "Encounter/example"
+  },
+  "performedPeriod": {
+    "start": "2013-04-05T09:20:00-04:00",
+    "end": "2013-04-05T10:30:00-04:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/example",
+        "display": "Dr Cecil Surgeon"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "163220003",
+          "display": "On examination - abdominal pain - right iliac"
+        }
+      ]
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "66754008",
+          "display": "Appendix structure"
+        }
+      ]
+    }
+  ],
+  "report": [
+    {
+      "reference": "DiagnosticReport/example"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "Encounter",
+  "id": "qicore-encounter-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>staus</strong>: in-progress      \n      </p>\n      <p>\n        <strong>class</strong>: { FHIR code 'IMP' = 'inpatient encounter' })      \n      </p>\n      <p>\n        <strong>subject</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n    </div>"
+  },
+  "status": "in-progress",
+  "class": {
+    "system": "http://hl7.org/fhir/v3/ActCode",
+    "code": "IMP",
+    "display": "inpatient encounter"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  }
+}

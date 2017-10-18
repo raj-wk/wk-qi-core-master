@@ -1,0 +1,46 @@
+{
+  "resourceType": "AdverseEvent",
+  "id": "qicore-adverseevent-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong> Generated Narrative with Details</strong>\n      </p>\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 49476534\n      </p>\n      <p>\n        <strong>category</strong>: AE\n      </p>\n      <p>\n        <strong>type</strong>: { SNOMED CT code '304386008' = 'O/E - itchy rash', given as 'O/E - itchy rash' }\n      </p>\n      <p>\n        <strong>subject</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>date</strong>: 29/01/2017 12:34:56 PM\n      </p>\n      <p>\n        <strong>seriousness</strong>: Mild { http://hl7.org/fhir/STU3/adverse-event-seriousness code 'Mild' = 'Mild', given as 'Mild' }\n      </p>\n      <p>\n        <strong>recorder</strong>:    \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>description</strong>: This was a mild rash on the left forearm\n      </p>\n      <h3>SuspectEntities</h3>\n      <table class=\"grid\">\n        <tbody>\n          <tr>\n            <td>-</td>\n            <td>\n              <strong>Instance</strong>\n            </td>\n          </tr>\n          <tr>\n            <td>*</td>\n            <td>\n              <a href=\"Medication-qicore-medication-example.html\">Medication/example</a>\n            </td>\n          </tr>\n        </tbody>\n        \n      </table>\n    </div>"
+  },
+  "identifier": {
+    "system": "http://acme.com/ids/patients/risks",
+    "value": "49476534"
+  },
+  "category": "AE",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "304386008",
+        "display": "O/E - itchy rash"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "date": "2017-01-29T12:34:56+00:00",
+  "seriousness": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/STU3/adverse-event-seriousness",
+        "code": "Mild",
+        "display": "Mild"
+      }
+    ]
+  },
+  "recorder": {
+    "reference": "Practitioner/example"
+  },
+  "description": "This was a mild rash on the left forearm",
+  "suspectEntity": [
+    {
+      "instance": {
+        "reference": "Medication/example"
+      }
+    }
+  ]
+}

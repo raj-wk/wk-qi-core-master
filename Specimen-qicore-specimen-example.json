@@ -1,0 +1,120 @@
+{
+  "resourceType": "Specimen",
+  "id": "qicore-specimen-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated narrative...</div>"
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "122555007",
+        "display": "Venous blood specimen"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "receivedTime": "2011-03-04T07:03:00Z",
+  "collection": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/specimen-collectionPriority",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.com",
+              "code": "5",
+              "display": "ROUTINE"
+            }
+          ]
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/specimen-specialHandling",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ActCode",
+              "code": "NOPERSISTP",
+              "display": "no collection beyond purpose of use"
+            }
+          ]
+        }
+      }
+    ],
+    "collectedDateTime": "2011-03-06T06:15:00Z",
+    "quantity": {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/specimen-isDryWeight",
+          "valueBoolean": false
+        }
+      ],
+      "value": 6,
+      "unit": "mL"
+    },
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "7311008",
+          "display": "Anterior surface of arm"
+        }
+      ]
+    }
+  },
+  "processing": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/specimen-processingTime",
+          "valuePeriod": {
+            "start": "2011-03-04T07:03:00Z",
+            "end": "2011-03-04T07:03:00Z"
+          }
+        }
+      ],
+      "description": "Treated with anticoagulants.",
+      "procedure": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0373",
+            "code": "DEFB",
+            "display": "Defibrination"
+          }
+        ]
+      },
+      "additive": [
+        {
+          "reference": "Substance/example"
+        }
+      ]
+    }
+  ],
+  "container": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/specimen-sequenceNumber",
+          "valueInteger": 1
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "434746001",
+            "display": "Specimen vial"
+          }
+        ]
+      },
+      "capacity": {
+        "value": 10,
+        "unit": "mL"
+      }
+    }
+  ]
+}

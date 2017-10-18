@@ -1,0 +1,165 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>QICore Implementation Guide</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir/ig/cqframework/opioid-cds"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+  <link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+</head>
+<body>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+   <div id="hl7-status">
+    <strong>Qi-Core Implementation Guide</strong> (Release 1)
+   </div>
+
+   <div id="hl7-nav">
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+    </a>
+   </div>
+   <div id="hl7-nav"><a id="hl7-logo" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+  </div>
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3//index.html">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">QI Core Profiles</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="artifacts.html">Artifacts</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
+
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
+
+
+
+ <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+  <div class="container">  <!-- container -->
+   <ul class="breadcrumb">
+        <li title="QICore Implementation Guide"><strong>QICore Implementation Guide</strong></li>
+   </ul>
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-breadcrumb -->
+
+ <div id="segment-content" class="segment">  <!-- segment-content -->
+ <div class="container">  <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+
+<div class="col-9">
+
+<h2>Valueset: qicore-encounter-condition-role</h2>
+
+<table class="grid">
+ <tbody><tr><td>Defining URL:</td><td>http://hl7.org/fhir/us/qicore/ValueSet/qicore-encounter-condition-role</td></tr>
+ <tr><td>Name:</td><td>SNOMED CT Qualifier For Type of Diagnosis Codes</td></tr>
+ <tr><td>Definition:</td><td><p>This value set includes all the &quot;Qualifier for type of diagnosis&quot; SNOMED CT codes (i.e. codes with an is-a relationship with 106229004: Qualifier for type of diagnosis).</p>
+</td></tr>
+ <tr><td>Publisher:</td><td>Health Level Seven, Inc. - CQI WG</td></tr>
+ <tr><td>Copyright:</td><td>This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</td></tr>
+ <tr><td>Source Resource</td><td><a href="ValueSet-qicore-encounter-condition-role.xml.html">XML</a> / <a href="ValueSet-qicore-encounter-condition-role.json.html">JSON</a> / <a href="ValueSet-qicore-encounter-condition-role.ttl.html">Turtle</a></td></tr>
+</tbody></table>
+
+
+This value set is used by:
+
+
+<p>This value set is not used</p>
+
+
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>SNOMED CT Qualifier For Type of Diagnosis Codes</h2><div><p>This value set includes all the &quot;Qualifier for type of diagnosis&quot; SNOMED CT codes (i.e. codes with an is-a relationship with 106229004: Qualifier for type of diagnosis).</p>
+</div><p><b>Copyright Statement:</b> This value set includes content from SNOMED CT, which is copyright &copy; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p><p>This value set includes codes from the following code systems:</p><ul><li>Include codes from <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  is-a  106229004 (Qualifier for type of diagnosis)</li></ul></div>
+
+<h3>Expansion</h3>
+
+<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 27 concepts</p><p>All codes from system <a href="http://hl7.org/fhir/STU3/codesystem-snomedct.html"><code>http://snomed.info/sct</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="http---snomed.info-sct-148006"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=148006">148006</a></td><td>Preliminary diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-5558000"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=5558000">5558000</a></td><td>Working diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-5605004"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=5605004">5605004</a></td><td>Autopsy diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-8319008"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=8319008">8319008</a></td><td>Principal diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-14657009"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=14657009">14657009</a></td><td>Established diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-15874002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=15874002">15874002</a></td><td>Revised diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-16100001"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=16100001">16100001</a></td><td>Death diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-24508002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=24508002">24508002</a></td><td>Cytology diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-25163005"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=25163005">25163005</a></td><td>X-ray diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-39154008"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=39154008">39154008</a></td><td>Clinical diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-46159000"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=46159000">46159000</a></td><td>Laboratory diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-47965005"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=47965005">47965005</a></td><td>Differential diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-48318009"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=48318009">48318009</a></td><td>Prior diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-52870002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=52870002">52870002</a></td><td>Admitting diagnosis (contextual qualifier)</td><td/></tr><tr><td><a name="http---snomed.info-sct-85097005"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=85097005">85097005</a></td><td>Secondary diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-88101002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=88101002">88101002</a></td><td>Pathology diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-89100005"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=89100005">89100005</a></td><td>Final diagnosis (discharge)</td><td/></tr><tr><td><a name="http---snomed.info-sct-103330002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=103330002">103330002</a></td><td>No diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406520001"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406520001">406520001</a></td><td>Pre-op diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406521002"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406521002">406521002</a></td><td>Post-op diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406522009"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406522009">406522009</a></td><td>Transfer diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406523004"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406523004">406523004</a></td><td>Referral diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406525006"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406525006">406525006</a></td><td>Suggested billing diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-406526007"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406526007">406526007</a></td><td>Transfer admissions diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-416400009"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=416400009">416400009</a></td><td>Palpatory diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-416932001"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=416932001">416932001</a></td><td>Segmental diagnosis</td><td/></tr><tr><td><a name="http---snomed.info-sct-703529000"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=703529000">703529000</a></td><td>Morphologic diagnosis</td><td/></tr></table></div>        
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+        &copy; HL7.org 2011+. QICore STU 3 Ballot (v3.0.1-11916) generated on Wed, Oct 18, 2017 21:00+0000. <a href="qa.html">QA Page</a>
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a style="color: #81BEF7" href="http://hl7.org/fhir/search.cfm">Search <img style="text-align: baseline" src="external.png"/></a> |
+               <!-- <a style="color: #81BEF7" href="http://hl7.org/fhir/us/qicore/history.html">Version History</a> | -->
+               <a style="color: #81BEF7" href="index.html">Table of Contents</a> |
+               <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+               <a style="color: #81BEF7" target="_blank" href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change <img style="text-align: baseline" src="external.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="dist/js/bootstrap.min.js"> </script>
+<script src="assets/js/respond.min.js"> </script>
+
+<script src="assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "resourceType": "Device",
+  "id": "qicore-coverage-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 345675, Serial Number = AMID-342135-8464\n      </p>\n      <p>\n        <strong>status</strong>: active\n      </p>\n      <p>\n        <strong>type</strong>: ECG { SNOMED CT code '86184003' = 'Electrocardiographic monitor and recorder' })\n      </p>\n      <p>\n        <strong>lotNumber</strong>: 43453424\n      </p>\n      <p>\n        <strong>manufacturer</strong>: Acme Devices, Inc\n      </p>\n      <p>\n        <strong>model</strong>: AB 45-J\n      </p>\n      <p>\n        <strong>contact</strong>: phone ext 4352\n      </p>\n      <blockquote>\n        <p><strong>note</strong></p>\n        <p>\n          <strong>authorReference</strong>:    \n          <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n        </p>\n        <p>\n          <strong>time</strong>: 06/28/2015\n        </p>\n        <p>\n          <strong>text</strong>: QA Checked\n        </p>\n      </blockquote>\n    </div>"
+  },
+  "identifier": [
+    {
+      "system": "http://goodcare.org/devices/id",
+      "value": "345675"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/identifier-type",
+            "code": "SNO"
+          }
+        ],
+        "text": "Serial Number"
+      },
+      "value": "AMID-342135-8464"
+    }
+  ],
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86184003",
+        "display": "Electrocardiographic monitor and recorder"
+      }
+    ],
+    "text": "ECG"
+  },
+  "lotNumber": "43453424",
+  "manufacturer": "Acme Devices, Inc",
+  "model": "AB 45-J",
+  "contact": [
+    {
+      "system": "phone",
+      "value": "ext 4352"
+    }
+  ],
+  "note": [
+    {
+      "authorReference": {
+        "reference": "Practitioner/example"
+      },
+      "time": "2015-06-28T14:03:32+10:00",
+      "text": "QA Checked"
+    }
+  ]
+}

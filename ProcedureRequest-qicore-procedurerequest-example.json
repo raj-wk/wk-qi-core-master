@@ -1,0 +1,60 @@
+{
+  "resourceType": "ProcedureRequest",
+  "id": "qicore-procedurerequest-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Request for Routine Appendectomy</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/procedurerequest-authorizedBy",
+      "valueReference": {
+        "reference": "Practitioner/example"
+      }
+    }
+  ],
+  "status": "completed",
+  "intent": "order",
+  "priority": "urgent",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "80146002",
+        "display": "Appendectomy (Procedure)"
+      }
+    ],
+    "text": "Appendectomy"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "context": {
+    "reference": "Encounter/example"
+  },
+  "occurrenceDateTime": "2013-04-05",
+  "asNeededBoolean": true,
+  "authoredOn": "2013-04-04",
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "163220003",
+          "display": "On examination - abdominal pain - right iliac"
+        }
+      ]
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "66754008",
+          "display": "Appendix structure"
+        }
+      ]
+    }
+  ]
+}

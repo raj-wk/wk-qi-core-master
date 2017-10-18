@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AdverseEvent/qicore-adverseevent-example> a fhir:AdverseEvent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-adverseevent-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong> Generated Narrative with Details</strong>\n      </p>\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 49476534\n      </p>\n      <p>\n        <strong>category</strong>: AE\n      </p>\n      <p>\n        <strong>type</strong>: { SNOMED CT code '304386008' = 'O/E - itchy rash', given as 'O/E - itchy rash' }\n      </p>\n      <p>\n        <strong>subject</strong>: <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>date</strong>: 29/01/2017 12:34:56 PM\n      </p>\n      <p>\n        <strong>seriousness</strong>: Mild { http://hl7.org/fhir/STU3/adverse-event-seriousness code 'Mild' = 'Mild', given as 'Mild' }\n      </p>\n      <p>\n        <strong>recorder</strong>:    \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>description</strong>: This was a mild rash on the left forearm\n      </p>\n      <h3>SuspectEntities</h3>\n      <table class=\"grid\">\n        <tbody>\n          <tr>\n            <td>-</td>\n            <td>\n              <strong>Instance</strong>\n            </td>\n          </tr>\n          <tr>\n            <td>*</td>\n            <td>\n              <a href=\"Medication-qicore-medication-example.html\">Medication/example</a>\n            </td>\n          </tr>\n        </tbody>\n        \n      </table>\n    </div>"
+  ];
+  fhir:AdverseEvent.identifier [
+     fhir:Identifier.system [ fhir:value "http://acme.com/ids/patients/risks" ];
+     fhir:Identifier.value [ fhir:value "49476534" ]
+  ];
+  fhir:AdverseEvent.category [ fhir:value "AE"];
+  fhir:AdverseEvent.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:304386008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "304386008" ];
+       fhir:Coding.display [ fhir:value "O/E - itchy rash" ]
+     ]
+  ];
+  fhir:AdverseEvent.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:AdverseEvent.date [ fhir:value "2017-01-29T12:34:56+00:00"^^xsd:dateTime];
+  fhir:AdverseEvent.seriousness [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/STU3/adverse-event-seriousness" ];
+       fhir:Coding.code [ fhir:value "Mild" ];
+       fhir:Coding.display [ fhir:value "Mild" ]
+     ]
+  ];
+  fhir:AdverseEvent.recorder [
+     fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:AdverseEvent.description [ fhir:value "This was a mild rash on the left forearm"];
+  fhir:AdverseEvent.suspectEntity [
+     fhir:index 0;
+     fhir:AdverseEvent.suspectEntity.instance [
+       fhir:link <http://hl7.org/fhir/us/qicore/Medication/example>;
+       fhir:Reference.reference [ fhir:value "Medication/example" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Medication/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AdverseEvent/qicore-adverseevent-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/AdverseEvent/qicore-adverseevent-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

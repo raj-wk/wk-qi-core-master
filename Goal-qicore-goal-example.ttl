@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Goal/qicore-goal-example> a fhir:Goal;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-goal-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>Simple care goal for an obese patient to lose weight</p>\n      <p>\n        <strong>identifier</strong>: 123\n      </p>\n      <p>\n        <strong>status</strong>: on-hold\n      </p>\n      <p>\n        <strong>assertedDate</strong>: 10/09/2014\n      </p>\n      <p>\n        <strong>category</strong>: { FHIR code 'dietary' = 'Dietary' }\n      </p>\n      <p>\n        <strong>priority</strong>: { FHIR code 'high-priority' = 'High Priority', given as 'high' })\n      </p>\n      <p>\n        <strong>description</strong>: Target weight is 160 to 180 lbs.\n      </p>\n      <p>\n        <strong>subject</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>startDate</strong>: 04/05/2015\n      </p>\n      <blockquote>\n        <p><strong>target</strong></p>\n        <p>\n          <strong>measure</strong>: { LOINC code '3141-9' = 'Weight Measured' })\n        </p>\n        <blockquote>\n          <p><strong>detailRange</strong></p>\n          <p>\n            <strong>low</strong>: 160 lbs\n          </p>\n          <p>\n            <strong>high</strong>: 180 lbs\n          </p>\n        </blockquote>\n        <p>\n          <strong>dueDate</strong>: 04/05/2015\n        </p>\n      </blockquote>\n      <p>\n        <strong>statusDate</strong>: 02/14/2016\n      </p>\n      <p>\n        <strong>statusReason</strong>: Patient wants to defer weight loss until after honeymoon.\n      </p>\n      <p>\n        <strong>expressedBy</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>addresses</strong>: obesity condition\n      </p>\n      <p>\n        <strong>outcomeReference</strong>: \n        <a href=\"Observation-qicore-observation-example.html\">Observation/example</a>\n      </p>\n    </div>"
+  ];
+  fhir:Goal.identifier [
+     fhir:index 0;
+     fhir:Identifier.value [ fhir:value "123" ]
+  ];
+  fhir:Goal.status [ fhir:value "on-hold"];
+  fhir:Goal.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/goal-category" ];
+       fhir:Coding.code [ fhir:value "dietary" ]
+     ]
+  ];
+  fhir:Goal.priority [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/goal-priority" ];
+       fhir:Coding.code [ fhir:value "high-priority" ];
+       fhir:Coding.display [ fhir:value "High Priority" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "high" ]
+  ];
+  fhir:Goal.description [
+     fhir:CodeableConcept.text [ fhir:value "Target weight is 160 to 180 lbs." ]
+  ];
+  fhir:Goal.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Goal.startDate [ fhir:value "2015-04-05"^^xsd:date];
+  fhir:Goal.target [
+     fhir:Goal.target.measure [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:3141-9;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "3141-9" ];
+         fhir:Coding.display [ fhir:value "Weight Measured" ]
+       ]
+     ];
+     fhir:Goal.target.detailRange [
+       fhir:Range.low [
+         fhir:Quantity.value [ fhir:value "160"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "lbs" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "[lb_av]" ]
+       ];
+       fhir:Range.high [
+         fhir:Quantity.value [ fhir:value "180"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "lbs" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "[lb_av]" ]
+       ]
+     ];
+     fhir:Goal.target.dueDate [ fhir:value "2016-04-05"^^xsd:date ]
+  ];
+  fhir:Goal.statusDate [ fhir:value "2016-02-14"^^xsd:date];
+  fhir:Goal.statusReason [ fhir:value "Patient wants to defer weight loss until after honeymoon."];
+  fhir:Goal.expressedBy [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:Goal.addresses [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "obesity condition" ]
+  ];
+  fhir:Goal.outcomeReference [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/qicore/Observation/example>;
+     fhir:Reference.reference [ fhir:value "Observation/example" ];
+     fhir:Reference.display [ fhir:value "Body Weight Measured" ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Observation/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Goal/qicore-goal-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Goal/qicore-goal-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

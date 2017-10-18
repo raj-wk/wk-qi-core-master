@@ -1,0 +1,120 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/qicore-allergyintolerance-example> a fhir:AllergyIntolerance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-allergyintolerance-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example\n      </p>\n      <p>\n        <strong>identifier</strong>: 49476534\n      </p>\n      <p>\n        <strong>clinicalStatus</strong>: active\n      </p>\n      <p>\n        <strong>verificationStatus</strong>: confirmed\n      </p>\n      <p>\n        <strong>type</strong>: allergy\n      </p>\n      <p>\n        <strong>category</strong>: food\n      </p>\n      <p>\n        <strong>criticality</strong>: high\n      </p>\n      <p>\n        <strong>code</strong>: Cashew nuts\n        <span>(Details: { SNOMED CT code '227493005' = 'Cashew nuts', given as 'Cashew nuts' })</span>\n      </p>\n      <p>\n        <strong>patient</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>onset</strong>: 01/01/2004\n      </p>\n      <p>\n        <strong>assertedDate</strong>: 10/09/2014\n      </p>\n      <p>\n        <strong>recorder</strong>: \n        <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n      </p>\n      <p>\n        <strong>asserter</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>lastOccurrence</strong>: 01/06/2012\n      </p>\n      <p>\n        <strong>note</strong>: The criticality is high because of the observed anaphylactic reaction when challenged with cashew extract.\n      </p>\n      <blockquote>\n        <p>\n          <strong>reaction</strong>\n        </p>\n        <p>\n          <strong>substance</strong>: { RxNorm code '1160593' = '1160593', given as 'cashew nut allergenic extract Injectable Product' }\n        </p>\n        <p>\n          <strong>manifestation</strong>: { SNOMED CT code '39579001' = 'Anaphylaxis', given as 'Anaphylactic reaction' })\n        </p>\n        <p>\n          <strong>description</strong>: Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered.\n        </p>\n        <p>\n          <strong>onset</strong>: 12/06/2012\n        </p>\n        <p>\n          <strong>severity</strong>: severe\n        </p>\n        <p>\n          <strong>exposureRoute</strong>: Subcutaneous route { SNOMED CT code '34206005' = 'Subcutaneous route', given as 'Subcutaneous route' }\n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>reaction</strong>\n        </p>\n        <p>\n          <strong>manifestation</strong>: { SNOMED CT code '64305001' = 'Urticaria', given as 'Urticaria' }\n        </p>\n        <p>\n          <strong>onset</strong>: 01/01/2004\n        </p>\n        <p>\n          <strong>severity</strong>: moderate\n        </p>\n        <p>\n          <strong>note</strong>: The patient reports that the onset of urticaria was within 15 minutes of eating cashews.\n        </p>\n      </blockquote>\n    </div>"
+  ];
+  fhir:AllergyIntolerance.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://acme.com/ids/patients/risks" ];
+     fhir:Identifier.value [ fhir:value "49476534" ]
+  ];
+  fhir:AllergyIntolerance.clinicalStatus [ fhir:value "active"];
+  fhir:AllergyIntolerance.verificationStatus [ fhir:value "confirmed"];
+  fhir:AllergyIntolerance.type [ fhir:value "allergy"];
+  fhir:AllergyIntolerance.category [
+     fhir:value "food";
+     fhir:index 0
+  ];
+  fhir:AllergyIntolerance.criticality [ fhir:value "high"];
+  fhir:AllergyIntolerance.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:227493005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "227493005" ];
+       fhir:Coding.display [ fhir:value "Cashew nuts" ]
+     ]
+  ];
+  fhir:AllergyIntolerance.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:AllergyIntolerance.onsetDateTime [ fhir:value "2004"^^xsd:gYear];
+  fhir:AllergyIntolerance.assertedDate [ fhir:value "2014-10-09T14:58:00+11:00"^^xsd:dateTime];
+  fhir:AllergyIntolerance.recorder [
+     fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:AllergyIntolerance.asserter [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:AllergyIntolerance.lastOccurrence [ fhir:value "2012-06-02T01:45:31+00:00"^^xsd:dateTime];
+  fhir:AllergyIntolerance.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "The criticality is high becasue of the observed anaphylactic reaction when challenged     with cashew extract." ]
+  ];
+  fhir:AllergyIntolerance.reaction [
+     fhir:index 0;
+     fhir:AllergyIntolerance.reaction.substance [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ];
+         fhir:Coding.code [ fhir:value "1160593" ];
+         fhir:Coding.display [ fhir:value "cashew nut allergenic extract Injectable Product" ]
+       ]
+     ];
+     fhir:AllergyIntolerance.reaction.manifestation [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:39579001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "39579001" ];
+         fhir:Coding.display [ fhir:value "Anaphylactic reaction" ]
+       ]
+     ];
+     fhir:AllergyIntolerance.reaction.description [ fhir:value "Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered" ];
+     fhir:AllergyIntolerance.reaction.onset [ fhir:value "2012-06-12"^^xsd:date ];
+     fhir:AllergyIntolerance.reaction.severity [ fhir:value "severe" ];
+     fhir:AllergyIntolerance.reaction.exposureRoute [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:34206005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "34206005" ];
+         fhir:Coding.display [ fhir:value "Subcutaneous route" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:AllergyIntolerance.reaction.manifestation [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:64305001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "64305001" ];
+         fhir:Coding.display [ fhir:value "Urticaria" ]
+       ]
+     ];
+     fhir:AllergyIntolerance.reaction.onset [ fhir:value "2004"^^xsd:gYear ];
+     fhir:AllergyIntolerance.reaction.severity [ fhir:value "moderate" ];
+     fhir:AllergyIntolerance.reaction.note [
+       fhir:index 0;
+       fhir:Annotation.text [ fhir:value "The patient reports that the onset of urticaria was within 15 minutes of eating cashews." ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/AllergyIntolerance/qicore-allergyintolerance-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/AllergyIntolerance/qicore-allergyintolerance-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

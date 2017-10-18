@@ -1,0 +1,75 @@
+{
+  "resourceType": "Condition",
+  "id": "qicore-condition-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <blockquote>\n        <p><strong>condition-criticality</strong></p>\n        <p>\n          <strong>code</strong>: { SNOMED CT code '399166001' = 'Fatal' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>clinicalStatus</strong>: confirmed\n      </p>\n      <blockquote>\n        <p><strong>category</strong></p>\n        <p>\n          <strong>coding 1</strong>: Problem List Item\n        </p>\n        <p>\n          <strong>coding 2</strong>: { SNOMED CT code '439401001' = 'Diagnosis' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>severity</strong>: { SNOMED CT code '24484000' = 'Severe (severity modifier)' }\n      </p>\n      <blockquote>\n        <p><strong>code</strong>: Burnt Ear</p>\n        <p>\n          <strong>coding 3</strong>: { SNOMED CT code '39065001' = 'Burn of ear' }\n        </p>\n      </blockquote>\n      <blockquote>\n        <p><strong>bodySite</strong>: Left Ear</p>\n        <p>\n          <strong>coding 4</strong>: { SNOMED CT code '49521004' = 'Left external ear structure' }\n        </p>\n      </blockquote>\n      <p>\n        <strong>subject</strong>: \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>onsetDateTime</strong>: 05/24/2012\n      </p>\n    </div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/condition-criticality",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "399166001",
+            "display": "Fatal"
+          }
+        ]
+      }
+    }
+  ],
+  "clinicalStatus": "active",
+  "verificationStatus": "confirmed",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "439401001",
+          "display": "Diagnosis"
+        }
+      ]
+    }
+  ],
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "24484000",
+        "display": "Severe (severity modifier)"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "39065001",
+        "display": "Burn of ear"
+      }
+    ],
+    "text": "Burnt Ear"
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "49521004",
+          "display": "Left external ear structure"
+        }
+      ],
+      "text": "Left Ear"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "onsetDateTime": "2012-05-24T00:00:00+00:00"
+}

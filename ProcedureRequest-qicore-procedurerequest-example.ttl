@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ProcedureRequest/qicore-procedurerequest-example> a fhir:ProcedureRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-procedurerequest-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Request for Routine Appendectomy</div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/procedurerequest-authorizedBy" ];
+     fhir:Extension.valueReference [
+       fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:ProcedureRequest.status [ fhir:value "completed"];
+  fhir:ProcedureRequest.intent [ fhir:value "order"];
+  fhir:ProcedureRequest.priority [ fhir:value "urgent"];
+  fhir:ProcedureRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:80146002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "80146002" ];
+       fhir:Coding.display [ fhir:value "Appendectomy (Procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Appendectomy" ]
+  ];
+  fhir:ProcedureRequest.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:ProcedureRequest.context [
+     fhir:link <http://hl7.org/fhir/us/qicore/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:ProcedureRequest.occurrenceDateTime [ fhir:value "2013-04-05"^^xsd:date];
+  fhir:ProcedureRequest.asNeededBoolean [ fhir:value "true"^^xsd:boolean];
+  fhir:ProcedureRequest.authoredOn [ fhir:value "2013-04-04"^^xsd:date];
+  fhir:ProcedureRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:163220003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "163220003" ];
+       fhir:Coding.display [ fhir:value "On examination - abdominal pain - right iliac" ]
+     ]
+  ];
+  fhir:ProcedureRequest.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:66754008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "66754008" ];
+       fhir:Coding.display [ fhir:value "Appendix structure" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ProcedureRequest/qicore-procedurerequest-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ProcedureRequest/qicore-procedurerequest-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

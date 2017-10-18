@@ -1,0 +1,52 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "qicore-medicationstatement-example",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>Penicillin VK 10ml suspension administered by oral route at 14:30 on 1 June 2012</p>\n      <p>to patient ref: a23</p>\n    </div>"
+  },
+  "status": "completed",
+  "medicationReference": {
+    "reference": "Medication/example"
+  },
+  "effectiveDateTime": "2012-06-01T14:30:00+14:00",
+  "dateAsserted": "2012-05-14T15:00:00+14:00",
+  "informationSource": {
+    "reference": "Practitioner/example"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "derivedFrom": [
+    {
+      "reference": "MedicationRequest/example"
+    }
+  ],
+  "taken": "n",
+  "dosage": [
+    {
+      "timing": {
+        "repeat": {
+          "frequency": 3,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "394899003",
+            "display": "oral administration of treatment"
+          }
+        ]
+      },
+      "doseQuantity": {
+        "value": 10,
+        "unit": "ml",
+        "system": "http://unitsofmeasure.org",
+        "code": "ml"
+      }
+    }
+  ]
+}

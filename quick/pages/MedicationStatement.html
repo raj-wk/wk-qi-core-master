@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>MedicationStatement</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="icon" href="../resources/favicon.ico" type="image/ico"/>
+    <link rel="stylesheet" href="../stylesheet.css" type="text/css" title="Style"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css"/>
+  </head>
+  <body>
+  <!-- ========= START OF TOP NAVBAR ======= -->
+    <div class="topNav">
+      <a name="navbar_top">
+  <!--  -->
+</a>
+      <ul title="Navigation" class="navList">
+        <li>
+          <a href="../overview-summary.html">Overview</a>
+        </li>
+        <li class="navBarCell1Rev">Class</li>
+        <li>
+          <a href="../index-files.html">Index</a>
+        </li>
+      </ul>
+      <div class="aboutLanguage">QUICK</div>
+    </div>
+    <div class="subNav">
+      <ul class="navList">
+        <li><a name="4b2cf28c-bd73-4a69-ad8f-25c1dfb16512"> </a>
+          <a href="../index.html?pages/MedicationStatement.html" target="_top">FRAMES</a>&nbsp;&nbsp;
+          <a href="MedicationStatement.html" target="_top">NO FRAMES</a>
+        </li>
+      </ul>
+      <div>  <!--  --></div>
+    </div>
+  <!-- ========= END OF TOP NAVBAR ========= -->
+  <!-- ======== START OF CLASS DATA ======== -->
+    <div class="header">
+      <h2 title="Class MedicationStatement" class="title">MedicationStatement</h2>
+    </div>
+    <div class="contentContainer">
+      <div class="summary">
+        <ul class="blockList">
+          <li class="blockList">
+            <ul class="blockList">
+              <li class="blockList">
+  <!-- =========== FIELD SUMMARY =========== -->
+                <a name="field_summary">  <!--  --></a>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+<table border="0" summary="Field Summary table, listing fields, and an explanation" cellpadding="3" cellspacing="0" class="overviewSummary">
+<tr>
+<th scope="col" class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;Field</th>
+<th scope="col" style="border-right-width: 0px" class="colLast">Card.</th>
+<th scope="col" class="colLast">Type and Description
+<span style="float: right"><a href="../help.html" title="Legend for this format"><img border="0" src="../resources/help16.png" alt="doco"/></a></span></th>
+</tr>
+
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="basedOn">basedOn</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Reference&gt;</code>
+                    <blockquote>
+                      <div class="block">A plan, proposal or order that is fulfilled in whole or in part by this event.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="category">category</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept</code>
+                    <blockquote>
+                      <div class="block">Indicates where type of medication statement and where the medication is expected to be consumed or administered.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-medication-statement-category.html" title="A coded concept identifying where the medication included in the medicationstatement is expected to be consumed or administered">MedicationStatementCategory</a> (Preferred)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="context">context</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Reference</code>
+                    <blockquote>
+                      <div class="block">The encounter or episode of care that establishes the context for this MedicationStatement.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="dateAsserted">dateAsserted</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>DateTime</code>
+                    <blockquote>
+                      <div class="block">The date when the medication statement was asserted by the information source.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="derivedFrom">derivedFrom</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Reference&gt;</code>
+                    <blockquote>
+                      <div class="block">Allows linking the MedicationStatement to the underlying MedicationRequest, or to other information that supports or is used to derive the MedicationStatement.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="dosage">dosage</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;<a href="Dosage.html">Dosage</a>&gt;</code>
+                    <blockquote>
+                      <div class="block">Indicates how the medication is/was or should be taken by the patient.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="effective_x_">effective[x]</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>DateTime | interval&lt;DateTime&gt;</code>
+                    <blockquote>
+                      <div class="block">The interval of time during which it is being asserted that the patient was taking the medication (or was not taking, when the wasNotGiven element is true).</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="identifier">identifier</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;<a href="Identifier.html">Identifier</a>&gt;</code>
+                    <blockquote>
+                      <div class="block">External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="informationSource">informationSource</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Reference</code>
+                    <blockquote>
+                      <div class="block">The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g Claim or MedicationRequest.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="medication_x_">medication[x]</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Concept | Reference</code>
+                    <blockquote>
+                      <div class="block">Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications.
+<p><a name="c89c3543-76e9-423e-8b0f-ccc6c6b5e10d"> </a>Binding: <a href="http://hl7.org/fhir/us/core/ValueSet/us-core-medication-codes" title="The set of RxNorm codes to represent medications">value set</a> (Preferred)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="note">note</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;<a href="Annotation.html">Annotation</a>&gt;</code>
+                    <blockquote>
+                      <div class="block">Provides extra information about the medication statement that is not conveyed by the other attributes.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="partOf">partOf</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Reference&gt;</code>
+                    <blockquote>
+                      <div class="block">A larger event of which this particular event is a component or step.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="reasonCode">reasonCode</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Concept&gt;</code>
+                    <blockquote>
+                      <div class="block">A reason for why the medication is being/was taken.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-condition-code.html" title="A coded concept identifying why the medication is being taken.">Condition/Problem/Diagnosis Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="reasonNotTaken">reasonNotTaken</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Concept&gt;</code>
+                    <blockquote>
+                      <div class="block">A code indicating why the medication was not taken.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-reason-medication-not-taken-codes.html" title="A coded concept indicating the reason why the medication was not taken">SNOMED CT Drugs not taken/completed Codes</a> (Example)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="reasonReference">reasonReference</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>0..*</code>
+                  </td>
+                  <td class="colLast">
+                    <code>List&lt;Reference&gt;</code>
+                    <blockquote>
+                      <div class="block">Condition or observation that supports why the medication is being/was taken.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i title="Is-Modifier" class="fa fa-exclamation fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="status">status</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>code</code>
+                    <blockquote>
+                      <div class="block">A code representing the patient or other source's judgment about the state of the medication used that this statement is about.  Generally this will be active or completed.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-medication-statement-status.html" title="A coded concept indicating the current status of a MedicationStatement.">MedicationStatementStatus</a> (Required)</p></div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="altColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i class="fa fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="subject">subject</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>Reference</code>
+                    <blockquote>
+                      <div class="block">The person, animal or group who is/was taking the medication.</div>
+                    </blockquote>
+                  </td>
+                </tr>
+                <tr class="rowColor">
+                  <td class="colFirst"><i title="Must Support" class="fa fa-check fa-fw"> </i><i class="fa fa-fw"> </i><i title="Is-Modifier" class="fa fa-exclamation fa-fw"> </i>&nbsp;
+                    <strong>
+                      <a name="taken">taken</a>
+                    </strong>
+                  </td>
+                  <td class="colMid">
+                    <code>1..1</code>
+                  </td>
+                  <td class="colLast">
+                    <code>code</code>
+                    <blockquote>
+                      <div class="block">Indicator of the certainty of whether the medication was taken by the patient.
+<p>Binding: <a href="http://hl7.org/fhir/STU3/valueset-medication-statement-taken.html" title="A coded concept identifying level of certainty if patient has taken or has not taken the medication">MedicationStatementTaken</a> (Required)</p></div>
+                    </blockquote>
+                  </td>
+                </tr></table>
+<p style="margin: 10px">Key: <i class="fa fa-check fa-fw"> </i>&nbsp;=&nbsp;Must support, <i class="fa fa-star fa-fw"> </i>&nbsp;=&nbsp;QICore-defined extension, <i class="fa fa-exclamation fa-fw"> </i>&nbsp;=&nbsp;Is-Modifier</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav">
+<span class="legalCopy"><small><font size="-1">
+        &copy; HL7.org 2011+. QUICK Generated on Fri, Aug 25, 2017 5:43PM.
+        </font>
+</small></span>
+</div>
+  <!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+  </body>
+</html>

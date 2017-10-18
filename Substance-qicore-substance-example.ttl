@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Substance/qicore-substance-example> a fhir:Substance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-substance-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n	  <p> <strong> Generated Narrative with Details</strong> </p> \n	  <p> <strong> id</strong> : example</p> <p> <strong> identifier</strong> : 1463</p> <p> <strong> status</strong> : active</p> \n	  <p> <strong> category</strong> : Allergen <span> (Details : {http://hl7.org.fhir/substance-category code 'allergen' = 'allergen', given as 'Allergen'})</span> </p> \n	  <p> <strong> code</strong> : apitoxin (Honey Bee Venom) <span> (Details )</span> </p> \n	  <p> <strong> ingredient</strong> : 0.150 mg of apitoxin </p>\n	</div>"
+  ];
+  fhir:Substance.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://acme.org/identifiers/substances" ];
+     fhir:Identifier.value [ fhir:value "1463" ]
+  ];
+  fhir:Substance.status [ fhir:value "active"];
+  fhir:Substance.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org.fhir/substance-category" ];
+       fhir:Coding.code [ fhir:value "allergen" ];
+       fhir:Coding.display [ fhir:value "Allergen" ]
+     ]
+  ];
+  fhir:Substance.code [
+     fhir:CodeableConcept.text [ fhir:value "apitoxin (Honey Bee Venom)" ]
+  ];
+  fhir:Substance.ingredient [
+     fhir:index 0;
+     fhir:Substance.ingredient.quantity [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "0.150"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "mg" ]
+       ];
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+       ]
+     ];
+     fhir:Substance.ingredient.substanceReference [
+       fhir:link <http://hl7.org/fhir/us/qicore/Substance/apitoxin>;
+       fhir:Reference.reference [ fhir:value "Substance/apitoxin" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Substance/apitoxin> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Substance/qicore-substance-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Substance/qicore-substance-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

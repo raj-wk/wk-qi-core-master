@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-verification> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-observation-verification"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>QICore Observation Verification Method</h2><div><p>Code for method by which the observation result was validated, e.g., human review, sliding average.</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <code>http://hl7.org/fhir/us/qicore/CodeSystem/qicore-observation-verification-method</code></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-verification"];
+  fhir:ValueSet.version [ fhir:value "0.02"];
+  fhir:ValueSet.name [ fhir:value "QICore Observation Verification Method"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2017-10-18T21:00:42+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "HL7 Clinical Quality Information (CQI) Work Group"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "other" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/cqi" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Code for method by which the observation result was validated, e.g., human review, sliding average."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/us/qicore/CodeSystem/qicore-observation-verification-method" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/ValueSet/qicore-observation-verification.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/ValueSet/qicore-observation-verification.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,128 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/qicore-medicationrequest-example> a fhir:MedicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-medicationrequest-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>Penicillin VK 5ml suspension to be administered by oral route</p>\n      <p>ONE 5ml spoonful to be taken THREE times a day</p>\n      <p>100ml bottle</p>\n      <p>to patient ref: a23</p>\n      <p>by doctor X</p>\n    </div>"
+  ];
+  fhir:MedicationRequest.status [ fhir:value "active"];
+  fhir:MedicationRequest.intent [ fhir:value "order"];
+  fhir:MedicationRequest.medicationReference [
+     fhir:link <http://hl7.org/fhir/us/qicore/Medication/example>;
+     fhir:Reference.reference [ fhir:value "Medication/example" ]
+  ];
+  fhir:MedicationRequest.subject [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:MedicationRequest.authoredOn [ fhir:value "2015-03-25T19:32:52-05:00"^^xsd:dateTime];
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/pharmacy-core-doseType" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:440231000124106;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "440231000124106" ];
+           fhir:Coding.display [ fhir:value "Maintenance dose" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/pharmacy-core-infuseOver" ];
+       fhir:Extension.valueDuration [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "min" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "m" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/pharmacy-core-minDosePerPeriod" ];
+       fhir:Extension.valueRatio [
+         fhir:Ratio.numerator [
+           fhir:Quantity.value [ fhir:value "15"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "ml" ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "ml" ]
+         ];
+         fhir:Ratio.denominator [
+           fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ];
+           fhir:Quantity.unit [ fhir:value "day" ];
+           fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+           fhir:Quantity.code [ fhir:value "day" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/pharmacy-core-maxDeliveryVolume" ];
+       fhir:Extension.valueQuantity [
+         fhir:Quantity.value [ fhir:value "15"^^xsd:decimal ];
+         fhir:Quantity.unit [ fhir:value "ml" ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "ml" ]
+       ]
+     ];
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "3"^^xsd:integer ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:Dosage.site [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:447964005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "447964005" ]
+       ]
+     ];
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:394899003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "394899003" ];
+         fhir:Coding.display [ fhir:value "oral administration of treatment" ]
+       ]
+     ];
+     fhir:Dosage.doseQuantity [
+       fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "ml" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "ml" ]
+     ]
+  ];
+  fhir:MedicationRequest.dispenseRequest [
+     fhir:MedicationRequest.dispenseRequest.quantity [
+       fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "ml" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "ml" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Medication/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/MedicationRequest/qicore-medicationrequest-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/MedicationRequest/qicore-medicationrequest-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,179 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Immunization/qicore-immunization-example> a fhir:Immunization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "qicore-immunization-example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>\n        <strong>id</strong>: example      \n      </p>\n      <p>\n        <strong>identifier</strong>: urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234      \n      </p>\n      <p>\n        <strong>status</strong>: completed      \n      </p>\n      <p>\n        <strong>notGiven</strong>: false      \n      </p>\n      <p>\n        <strong>vaccineCode</strong>: { urn:oid:1.2.36.1.2001.1005.17 code 'FLUVAX' = 'Fluvax' }      \n      </p>\n      <p>\n        <strong>patient</strong>:         \n        <a href=\"Patient-qicore-patient-example.html\">Patient/example</a>\n      </p>\n      <p>\n        <strong>encounter</strong>:         \n        <a href=\"Encounter-qicore-encounter-example.html\">Encounter/example</a>\n      </p>\n      <p>\n        <strong>date</strong>: 10/01/2013      \n      </p>\n      <p>\n        <strong>primarySource</strong>: true      \n      </p>\n      <p>\n        <strong>location</strong>:         \n        <a href=\"Location-qicore-location-example.html\">Location/example</a>\n      </p>\n      <p>\n        <strong>manufacturer</strong>:         \n        <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n      </p>\n      <p>\n        <strong>lotNumber</strong>: AAJN11K      \n      </p>\n      <p>\n        <strong>expirationDate</strong>: 15/02/2015      \n      </p>\n      <p>\n        <strong>site</strong>: { http://hl7.org/fhir/v3/ActSite code 'LA' = 'left arm' }      \n      </p>\n      <p>\n        <strong>route</strong>: { http://hl7.org/fhir/v3/RouteOfAdministration code 'IM' = 'Injection, intramuscular' }      \n      </p>\n      <p>\n        <strong>doseQuantity</strong>: 5 mg        \n        <span>(Details: UCUM code mg = 'mg')</span>\n      </p>\n      <blockquote>\n        <p>\n          <strong>practitioner</strong>\n        </p>\n        <p>\n          <strong>role</strong>: Ordering Provider: { http://hl7.org/fhir/v2/0443 code 'OP' = 'Ordering Provider' }        \n        </p>\n        <p>\n          <strong>actor</strong>:           \n          <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n        </p>\n      </blockquote>\n      <blockquote>\n        <p>\n          <strong>practitioner</strong>\n        </p>\n        <p>\n          <strong>role</strong>: { http://hl7.org/fhir/v2/0443 code 'AP' = 'Administering Provider' }        \n        </p>\n        <p>\n          <strong>actor</strong>:           \n          <a href=\"Practitioner-qicore-practitioner-example.html\">Practitioner/example</a>\n        </p>\n      </blockquote>\n      <p>\n        <strong>note</strong>: Notes on adminstration of vaccine      \n      </p>\n      <h3>Explanations</h3>\n      <table>\n        <tr>\n          <td>-</td>\n          <td>\n            <strong>Reason</strong>\n          </td>\n        </tr>\n        <tr>\n          <td>*</td>\n          <td>Procedure to meet occupational requirement: { SNOMED CT code '429060002' = 'Procedure to meet occupational requirement' }</td>\n        </tr>\n      </table>\n      <h3>Reactions</h3>\n      <table>\n        <tr>\n          <td>-</td>\n          <td>\n            <strong>Date</strong>\n          </td>\n          <td>\n            <strong>Detail</strong>\n          </td>\n          <td>\n            <strong>Reported</strong>\n          </td>\n        </tr>\n        <tr>\n          <td>*</td>\n          <td>10/01/2013</td>\n          <td>\n            <a href=\"Observation-qicore-observation-example.html\">Observation/example</a>\n          </td>\n          <td>true</td>\n        </tr>\n      </table>\n      <h3>VaccinationProtocols</h3>\n      <table>\n        <tr>\n          <td>-</td>\n          <td>\n            <strong>DoseSequence</strong>\n          </td>\n          <td>\n            <strong>Description</strong>\n          </td>\n          <td>\n            <strong>Authority</strong>\n          </td>\n          <td>\n            <strong>Series</strong>\n          </td>\n          <td>\n            <strong>SeriesDoses</strong>\n          </td>\n          <td>\n            <strong>TargetDisease</strong>\n          </td>\n          <td>\n            <strong>DoseStatus</strong>\n          </td>\n          <td>\n            <strong>DoseStatusReason</strong>\n          </td>\n        </tr>\n        <tr>\n          <td>*</td>\n          <td>1</td>\n          <td>Vaccination Protocol Sequence 1</td>\n          <td>\n            <a href=\"Organization-qicore-organization-example.html\">Organization/example</a>\n          </td>\n          <td>Vaccination Series 1</td>\n          <td>2</td>\n          <td>Gestational rubella syndrome { SNOMED CT code '1857005' = 'Gestational rubella syndrome }</td>\n          <td>Counts { http://hl7.org/fhir/STU3/vaccination-protocol-dose-status code 'count' = 'Counts' }</td>\n          <td>Cold chain break { http://hl7.org/fhir/STU3/vaccination-protocol-dose-status-reason code 'coldchbrk' = 'Cold chain break' }          </td>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:Immunization.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234" ]
+  ];
+  fhir:Immunization.status [ fhir:value "completed"];
+  fhir:Immunization.notGiven [ fhir:value "false"^^xsd:boolean];
+  fhir:Immunization.vaccineCode [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:oid:1.2.36.1.2001.1005.17" ];
+       fhir:Coding.code [ fhir:value "FLUVAX" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Fluvax (Influenza)" ]
+  ];
+  fhir:Immunization.patient [
+     fhir:link <http://hl7.org/fhir/us/qicore/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Immunization.encounter [
+     fhir:link <http://hl7.org/fhir/us/qicore/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:Immunization.date [ fhir:value "2013-01-10"^^xsd:date];
+  fhir:Immunization.primarySource [ fhir:value "true"^^xsd:boolean];
+  fhir:Immunization.location [
+     fhir:link <http://hl7.org/fhir/us/qicore/Location/example>;
+     fhir:Reference.reference [ fhir:value "Location/example" ]
+  ];
+  fhir:Immunization.manufacturer [
+     fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+     fhir:Reference.reference [ fhir:value "Organization/example" ]
+  ];
+  fhir:Immunization.lotNumber [ fhir:value "AAJN11K"];
+  fhir:Immunization.expirationDate [ fhir:value "2015-02-15"^^xsd:date];
+  fhir:Immunization.site [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/ActSite" ];
+       fhir:Coding.code [ fhir:value "LA" ];
+       fhir:Coding.display [ fhir:value "left arm" ]
+     ]
+  ];
+  fhir:Immunization.route [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/RouteOfAdministration" ];
+       fhir:Coding.code [ fhir:value "IM" ];
+       fhir:Coding.display [ fhir:value "Injection, intramuscular" ]
+     ]
+  ];
+  fhir:Immunization.doseQuantity [
+     fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "mg" ]
+  ];
+  fhir:Immunization.practitioner [
+     fhir:index 0;
+     fhir:Immunization.practitioner.role [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0443" ];
+         fhir:Coding.code [ fhir:value "OP" ]
+       ]
+     ];
+     fhir:Immunization.practitioner.actor [
+       fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Immunization.practitioner.role [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0443" ];
+         fhir:Coding.code [ fhir:value "AP" ]
+       ]
+     ];
+     fhir:Immunization.practitioner.actor [
+       fhir:link <http://hl7.org/fhir/us/qicore/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ]
+  ];
+  fhir:Immunization.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Notes on adminstration of vaccine" ]
+  ];
+  fhir:Immunization.explanation [
+     fhir:Immunization.explanation.reason [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:429060002;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "429060002" ]
+       ]
+     ]
+  ];
+  fhir:Immunization.reaction [
+     fhir:index 0;
+     fhir:Immunization.reaction.date [ fhir:value "2013-01-10"^^xsd:date ];
+     fhir:Immunization.reaction.detail [
+       fhir:link <http://hl7.org/fhir/us/qicore/Observation/example>;
+       fhir:Reference.reference [ fhir:value "Observation/example" ]
+     ];
+     fhir:Immunization.reaction.reported [ fhir:value "true"^^xsd:boolean ]
+  ];
+  fhir:Immunization.vaccinationProtocol [
+     fhir:index 0;
+     fhir:Immunization.vaccinationProtocol.doseSequence [ fhir:value "1"^^xsd:positiveInteger ];
+     fhir:Immunization.vaccinationProtocol.description [ fhir:value "Vaccination Protocol Sequence 1" ];
+     fhir:Immunization.vaccinationProtocol.authority [
+       fhir:link <http://hl7.org/fhir/us/qicore/Organization/example>;
+       fhir:Reference.reference [ fhir:value "Organization/example" ]
+     ];
+     fhir:Immunization.vaccinationProtocol.series [ fhir:value "Vaccination Series 1" ];
+     fhir:Immunization.vaccinationProtocol.seriesDoses [ fhir:value "2"^^xsd:positiveInteger ];
+     fhir:Immunization.vaccinationProtocol.targetDisease [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:1857005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "1857005" ]
+       ]
+     ];
+     fhir:Immunization.vaccinationProtocol.doseStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/vaccination-protocol-dose-status" ];
+         fhir:Coding.code [ fhir:value "count" ];
+         fhir:Coding.display [ fhir:value "Counts" ]
+       ]
+     ];
+     fhir:Immunization.vaccinationProtocol.doseStatusReason [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/vaccination-protocol-dose-status-reason" ];
+         fhir:Coding.code [ fhir:value "coldchbrk" ];
+         fhir:Coding.display [ fhir:value "Cold chain break" ]
+       ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/qicore/Patient/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Encounter/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Location/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Organization/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Practitioner/example> a fhir:us .
+
+<http://hl7.org/fhir/us/qicore/Observation/example> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/qicore/Immunization/qicore-immunization-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://hl7.org/fhir/STU3/us/qicore/Immunization/qicore-immunization-example.ttl> .
+
+# -------------------------------------------------------------------------------------
+
